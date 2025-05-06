@@ -2,21 +2,41 @@
   <head>
     <link rel="icon" href="favicon.png" type="image/png">
     <style>
+      :root {
+        --bg-color: linear-gradient(135deg, #4c5457, #2e3436);
+        --box-color: #bbb;
+        --text-color: black;
+        --button-bg: #888;
+        --button-color: white;
+      }
+
+      body.light {
+        --bg-color: linear-gradient(135deg, #dfe6e9, #b2bec3);
+        --box-color: #fff;
+        --text-color: #000;
+        --button-bg: #444;
+        --button-color: white;
+      }
+
       html, body {
         margin: 0;
         height: 100%;
-        background: linear-gradient(135deg, #4c5457, #2e3436);
+        background: var(--bg-color);
+        transition: background 0.5s;
       }
+
       body {
         display: flex;
         justify-content: center;
         align-items: center;
+        font-family: sans-serif;
       }
+
       .center-box {
-        background-color: #bbb;
-        width: 520px;
-        height: 420px;
-        border-radius: 10px;
+        background-color: var(--box-color);
+        width: 720px;
+        height: 620px;
+        border-radius: 6px;
         box-shadow: 0 0 20px rgba(0,0,0,0.3);
         position: relative;
         display: flex;
@@ -25,38 +45,93 @@
         justify-content: space-between;
         padding: 20px;
         box-sizing: border-box;
+        transition: background-color 0.5s;
       }
+
       .header {
         display: flex;
         align-items: center;
-        font-family: sans-serif;
         font-size: 20px;
-        color: black;
+        color: var(--text-color);
         width: 100%;
         justify-content: flex-start;
+        animation: fadeIn 2s ease-out;
       }
+
       .header img {
         width: 24px;
         height: 24px;
         margin-right: 10px;
         filter: invert(1);
       }
+
+      @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(-10px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+
       .button-row {
         display: flex;
         width: 100%;
         gap: 10px;
       }
+
       .button-row button {
         flex: 1;
         padding: 10px;
         font-size: 16px;
         border: none;
         border-radius: 5px;
-        background-color: #888;
-        color: white;
+        background-color: var(--button-bg);
+        color: var(--button-color);
         cursor: pointer;
+        transition: box-shadow 0.3s, transform 0.2s;
+      }
+
+      .button-row button:hover {
+        box-shadow: 0 0 15px white;
+        transform: scale(1.02);
+      }
+
+      .bottom-socials {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .bottom-socials img {
+        width: 24px;
+        height: 24px;
+        filter: invert(1);
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      .bottom-socials img:hover {
+        transform: scale(1.2);
+      }
+
+      .theme-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        filter: invert(1);
+      }
+
+      .theme-toggle img {
+        width: 24px;
+        height: 24px;
       }
     </style>
+    <script>
+      function toggleTheme() {
+        document.body.classList.toggle('light');
+      }
+    </script>
   </head>
   <body>
     <div class="center-box">
@@ -64,15 +139,26 @@
         <img src="favicon.png" alt="icon">
         Sssmmilles
       </div>
+
+      <button class="theme-toggle" onclick="toggleTheme()">
+        <img src="favicon.png" alt="toggle">
+      </button>
+
       <div class="button-row">
-        <button>Кнопка 1</button>
-        <button>Кнопка 2</button>
-        <button>Кнопка 3</button>
+        <button>Button 1</button>
+        <button>Button 2</button>
+        <button>Button 3</button>
       </div>
       <div class="button-row">
-        <button>Кнопка 4</button>
-        <button>Кнопка 5</button>
-        <button>Кнопка 6</button>
+        <button>Button 4</button>
+        <button>Button 5</button>
+        <button>Button 6</button>
+      </div>
+
+      <div class="bottom-socials">
+        <img src="favicon.png" alt="icon">
+        <img src="favicon.png" alt="icon">
+        <img src="favicon.png" alt="icon">
       </div>
     </div>
   </body>
