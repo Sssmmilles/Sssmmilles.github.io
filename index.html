@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sssmmilles Profile</title>
+  <title>Desktop Simulation</title>
   <link rel="icon" href="ImagesFolder/BlackIcon-1.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-mH4mAO1xOq8Qq8QZptUc1O3RZ3cFkeT8YH1x9dT6WyT2+1Z+ItfbLZECIgqAhXHa2N+K9We9sMTCeCQg5L6m9g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,19 +19,35 @@
   overflow: hidden;
 }
 
-.window {
+.top-left {
   position: absolute;
+  top: 20px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.top-left img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.window {
   width: 720px;
-  max-width: 95%;
   height: 520px;
   background-color: #1f1f1f;
   border: 1px solid white;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 100px;
+  left: 100px;
   display: none;
   flex-direction: column;
-  transition: opacity 0.5s ease;
-  z-index: 10;
+  resize: both;
+  overflow: auto;
 }
 
 .panel {
@@ -41,19 +57,21 @@
   border-top-right-radius: 12px;
   border-bottom: 1px solid white;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 0 10px;
+  justify-content: space-between;
 }
 
-.panel img {
-  height: 20px;
-  margin-right: 10px;
-}
-
-.panel span {
+.panel-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 12px;
-  color: white;
+}
+
+.panel-title img {
+  width: 18px;
+  height: 18px;
 }
 
 .close-btn {
@@ -71,86 +89,119 @@
 .taskbar {
   position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
-  height: 50px;
-  background-color: #1a1a1a;
-  border-top: 1px solid white;
+  height: 40px;
+  background-color: #111;
+  border-top: 1px solid #444;
   display: flex;
   align-items: center;
   padding: 0 10px;
   gap: 10px;
 }
 
-.taskbar .start-button {
-  background-color: #2a2a2a;
-  border: 1px solid white;
-  color: white;
-  font-size: 12px;
-  padding: 4px 10px;
-  cursor: pointer;
-}
-
-.taskbar .icon {
+.start-btn {
   width: 32px;
   height: 32px;
-  background-image: url('ImagesFolder/WhiteIcon-1.png');
-  background-size: cover;
+  background-color: #333;
+  border-radius: 8px;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
 
-.content {
+.start-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.task-icon {
+  width: 32px;
+  height: 32px;
+  background-color: #333;
+  border-radius: 8px;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.task-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.window-content {
   padding: 20px;
-  overflow-y: auto;
-  flex: 1;
-  color: white;
   font-size: 12px;
 }
 
   </style>
 </head>
 <body>
-  <div class="window" id="profileWindow" style="top: 80px; left: 50px; display: flex;">
+  <div class="top-left">
+    <img src="ImagesFolder/WhiteIcon-1.png" alt="icon" />
+    Desktop
+  </div>  <div class="window" id="paintWindow">
     <div class="panel">
-      <div style="display: flex; align-items: center;">
+      <div class="panel-title">
         <img src="ImagesFolder/WhiteIcon-1.png" />
-        <span>Sssmmilles.exe</span>
-      </div>
-      <button class="close-btn" onclick="toggleWindow('profileWindow')">×</button>
-    </div>
-    <div class="content">
-      Profile window content goes here.
-    </div>
-  </div>  <div class="window" id="paintWindow" style="top: 120px; left: 100px;">
-    <div class="panel">
-      <div style="display: flex; align-items: center;">
-        <img src="ImagesFolder/WhiteIcon-1.png" />
-        <span>Paint.exe</span>
+        Paint.exe
       </div>
       <button class="close-btn" onclick="toggleWindow('paintWindow')">×</button>
     </div>
-    <div class="content">
-      Paint app placeholder.
+    <div class="window-content">
+      <canvas id="paintCanvas" width="600" height="400" style="background:#fff; border:1px solid #000;"></canvas>
     </div>
-  </div>  <div class="window" id="tetrisWindow" style="top: 160px; left: 150px;">
+  </div>  <div class="window" id="tetrisWindow">
     <div class="panel">
-      <div style="display: flex; align-items: center;">
+      <div class="panel-title">
         <img src="ImagesFolder/WhiteIcon-1.png" />
-        <span>Tetris.exe</span>
+        Tetris.exe
       </div>
       <button class="close-btn" onclick="toggleWindow('tetrisWindow')">×</button>
     </div>
-    <div class="content">
-      Tetris game placeholder.
+    <div class="window-content">
+      <p>Coming soon: Tetris game interface</p>
     </div>
   </div>  <div class="taskbar">
-    <button class="start-button">Start</button>
-    <div class="icon" onclick="toggleWindow('profileWindow')"></div>
-    <div class="icon" onclick="toggleWindow('paintWindow')"></div>
-    <div class="icon" onclick="toggleWindow('tetrisWindow')"></div>
+    <div class="start-btn">
+      <img src="ImagesFolder/WhiteIcon-1.png" />
+    </div>
+    <div class="task-icon" onclick="toggleWindow('paintWindow')">
+      <img src="ImagesFolder/WhiteIcon-1.png" />
+    </div>
+    <div class="task-icon" onclick="toggleWindow('tetrisWindow')">
+      <img src="ImagesFolder/WhiteIcon-1.png" />
+    </div>
   </div>  <script>
     function toggleWindow(id) {
       const win = document.getElementById(id);
-      win.style.display = win.style.display === 'flex' ? 'none' : 'flex';
+      win.style.display = (win.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    const canvas = document.getElementById('paintCanvas');
+    const ctx = canvas?.getContext('2d');
+    let painting = false;
+
+    if (canvas) {
+      canvas.addEventListener('mousedown', () => painting = true);
+      canvas.addEventListener('mouseup', () => painting = false);
+      canvas.addEventListener('mousemove', draw);
+
+      function draw(e) {
+        if (!painting) return;
+        ctx.lineWidth = 5;
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = '#000';
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(e.offsetX, e.offsetY);
+      }
     }
   </script></body>
-</html>
+  </html>
