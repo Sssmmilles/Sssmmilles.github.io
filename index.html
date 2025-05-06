@@ -1,105 +1,102 @@
-<html>
-  <head>
-    <link rel="icon" href="favicon.png" type="image/png">
-    <style>
-      html, body {
-        margin: 0;
-        height: 100%;
-        background: linear-gradient(135deg, #4c5457, #2e3436);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-      }
-      .center-box {
-        background-color: #bbb;
-        width: 720px;
-        height: 620px;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.3);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        animation: fadeIn 1s ease-in-out;
-      }
-      @keyframes fadeIn {
-        from { opacity: 0; transform: scale(0.95); }
-        to { opacity: 1; transform: scale(1); }
-      }
-      .top-bar {
-        width: 100%;
-        height: 50px;
-        background-color: #999;
-        display: flex;
-        align-items: center;
-        padding: 0 20px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-      }
-      .top-bar img {
-        width: 24px;
-        height: 24px;
-      }
-      .profile-section {
-        width: 100%;
-        display: flex;
-        padding: 20px;
-        gap: 20px;
-        align-items: center;
-      }
-      .avatar {
-        width: 100px;
-        height: 100px;
-        border-radius: 20px;
-      }
-      .info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 10px;
-      }
-      .info h2 {
-        margin: 0;
-        font-family: sans-serif;
-        color: black;
-      }
-      .socials {
-        display: flex;
-        gap: 10px;
-      }
-      .socials img {
-        width: 24px;
-        height: 24px;
-        filter: brightness(0.5);
-      }
-      .divider {
-        width: 90%;
-        height: 2px;
-        background-color: white;
-        margin-top: 10px;
-        align-self: center;
-        border-radius: 1px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="center-box">
-      <div class="top-bar">
-        <img src="ImagesFolder/BlackIcon-1.png" alt="icon">
-      </div>
-      <div class="profile-section">
-        <img src="SssAvatar.png" alt="avatar" class="avatar">
-        <div class="info">
-          <h2>Sssmmilles</h2>
-          <div class="socials">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
-            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
-            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord">
-            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
-          </div>
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="ImagesFolder/BlackIcon-1.png" type="image/png">
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #4c5457, #2e3436);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .main-box {
+      background-color: #bbb;
+      width: 720px;
+      height: 620px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 1s ease-in-out;
+      overflow: hidden;
+    }
+    .panel {
+      background-color: #999;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    .panel img {
+      width: 24px;
+      height: 24px;
+    }
+    .profile-section {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+    }
+    .profile-section img.avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 20%;
+      margin-right: 20px;
+    }
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .profile-info .name {
+      font-family: sans-serif;
+      font-size: 22px;
+      color: black;
+      margin-bottom: 10px;
+    }
+    .social-icons {
+      display: flex;
+      gap: 10px;
+    }
+    .social-icons img {
+      width: 24px;
+      height: 24px;
+      filter: grayscale(100%) brightness(1.2);
+    }
+    .divider {
+      width: 90%;
+      height: 2px;
+      background: white;
+      align-self: center;
+      margin-top: 10px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="main-box">
+    <div class="panel">
+      <img src="ImagesFolder/BlackIcon-1.png" alt="icon">
+    </div>
+    <div class="profile-section">
+      <img src="ImagesFolder/SssAvatar.png" alt="avatar" class="avatar">
+      <div class="profile-info">
+        <div class="name">Sssmmilles</div>
+        <div class="social-icons">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="twitter">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="youtube">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="discord">
+          <img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="tiktok">
         </div>
       </div>
-      <div class="divider"></div>
     </div>
-  </body>
+    <div class="divider"></div>
+  </div>
+</body>
 </html>
