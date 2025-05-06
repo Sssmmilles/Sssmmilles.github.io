@@ -6,40 +6,74 @@
         margin: 0;
         height: 100%;
         background: linear-gradient(135deg, #4c5457, #2e3436);
+      }
+      body {
         display: flex;
         justify-content: center;
         align-items: center;
-        overflow: hidden;
       }
       .center-box {
         background-color: #bbb;
-        width: 320px;
-        height: 220px;
-        border-radius: 15px;
+        width: 520px;
+        height: 420px;
+        border-radius: 10px;
         box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        box-sizing: border-box;
       }
-      .top-left {
-        position: absolute;
-        top: 20px;
-        left: 30px;
+      .header {
         display: flex;
         align-items: center;
         font-family: sans-serif;
         font-size: 20px;
         color: black;
+        width: 100%;
+        justify-content: flex-start;
       }
-      .top-left img {
-        width: 20px;
-        height: 20px;
-        margin-right: 8px;
+      .header img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+        filter: invert(1);
+      }
+      .button-row {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+      }
+      .button-row button {
+        flex: 1;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #888;
+        color: white;
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
-    <div class="top-left">
-      <img src="favicon.png" alt="icon">
-      Sssmmilles
+    <div class="center-box">
+      <div class="header">
+        <img src="favicon.png" alt="icon">
+        Sssmmilles
+      </div>
+      <div class="button-row">
+        <button>Кнопка 1</button>
+        <button>Кнопка 2</button>
+        <button>Кнопка 3</button>
+      </div>
+      <div class="button-row">
+        <button>Кнопка 4</button>
+        <button>Кнопка 5</button>
+        <button>Кнопка 6</button>
+      </div>
     </div>
-    <div class="center-box"></div>
   </body>
 </html>
