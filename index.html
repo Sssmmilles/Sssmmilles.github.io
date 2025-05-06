@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=1200" />
   <title>Sssmmilles</title>
-  <link rel="icon" href="favicon.png" type="image/png" />
   <style>
     @font-face {
       font-family: 'PixelFont';
@@ -18,18 +17,13 @@
       font-family: 'PixelFont', monospace;
     }
 
-    html, body {
-      height: 100%;
-      background: linear-gradient(135deg, #4c5457, #2e3436);
-      color: black;
-    }
-
     body {
+      background: #2e2e2e;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      padding: 60px;
-      animation: fadeIn 1s ease-in;
+      height: 100vh;
+      animation: fadeIn 0.8s ease-in;
     }
 
     @keyframes fadeIn {
@@ -38,98 +32,15 @@
     }
 
     .container {
-      background: #ccc;
-      border-radius: 14px;
       width: 1200px;
       height: 1200px;
-      padding: 30px;
+      background: #c0c0c0;
+      padding: 20px;
       position: relative;
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
       display: flex;
       flex-direction: column;
       gap: 20px;
-    }
-
-    .header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .header img {
-      width: 24px;
-      height: 24px;
-      filter: invert(100%);
-    }
-
-    .header span {
-      font-size: 16px;
-    }
-
-    .buttons-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-
-    .button {
-      padding: 10px;
-      text-align: center;
-      background: #666;
-      color: white;
-      border-radius: 12px;
-      transition: box-shadow 0.3s;
-    }
-
-    .button:hover {
-      box-shadow: 0 0 10px white;
-    }
-
-    .content {
-      display: flex;
-      flex: 1;
-      gap: 20px;
-    }
-
-    .left, .right {
-      flex: 1;
-      background: #bbb;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .image-square {
-      width: 200px;
-      height: 200px;
-      background: #999;
-      margin-bottom: 10px;
-    }
-
-    .image-wide {
-      width: 300px;
-      height: 170px;
-      background: #999;
-    }
-
-    .bottom {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-
-    .bottom div {
-      padding: 10px;
-      background: #666;
-      border-radius: 12px;
-      color: white;
-      text-align: center;
-      transition: box-shadow 0.3s;
-    }
-
-    .bottom div:hover {
-      box-shadow: 0 0 10px white;
     }
 
     .social {
@@ -137,18 +48,14 @@
       top: 20px;
       left: 20px;
       display: flex;
-      gap: 10px;
+      gap: 12px;
     }
 
     .social img {
-      width: 24px;
-      height: 24px;
-      filter: invert(100%);
+      width: 32px;
+      height: 32px;
+      filter: invert(1);
     }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="social">
-      <img src="discord.png" alt="Discord">
-      <img src="x.png" alt="X
+
+    .header {
+      display: flex;
