@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sssmmilles Desktop</title>
+  <title>Sssmmilles Profile</title>
   <link rel="icon" href="ImagesFolder/BlackIcon-1.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-mH4mAO1xOq8Qq8QZptUc1O3RZ3cFkeT8YH1x9dT6WyT2+1Z+ItfbLZECIgqAhXHa2N+K9We9sMTCeCQg5L6m9g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,103 +19,61 @@
   overflow: hidden;
 }
 
-.desktop-icon {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-}
-
-.icon-label {
-  position: absolute;
-  top: 54px;
-  font-size: 8px;
-  text-align: center;
-  width: 100px;
-}
-
-.icon-container {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  width: 100px;
-}
-
 .window {
+  position: absolute;
   width: 720px;
   max-width: 95%;
-  height: 500px;
-  margin: auto;
+  height: 520px;
   background-color: #1f1f1f;
   border: 1px solid white;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  position: absolute;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
   display: none;
   flex-direction: column;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
+  z-index: 10;
 }
 
-.window.active {
-  display: flex;
-  animation: fadeIn 0.3s ease forwards;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateX(-50%) scale(0.95); }
-  100% { opacity: 1; transform: translateX(-50%) scale(1); }
-}
-
-.window-header {
+.panel {
   height: 40px;
   background-color: #2a2a2a;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   border-bottom: 1px solid white;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   padding: 0 10px;
 }
 
-.window-header .title {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.panel img {
+  height: 20px;
+  margin-right: 10px;
+}
+
+.panel span {
   font-size: 12px;
+  color: white;
 }
 
-.window-header .title img {
-  width: 16px;
-  height: 16px;
-}
-
-.window-header .close-btn {
+.close-btn {
   background: transparent;
   border: none;
   font-size: 18px;
-  color: white;
   cursor: pointer;
+  color: white;
 }
 
-.window-body {
-  padding: 20px;
-  overflow-y: auto;
-  flex: 1;
+.close-btn:hover {
+  color: red;
 }
 
 .taskbar {
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40px;
-  background-color: #121212;
+  width: 100%;
+  height: 50px;
+  background-color: #1a1a1a;
   border-top: 1px solid white;
   display: flex;
   align-items: center;
@@ -123,61 +81,76 @@
   gap: 10px;
 }
 
-.taskbar-icon {
-  width: 28px;
-  height: 28px;
+.taskbar .start-button {
+  background-color: #2a2a2a;
+  border: 1px solid white;
+  color: white;
+  font-size: 12px;
+  padding: 4px 10px;
   cursor: pointer;
+}
+
+.taskbar .icon {
+  width: 32px;
+  height: 32px;
+  background-image: url('ImagesFolder/WhiteIcon-1.png');
+  background-size: cover;
+  cursor: pointer;
+}
+
+.content {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+  color: white;
+  font-size: 12px;
 }
 
   </style>
 </head>
-<body>  <div class="icon-container" style="top: 60px; left: 40px;" onclick="toggleWindow('ssmWindow')">
-    <img src="ImagesFolder/WhiteIcon-1.png" class="desktop-icon" />
-    <div class="icon-label">Sssmmilles.exe</div>
-  </div>  <div class="icon-container" style="top: 140px; left: 40px;" onclick="toggleWindow('errWindow')">
-    <img src="ImagesFolder/WhiteIcon-1.png" class="desktop-icon" />
-    <div class="icon-label">Error</div>
-  </div>  <div class="icon-container" style="top: 220px; left: 40px;" onclick="toggleWindow('webWindow')">
-    <img src="ImagesFolder/WhiteIcon-1.png" class="desktop-icon" />
-    <div class="icon-label">AstralWeb</div>
-  </div>  <div class="window" id="ssmWindow">
-    <div class="window-header">
-      <div class="title">
-        <img src="ImagesFolder/WhiteIcon-1.png" /> Sssmmilles.exe
+<body>
+  <div class="window" id="profileWindow" style="top: 80px; left: 50px; display: flex;">
+    <div class="panel">
+      <div style="display: flex; align-items: center;">
+        <img src="ImagesFolder/WhiteIcon-1.png" />
+        <span>Sssmmilles.exe</span>
       </div>
-      <button class="close-btn" onclick="toggleWindow('ssmWindow')">×</button>
+      <button class="close-btn" onclick="toggleWindow('profileWindow')">×</button>
     </div>
-    <div class="window-body">
-      <p>Hello, this is the Sssmmilles app window.</p>
+    <div class="content">
+      Profile window content goes here.
     </div>
-  </div>  <div class="window" id="errWindow">
-    <div class="window-header">
-      <div class="title">
-        <img src="ImagesFolder/WhiteIcon-1.png" /> Error
+  </div>  <div class="window" id="paintWindow" style="top: 120px; left: 100px;">
+    <div class="panel">
+      <div style="display: flex; align-items: center;">
+        <img src="ImagesFolder/WhiteIcon-1.png" />
+        <span>Paint.exe</span>
       </div>
-      <button class="close-btn" onclick="toggleWindow('errWindow')">×</button>
+      <button class="close-btn" onclick="toggleWindow('paintWindow')">×</button>
     </div>
-    <div class="window-body">
-      <p>ERROR 404</p>
+    <div class="content">
+      Paint app placeholder.
     </div>
-  </div>  <div class="window" id="webWindow">
-    <div class="window-header">
-      <div class="title">
-        <img src="ImagesFolder/WhiteIcon-1.png" /> AstralWeb
+  </div>  <div class="window" id="tetrisWindow" style="top: 160px; left: 150px;">
+    <div class="panel">
+      <div style="display: flex; align-items: center;">
+        <img src="ImagesFolder/WhiteIcon-1.png" />
+        <span>Tetris.exe</span>
       </div>
-      <button class="close-btn" onclick="toggleWindow('webWindow')">×</button>
+      <button class="close-btn" onclick="toggleWindow('tetrisWindow')">×</button>
     </div>
-    <div class="window-body">
-      <iframe src="https://example.com" style="width:100%; height:100%; border:none;"></iframe>
+    <div class="content">
+      Tetris game placeholder.
     </div>
   </div>  <div class="taskbar">
-    <img src="ImagesFolder/WhiteIcon-1.png" class="taskbar-icon" onclick="toggleWindow('ssmWindow')" />
-    <img src="ImagesFolder/WhiteIcon-1.png" class="taskbar-icon" onclick="toggleWindow('errWindow')" />
-    <img src="ImagesFolder/WhiteIcon-1.png" class="taskbar-icon" onclick="toggleWindow('webWindow')" />
+    <button class="start-button">Start</button>
+    <div class="icon" onclick="toggleWindow('profileWindow')"></div>
+    <div class="icon" onclick="toggleWindow('paintWindow')"></div>
+    <div class="icon" onclick="toggleWindow('tetrisWindow')"></div>
   </div>  <script>
     function toggleWindow(id) {
       const win = document.getElementById(id);
-      win.classList.toggle('active');
+      win.style.display = win.style.display === 'flex' ? 'none' : 'flex';
     }
   </script></body>
-  </html>
+</html>
