@@ -1,124 +1,154 @@
-<html>
-  <head>
-    <link rel="icon" href="favicon.png" type="image/png">
-    <style>
-      :root {
-        --bg-color: linear-gradient(135deg, #4c5457, #2e3436);
-        --box-color: #bbb;
-        --text-color: black;
-        --button-bg: #888;
-        --button-color: white;
-      }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sssmmilles</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <style>
+    @font-face {
+      font-family: 'PixelFont';
+      src: url('file-8MRh61vbNfk4U5AmN7KxuS.ttf') format('truetype');
+    }
 
-      html, body {
-        margin: 0;
-        height: 100%;
-        background: var(--bg-color);
-      }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'PixelFont', monospace;
+    }
 
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: sans-serif;
-      }
+    html, body {
+      height: 100%;
+      background: linear-gradient(135deg, #4c5457, #2e3436);
+      color: black;
+    }
 
-      .center-box {
-        background-color: var(--box-color);
-        width: 720px;
-        height: 620px;
-        border-radius: 4px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.3);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 20px;
-        box-sizing: border-box;
-        position: relative;
-      }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px;
+      animation: fadeIn 1s ease-in;
+    }
 
-      .header {
-        display: flex;
-        align-items: center;
-        font-size: 20px;
-        color: var(--text-color);
-        margin-bottom: 20px;
-      }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-      .header img {
-        width: 24px;
-        height: 24px;
-        margin-right: 10px;
-        filter: invert(1);
-      }
+    .container {
+      background: #ccc;
+      border-radius: 14px;
+      width: 1200px;
+      height: 1200px;
+      padding: 30px;
+      position: relative;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
-      .buttons-column {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 10px;
-        align-items: stretch;
-      }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-      .buttons-column button {
-        padding: 12px;
-        font-size: 16px;
-        border: none;
-        border-radius: 5px;
-        background-color: var(--button-bg);
-        color: var(--button-color);
-        cursor: pointer;
-        transition: box-shadow 0.3s, transform 0.2s;
-      }
+    .header img {
+      width: 24px;
+      height: 24px;
+      filter: invert(100%);
+    }
 
-      .buttons-column button:hover {
-        box-shadow: 0 0 15px white;
-        transform: scale(1.02);
-      }
+    .header span {
+      font-size: 16px;
+    }
 
-      .bottom-socials {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        display: flex;
-        gap: 16px;
-      }
+    .buttons-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
 
-      .bottom-socials img {
-        width: 24px;
-        height: 24px;
-        filter: invert(1);
-        cursor: pointer;
-        transition: transform 0.2s;
-      }
+    .button {
+      padding: 10px;
+      text-align: center;
+      background: #666;
+      color: white;
+      border-radius: 12px;
+      transition: box-shadow 0.3s;
+    }
 
-      .bottom-socials img:hover {
-        transform: scale(1.2);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="center-box">
-      <div class="header">
-        <img src="favicon.png" alt="icon">
-        Sssmmilles
-      </div>
+    .button:hover {
+      box-shadow: 0 0 10px white;
+    }
 
-      <div class="buttons-column">
-        <button>Button 1</button>
-        <button>Button 2</button>
-        <button>Button 3</button>
-        <button>Button 4</button>
-        <button>Button 5</button>
-        <button>Button 6</button>
-      </div>
+    .content {
+      display: flex;
+      flex: 1;
+      gap: 20px;
+    }
 
-      <div class="bottom-socials">
-        <img src="favicon.png" alt="icon">
-        <img src="favicon.png" alt="icon">
-        <img src="favicon.png" alt="icon">
-      </div>
-    </div>
-  </body>
-</html>
+    .left, .right {
+      flex: 1;
+      background: #bbb;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-square {
+      width: 200px;
+      height: 200px;
+      background: #999;
+      margin-bottom: 10px;
+    }
+
+    .image-wide {
+      width: 300px;
+      height: 170px;
+      background: #999;
+    }
+
+    .bottom {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .bottom div {
+      padding: 10px;
+      background: #666;
+      border-radius: 12px;
+      color: white;
+      text-align: center;
+      transition: box-shadow 0.3s;
+    }
+
+    .bottom div:hover {
+      box-shadow: 0 0 10px white;
+    }
+
+    .social {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .social img {
+      width: 24px;
+      height: 24px;
+      filter: invert(100%);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="social">
+      <img src="discord.png" alt="Discord">
+      <img src="x.png" alt="X
