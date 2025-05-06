@@ -56,7 +56,7 @@
     .info {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
     }
 
     .info .name {
@@ -67,26 +67,22 @@
 
     .socials {
       display: flex;
-      gap: 12px;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
-    .socials a img {
-      width: 24px;
-      height: 24px;
-      opacity: 0.6;
-      transition: opacity 0.2s;
+    .socials a {
+      background-color: #444;
+      color: #eee;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: background-color 0.2s;
     }
 
-    .socials a img:hover {
-      opacity: 1;
-    }
-
-    .footer-line {
-      width: 88%;
-      height: 1px;
-      margin: 20px auto 12px;
-      background: #666; /* теперь серая линия */
-      opacity: 0.5;
+    .socials a:hover {
+      background-color: #222;
     }
 
     @keyframes fadeIn {
@@ -106,23 +102,13 @@
       <div class="info">
         <div class="name">Sssmmilles</div>
         <div class="socials">
-          <a href="https://discord.com/users/1129546209485406299" target="_blank">
-            <img src="ImagesFolder/discord-icon.png" alt="Discord">
-          </a>
-          <a href="https://twitter.com/Sssmmilles" target="_blank">
-            <img src="ImagesFolder/twitter-icon.png" alt="Twitter">
-          </a>
-          <a href="https://youtube.com/@Sssmmilles" target="_blank">
-            <img src="ImagesFolder/youtube-icon.png" alt="YouTube">
-          </a>
-          <a href="https://tiktok.com/@Sssmmilles" target="_blank">
-            <img src="ImagesFolder/tiktok-icon.png" alt="TikTok">
-          </a>
+          <a href="https://discord.com/users/1129546209485406299" target="_blank">Discord</a>
+          <a href="https://twitter.com/Sssmmilles" target="_blank">Twitter</a>
+          <a href="https://youtube.com/@Sssmmilles" target="_blank">YouTube</a>
+          <a href="https://tiktok.com/@Sssmmilles" target="_blank">TikTok</a>
         </div>
       </div>
     </div>
-
-    <div class="footer-line"></div>
   </div>
 </body>
 </html>
