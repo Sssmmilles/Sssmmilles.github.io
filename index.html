@@ -9,17 +9,28 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
       }
       .center-box {
         background-color: #bbb;
-        width: 300px;
-        height: 200px;
+        width: 90%;
+        height: calc(100% - 300px);
         border-radius: 30px;
         box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      }
+      .top-left {
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        color: white;
+        font-family: sans-serif;
+        font-size: 20px;
+        opacity: 0.8;
       }
     </style>
   </head>
   <body>
+    <div class="top-left">Sssmmilles</div>
     <div class="center-box"></div>
   </body>
 </html>
