@@ -1,97 +1,119 @@
-<html>
-  <head>
-    <link rel="icon" href="favicon.png" type="image/png">
-    <style>
-      html, body {
-        margin: 0;
-        height: 100%;
-        background: linear-gradient(135deg, #4c5457, #2e3436);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-      }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sssmmilles</title>
+  <link rel="icon" href="ImagesFolder/BlackIcon-A.png" type="image/png">
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #4c5457, #2e3436);
+      font-family: sans-serif;
+      overflow: hidden;
+    }
 
-      .center-box {
-        background-color: #bbb;
-        width: 720px;
-        height: 620px;
-        border-radius: 12px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.3);
-        position: relative;
-        animation: fadeIn 1s ease forwards;
-      }
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
+    }
 
-      @keyframes fadeIn {
-        from { opacity: 0; transform: scale(0.95); }
-        to { opacity: 1; transform: scale(1); }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
       }
+    }
 
-      .top-panel {
-        width: 100%;
-        height: 50px;
-        background-color: #999;
-        border-top-left-radius: 12px;
-        border-top-right-radius: 12px;
-        display: flex;
-        align-items: center;
-        padding: 0 20px;
-      }
+    .center-box {
+      background-color: #bbb;
+      width: 720px;
+      height: 620px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      position: relative;
+      margin: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
 
-      .top-panel img {
-        width: 24px;
-        height: 24px;
-      }
+    .top-panel {
+      background-color: #999;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+    }
 
-      .avatar-section {
-        display: flex;
-        align-items: center;
-        padding: 20px;
-        gap: 20px;
-      }
+    .top-panel img {
+      width: 24px;
+      height: 24px;
+    }
 
-      .avatar-section img {
-        width: 80px;
-        height: 80px;
-        border-radius: 15px;
-      }
+    .profile-section {
+      display: flex;
+      padding: 20px;
+      align-items: flex-start;
+      gap: 20px;
+    }
 
-      .name-and-links {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 10px;
-      }
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
 
-      .social-icons {
-        display: flex;
-        gap: 10px;
-      }
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+    }
 
-      .social-icons img {
-        width: 24px;
-        height: 24px;
-        filter: brightness(0);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="center-box">
-      <div class="top-panel">
-        <img src="ImagesFolder/BlackIcon-A.png" alt="icon">
-      </div>
-      <div class="avatar-section">
-        <img src="SssAvatar.png" alt="avatar">
-        <div class="name-and-links">
-          <div style="font-family: sans-serif; font-size: 20px; color: black;">Sssmmilles</div>
-          <div class="social-icons">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="twitter">
-            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="youtube">
-            <img src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" alt="discord">
-            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="tiktok">
-          </div>
+    .nickname {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-icons a img {
+      width: 24px;
+      height: 24px;
+      filter: grayscale(1) brightness(0.7);
+      opacity: 0.8;
+      transition: filter 0.3s ease, opacity 0.3s ease;
+    }
+
+    .social-icons a img:hover {
+      filter: grayscale(0.3) brightness(1);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="center-box fade-in">
+    <div class="top-panel">
+      <img src="ImagesFolder/BlackIcon-A.png" alt="icon">
+    </div>
+    <div class="profile-section">
+      <img class="avatar" src="SssAvatar.png" alt="Avatar">
+      <div class="profile-info">
+        <div class="nickname">Sssmmilles</div>
+        <div class="social-icons">
+          <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X"></a>
+          <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube"></a>
+          <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord"></a>
+          <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok"></a>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>
