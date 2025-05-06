@@ -1,114 +1,160 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Sssmmilles</title>
-  <link rel="icon" href="ImagesFolder/BlackIcon-1.png" type="image/png" />
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background: linear-gradient(135deg, #4c5457, #2e3436);
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+<html>
+  <head>
+    <link rel="icon" href="ImagesFolder/BlackIcon-1.png" type="image/png">
+    <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+        background: linear-gradient(135deg, #4c5457, #2e3436);
+        font-family: sans-serif;
+        overflow: hidden;
+      }
 
-    .main-box {
-      width: 720px;
-      background: #bbb;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-      overflow: hidden;
-      animation: fadeIn 1.2s ease-in-out;
-    }
+      .top-left {
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        color: black;
+      }
 
-    .panel {
-      width: 100%;
-      background: #999;
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-    }
+      .top-left img {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+      }
 
-    .panel img {
-      width: 24px;
-      height: 24px;
-      margin-right: 10px;
-    }
+      .center-box {
+        background-color: #bbb;
+        width: 720px;
+        height: 600px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        margin: auto;
+        margin-top: 60px;
+        position: relative;
+        transition: opacity 0.5s ease;
+      }
 
-    .content {
-      display: flex;
-      align-items: center;
-      padding: 20px;
-    }
+      .panel {
+        height: 40px;
+        width: 100%;
+        background-color: #a0a0a0;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0 10px;
+        box-sizing: border-box;
+      }
 
-    .avatar {
-      width: 88px;
-      height: 88px;
-      border-radius: 12px;
-      object-fit: cover;
-      margin-right: 20px;
-    }
+      .close-btn {
+        background: transparent;
+        border: none;
+        font-size: 22px;
+        cursor: pointer;
+      }
 
-    .info {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
+      .info-block {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
+      }
 
-    .info .name {
-      font-size: 24px;
-      font-weight: bold;
-      color: #111;
-    }
+      .info-avatar {
+        width: 90px;
+        height: 90px;
+        border-radius: 15px;
+        object-fit: cover;
+      }
 
-    .socials {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+      .info-content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
 
-    .socials a {
-      background-color: #444;
-      color: #eee;
-      text-decoration: none;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 14px;
-      transition: background-color 0.2s;
-    }
+      .info-name {
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+      }
 
-    .socials a:hover {
-      background-color: #222;
-    }
+      .social-buttons {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
 
-    @keyframes fadeIn {
-      0% { transform: scale(0.95); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-  </style>
-</head>
-<body>
-  <div class="main-box">
-    <div class="panel">
-      <img src="ImagesFolder/BlackIcon-1.png" alt="Icon">
+      .social-buttons a {
+        text-decoration: none;
+        color: #444;
+        background-color: #ddd;
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-size: 14px;
+        transition: background 0.3s;
+      }
+
+      .social-buttons a:hover {
+        background-color: #bbb;
+      }
+
+      .error-popup {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 180px;
+        height: 280px;
+        background-color: white;
+        border-radius: 10px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: red;
+        box-shadow: 0 0 15px rgba(0,0,0,0.4);
+        cursor: pointer;
+        text-align: center;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-left">
+      <img src="ImagesFolder/BlackIcon-1.png" alt="icon">
     </div>
 
-    <div class="content">
-      <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
-      <div class="info">
-        <div class="name">Sssmmilles</div>
-        <div class="socials">
-          <a href="https://discord.com/users/1129546209485406299" target="_blank">Discord</a>
-          <a href="https://twitter.com/Sssmmilles" target="_blank">Twitter</a>
-          <a href="https://youtube.com/@Sssmmilles" target="_blank">YouTube</a>
-          <a href="https://tiktok.com/@Sssmmilles" target="_blank">TikTok</a>
+    <div class="center-box">
+      <div class="panel">
+        <button class="close-btn" onclick="toggleError()">×</button>
+      </div>
+      <div class="info-block">
+        <img src="ImagesFolder/SssAvatar.png" alt="avatar" class="info-avatar">
+        <div class="info-content">
+          <div class="info-name">Sssmmilles</div>
+          <div class="social-buttons">
+            <a href="https://x.com/Sssmmilles" target="_blank">Twitter</a>
+            <a href="https://www.youtube.com/@Sssmmilles" target="_blank">YouTube</a>
+            <a href="https://discord.com/users/1129546209485406299" target="_blank">Discord</a>
+            <a href="https://www.tiktok.com/@Sssmmilles" target="_blank">TikTok</a>
+          </div>
         </div>
       </div>
+      <div class="error-popup" id="errorPopup" onclick="toggleError()">Error 404</div>
     </div>
-  </div>
-</body>
+
+    <script>
+      function toggleError() {
+        const popup = document.getElementById('errorPopup');
+        popup.style.display = popup.style.display === 'flex' ? 'none' : 'flex';
+      }
+    </script>
+  </body>
 </html>
