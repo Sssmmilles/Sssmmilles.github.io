@@ -1,119 +1,130 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sssmmilles</title>
-  <link rel="icon" href="ImagesFolder/BlackIcon-A.png" type="image/png">
-  <style>
-    html, body {
-      margin: 0;
-      height: 100%;
-      background: linear-gradient(135deg, #4c5457, #2e3436);
-      font-family: sans-serif;
-      overflow: hidden;
-    }
+<!DOCTYPE html><html>
+  <head>
+    <link rel="icon" href="ImagesFolder/BlackIcon-A.png" type="image/png">
+    <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+        background: linear-gradient(135deg, #4c5457, #2e3436);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        font-family: sans-serif;
+      }.main-box {
+    background-color: #bbb;
+    width: 720px;
+    height: 620px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    animation: fadeIn 1s ease-in-out;
+  }
 
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1.5s forwards;
-    }
+  .top-panel {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    box-sizing: border-box;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
 
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
+  .top-left-icon {
+    display: flex;
+    align-items: center;
+  }
 
-    .center-box {
-      background-color: #bbb;
-      width: 720px;
-      height: 620px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-      position: relative;
-      margin: auto;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
+  .top-left-icon img {
+    width: 24px;
+    height: 24px;
+  }
 
-    .top-panel {
-      background-color: #999;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      padding: 0 20px;
-    }
+  .social-icons {
+    display: flex;
+    gap: 12px;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+  }
 
-    .top-panel img {
-      width: 24px;
-      height: 24px;
-    }
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0.7);
+  }
 
-    .profile-section {
-      display: flex;
-      padding: 20px;
-      align-items: flex-start;
-      gap: 20px;
-    }
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
 
-    .avatar {
-      width: 100px;
-      height: 100px;
-      border-radius: 12px;
-      object-fit: cover;
-    }
+  .profile img {
+    width: 72px;
+    height: 72px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
 
-    .profile-info {
-      display: flex;
-      flex-direction: column;
-    }
+  .username {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #222;
+  }
 
-    .nickname {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
+  .profile-links {
+    display: flex;
+    gap: 10px;
+  }
 
-    .social-icons {
-      display: flex;
-      gap: 12px;
-    }
+  .profile-links img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0.6);
+  }
 
-    .social-icons a img {
-      width: 24px;
-      height: 24px;
-      filter: grayscale(1) brightness(0.7);
-      opacity: 0.8;
-      transition: filter 0.3s ease, opacity 0.3s ease;
-    }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
 
-    .social-icons a img:hover {
-      filter: grayscale(0.3) brightness(1);
-      opacity: 1;
-    }
-  </style>
-</head>
-<body>
-  <div class="center-box fade-in">
-    <div class="top-panel">
-      <img src="ImagesFolder/BlackIcon-A.png" alt="icon">
-    </div>
-    <div class="profile-section">
-      <img class="avatar" src="SssAvatar.png" alt="Avatar">
-      <div class="profile-info">
-        <div class="nickname">Sssmmilles</div>
-        <div class="social-icons">
-          <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X"></a>
-          <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube"></a>
-          <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord"></a>
-          <a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok"></a>
+  </head>
+  <body>
+    <div class="main-box">
+      <div class="top-panel">
+        <div class="top-left-icon">
+          <img src="ImagesFolder/BlackIcon-A.png" alt="icon">
         </div>
-      </div>
+      </div><div class="profile">
+    <img src="ImagesFolder/SssAvatar.png" alt="Avatar">
+    <div class="username">Sssmmilles</div>
+    <div class="profile-links">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok">
     </div>
   </div>
-</body>
+
+  <div class="social-icons">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" alt="X">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok">
+  </div>
+</div>
+
+  </body>
 </html>
