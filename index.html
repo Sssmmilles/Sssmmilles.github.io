@@ -34,26 +34,10 @@
   margin-right: 8px;
 }
 
-.icon-launcher {
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
-  display: flex;
-  gap: 20px;
-}
-
-.icon-launcher img {
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  border: 1px solid white;
-  border-radius: 8px;
-}
-
 .center-box {
   width: 720px;
   max-width: 95%;
-  height: 480px;
+  height: 500px;
   margin: 60px auto;
   background-color: #1f1f1f;
   border: 1px solid white;
@@ -65,27 +49,42 @@
   transition: opacity 0.5s ease;
 }
 
+.secondary-box {
+  width: 400px;
+  height: 380px;
+  background-color: #2a2a2a;
+  border: 1px solid white;
+  border-radius: 12px;
+  position: absolute;
+  top: 60px;
+  right: 30px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  display: none;
+  flex-direction: column;
+}
+
 .panel {
   height: 40px;
   background-color: #2a2a2a;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  border-bottom: 1px solid white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
+  border-bottom: 1px solid gray;
 }
 
 .panel-title {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
+  font-size: 10px;
 }
 
-.panel-title i {
-  color: white;
+.panel-title img {
+  width: 14px;
+  height: 14px;
 }
 
 .close-btn {
@@ -174,6 +173,20 @@
   cursor: pointer;
 }
 
+.trigger-icons {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  display: flex;
+  gap: 16px;
+}
+
+.trigger-icons img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
 @media (max-width: 480px) {
   .info-block {
     flex-direction: column;
@@ -196,15 +209,13 @@
   <div class="top-left">
     <img src="ImagesFolder/BlackIcon-1.png" alt="icon" />
     Sssmmilles
-  </div>  <div class="icon-launcher">
-    <img src="ImagesFolder/BlackIcon-1.png" alt="main" onclick="showBox('mainBox')" />
-    <img src="ImagesFolder/ErrorIcon.png" alt="error" onclick="showBox('errorPopup')" />
-  </div>  <div class="center-box" id="mainBox">
+  </div>  <div class="center-box">
     <div class="panel">
       <div class="panel-title">
-        <i class="fas fa-folder"></i> Sssmmilles.exe
+        <img src="ImagesFolder/BlackIcon-1.png" alt="icon">
+        Sssmmilles.exe
       </div>
-      <button class="close-btn" onclick="hideBox('mainBox')">×</button>
+      <button class="close-btn" onclick="toggleError()">×</button>
     </div>
     <div class="info-block">
       <img src="ImagesFolder/SssAvatar.png" alt="avatar" class="info-avatar" />
@@ -218,22 +229,27 @@
         </div>
       </div>
     </div>
-  </div>  <div class="error-popup" id="errorPopup" onclick="hideBox('errorPopup')">
-    <div>
-      <div class="panel-title" style="margin-bottom: 12px;">
-        <i class="fas fa-bug"></i> Error
+    <div class="error-popup" id="errorPopup" onclick="toggleError()">ERROR 404</div>
+  </div>  <div class="secondary-box" id="secondaryBox">
+    <div class="panel">
+      <div class="panel-title">
+        <img src="ImagesFolder/WhiteIcon-1.png" alt="icon">
+        Error
       </div>
-      ERROR 404
+      <button class="close-btn" onclick="toggleSecondary()">×</button>
     </div>
+  </div>  <div class="trigger-icons">
+    <img src="ImagesFolder/BlackIcon-1.png" onclick="toggleSecondary()" alt="Open Main">
+    <img src="ImagesFolder/WhiteIcon-1.png" onclick="toggleSecondary()" alt="Open Error">
   </div>  <script>
-    function showBox(id) {
-      const el = document.getElementById(id);
-      if (el) el.style.display = id === 'errorPopup' ? 'flex' : 'block';
+    function toggleError() {
+      const popup = document.getElementById('errorPopup');
+      popup.style.display = popup.style.display === 'flex' ? 'none' : 'flex';
     }
 
-    function hideBox(id) {
-      const el = document.getElementById(id);
-      if (el) el.style.display = 'none';
+    function toggleSecondary() {
+      const box = document.getElementById('secondaryBox');
+      box.style.display = box.style.display === 'flex' ? 'none' : 'flex';
     }
   </script></body>
   </html>
