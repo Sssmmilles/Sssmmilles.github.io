@@ -1,127 +1,128 @@
-<html>
-  <head>
-    <link rel="icon" href="BlackIcon-1.png" type="image/png">
-    <style>
-      html, body {
-        margin: 0;
-        height: 100%;
-        background: linear-gradient(135deg, #4c5457, #2e3436);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        font-family: sans-serif;
-      }.center-box {
-    background-color: #bbb;
-    width: 720px;
-    height: 640px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    animation: fadeIn 1s ease forwards;
-    overflow: hidden;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sssmmilles</title>
+  <link rel="icon" href="ImagesFolder/BlackIcon-1.png" type="image/png" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #4c5457, #2e3436);
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-  .top-panel {
-    width: 100%;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-  }
+    .main-box {
+      width: 720px;
+      background: #bbb;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      animation: fadeIn 1.2s ease-in-out;
+    }
 
-  .top-panel img {
-    width: 24px;
-    height: 24px;
-  }
+    .panel {
+      width: 100%;
+      background: #999;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+    }
 
-  .profile-section {
-    display: flex;
-    align-items: flex-start;
-    padding: 20px;
-  }
+    .panel img {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
 
-  .avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 20%;
-    object-fit: cover;
-    margin-right: 20px;
-  }
+    .content {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+    }
 
-  .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+    .avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 12px;
+      object-fit: cover;
+      margin-right: 20px;
+    }
 
-  .info-name {
-    font-size: 24px;
-    font-weight: bold;
-    color: #000;
-    margin-bottom: 10px;
-  }
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
 
-  .socials {
-    display: flex;
-    gap: 12px;
-  }
+    .info .name {
+      font-size: 24px;
+      font-weight: bold;
+      color: #111;
+    }
 
-  .socials a img {
-    width: 24px;
-    height: 24px;
-    opacity: 0.6;
-    transition: opacity 0.3s;
-  }
+    .socials {
+      display: flex;
+      gap: 12px;
+    }
 
-  .socials a img:hover {
-    opacity: 1;
-  }
+    .socials a img {
+      width: 24px;
+      height: 24px;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
 
-  .divider {
-    margin: 20px;
-    height: 1px;
-    background-color: white;
-    width: calc(100% - 40px);
-    align-self: center;
-  }
+    .socials a img:hover {
+      opacity: 1;
+    }
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-  }
-</style>
+    .footer-line {
+      width: 88%;
+      height: 1px;
+      margin: 20px auto 12px;
+      background: #666; /* теперь серая линия */
+      opacity: 0.5;
+    }
 
-  </head>
-  <body>
-    <div class="center-box">
-      <div class="top-panel">
-        <img src="BlackIcon-1.png" alt="icon">
-      </div>
-      <div class="profile-section">
-        <img src="SssAvatar.png" class="avatar" alt="avatar">
-        <div class="info">
-          <div class="info-name">@Sssmmilles</div>
-          <div class="socials">
-            <a href="https://discord.com/users/1129546209485406299" target="_blank">
-              <img src="https://img.icons8.com/ios-filled/50/ffffff/discord-logo.png" alt="Discord">
-            </a>
-            <a href="#">
-              <img src="https://img.icons8.com/ios-filled/50/ffffff/twitter--v1.png" alt="Twitter">
-            </a>
-            <a href="#">
-              <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="YouTube">
-            </a>
-            <a href="#">
-              <img src="https://img.icons8.com/ios-filled/50/ffffff/tiktok--v1.png" alt="TikTok">
-            </a>
-          </div>
+    @keyframes fadeIn {
+      0% { transform: scale(0.95); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="main-box">
+    <div class="panel">
+      <img src="ImagesFolder/BlackIcon-1.png" alt="Icon">
+    </div>
+
+    <div class="content">
+      <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
+      <div class="info">
+        <div class="name">Sssmmilles</div>
+        <div class="socials">
+          <a href="https://discord.com/users/1129546209485406299" target="_blank">
+            <img src="ImagesFolder/discord-icon.png" alt="Discord">
+          </a>
+          <a href="https://twitter.com/Sssmmilles" target="_blank">
+            <img src="ImagesFolder/twitter-icon.png" alt="Twitter">
+          </a>
+          <a href="https://youtube.com/@Sssmmilles" target="_blank">
+            <img src="ImagesFolder/youtube-icon.png" alt="YouTube">
+          </a>
+          <a href="https://tiktok.com/@Sssmmilles" target="_blank">
+            <img src="ImagesFolder/tiktok-icon.png" alt="TikTok">
+          </a>
         </div>
       </div>
-      <div class="divider"></div>
     </div>
-  </body>
+
+    <div class="footer-line"></div>
+  </div>
+</body>
 </html>
