@@ -1,207 +1,79 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Desktop Simulation</title>
-  <link rel="icon" href="ImagesFolder/BlackIcon-1.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-mH4mAO1xOq8Qq8QZptUc1O3RZ3cFkeT8YH1x9dT6WyT2+1Z+ItfbLZECIgqAhXHa2N+K9We9sMTCeCQg5L6m9g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }html, body {
-  height: 100%;
-  background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
-  font-family: 'Press Start 2P', monospace;
-  color: white;
-  overflow: hidden;
-}
-
-.top-left {
-  position: absolute;
-  top: 20px;
-  left: 30px;
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-}
-
-.top-left img {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
-}
-
-.window {
-  width: 720px;
-  height: 520px;
-  background-color: #1f1f1f;
-  border: 1px solid white;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  position: absolute;
-  top: 100px;
-  left: 100px;
-  display: none;
-  flex-direction: column;
-  resize: both;
-  overflow: auto;
-}
-
-.panel {
-  height: 40px;
-  background-color: #2a2a2a;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  border-bottom: 1px solid white;
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
-  justify-content: space-between;
-}
-
-.panel-title {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
-}
-
-.panel-title img {
-  width: 18px;
-  height: 18px;
-}
-
-.close-btn {
-  background: transparent;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-  color: white;
-}
-
-.close-btn:hover {
-  color: red;
-}
-
-.taskbar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  background-color: #111;
-  border-top: 1px solid #444;
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
-  gap: 10px;
-}
-
-.start-btn {
-  width: 32px;
-  height: 32px;
-  background-color: #333;
-  border-radius: 8px;
-  border: 1px solid white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.start-btn img {
-  width: 20px;
-  height: 20px;
-}
-
-.task-icon {
-  width: 32px;
-  height: 32px;
-  background-color: #333;
-  border-radius: 8px;
-  border: 1px solid white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.task-icon img {
-  width: 20px;
-  height: 20px;
-}
-
-.window-content {
-  padding: 20px;
-  font-size: 12px;
-}
-
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sssmmilles OS</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="top-left">
-    <img src="ImagesFolder/WhiteIcon-1.png" alt="icon" />
-    Desktop
-  </div>  <div class="window" id="paintWindow">
-    <div class="panel">
-      <div class="panel-title">
-        <img src="ImagesFolder/WhiteIcon-1.png" />
-        Paint.exe
-      </div>
-      <button class="close-btn" onclick="toggleWindow('paintWindow')">×</button>
+  <div class="taskbar">
+    <div class="start-button" onclick="toggleStartMenu()"></div>
+    <div class="taskbar-icons">
+      <img src="WhiteIcon-1.png" onclick="toggleWindow('errorApp')" />
+      <img src="WhiteIcon-1.png" onclick="toggleWindow('paintApp')" />
+      <img src="WhiteIcon-1.png" onclick="toggleWindow('tetrisApp')" />
+      <img src="WhiteIcon-1.png" onclick="toggleWindow('playerApp')" />
     </div>
-    <div class="window-content">
-      <canvas id="paintCanvas" width="600" height="400" style="background:#fff; border:1px solid #000;"></canvas>
-    </div>
-  </div>  <div class="window" id="tetrisWindow">
-    <div class="panel">
-      <div class="panel-title">
-        <img src="ImagesFolder/WhiteIcon-1.png" />
-        Tetris.exe
-      </div>
-      <button class="close-btn" onclick="toggleWindow('tetrisWindow')">×</button>
-    </div>
-    <div class="window-content">
-      <p>Coming soon: Tetris game interface</p>
-    </div>
-  </div>  <div class="taskbar">
-    <div class="start-btn">
-      <img src="ImagesFolder/WhiteIcon-1.png" />
-    </div>
-    <div class="task-icon" onclick="toggleWindow('paintWindow')">
-      <img src="ImagesFolder/WhiteIcon-1.png" />
-    </div>
-    <div class="task-icon" onclick="toggleWindow('tetrisWindow')">
-      <img src="ImagesFolder/WhiteIcon-1.png" />
-    </div>
-  </div>  <script>
-    function toggleWindow(id) {
-      const win = document.getElementById(id);
-      win.style.display = (win.style.display === 'flex') ? 'none' : 'flex';
-    }
+  </div>
 
-    const canvas = document.getElementById('paintCanvas');
-    const ctx = canvas?.getContext('2d');
-    let painting = false;
+  <div class="start-menu" id="startMenu">
+    <div class="start-menu-content">
+      <div onclick="toggleWindow('paintApp')">Paint</div>
+      <div onclick="toggleWindow('tetrisApp')">Tetris</div>
+      <div onclick="toggleWindow('calcApp')">Calculator</div>
+      <div onclick="toggleWindow('playerApp')">Player</div>
+    </div>
+  </div>
 
-    if (canvas) {
-      canvas.addEventListener('mousedown', () => painting = true);
-      canvas.addEventListener('mouseup', () => painting = false);
-      canvas.addEventListener('mousemove', draw);
+  <div class="window" id="errorApp">
+    <div class="title-bar">
+      <span>Sssmmilles.exe - Error</span>
+      <button onclick="closeWindow('errorApp')">×</button>
+    </div>
+    <div class="window-content">An unexpected error has occurred!</div>
+  </div>
 
-      function draw(e) {
-        if (!painting) return;
-        ctx.lineWidth = 5;
-        ctx.lineCap = 'round';
-        ctx.strokeStyle = '#000';
-        ctx.lineTo(e.offsetX, e.offsetY);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.moveTo(e.offsetX, e.offsetY);
-      }
-    }
-  </script></body>
-  </html>
+  <div class="window" id="paintApp">
+    <div class="title-bar">
+      <span>Paint</span>
+      <button onclick="closeWindow('paintApp')">×</button>
+    </div>
+    <canvas id="paintCanvas" width="300" height="300"></canvas>
+    <div class="colors">
+      <button style="background:red" onclick="setColor('red')"></button>
+      <button style="background:blue" onclick="setColor('blue')"></button>
+      <button style="background:green" onclick="setColor('green')"></button>
+      <button style="background:black" onclick="setColor('black')"></button>
+    </div>
+  </div>
+
+  <div class="window" id="tetrisApp">
+    <div class="title-bar">
+      <span>Tetris</span>
+      <button onclick="closeWindow('tetrisApp')">×</button>
+    </div>
+    <iframe src="tetris.html" width="300" height="400"></iframe>
+  </div>
+
+  <div class="window" id="calcApp">
+    <div class="title-bar">
+      <span>Calculator</span>
+      <button onclick="closeWindow('calcApp')">×</button>
+    </div>
+    <iframe src="calculator.html" width="300" height="400"></iframe>
+  </div>
+
+  <div class="window" id="playerApp">
+    <div class="title-bar">
+      <span>Player</span>
+      <button onclick="closeWindow('playerApp')">×</button>
+    </div>
+    <audio controls>
+      <source src="song.mp3" type="audio/mpeg" />
+    </audio>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
