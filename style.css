@@ -1,6 +1,0 @@
-body { margin: 0; font-family: sans-serif; }
-.window { position: absolute; background: white; border: 1px solid black; }
-.taskbar { position: fixed; bottom: 0; width: 100%; height: 40px; background: #333; display: flex; align-items: center; padding: 0 10px; }
-.taskbar-icons img { width: 32px; margin: 0 5px; cursor: pointer; }
-.start-button { width: 32px; height: 32px; background: #555; border-radius: 5px; cursor: pointer; }
-.start-menu { position: fixed; bottom: 40px; left: 0; display: none; background: #fff; border: 1px solid #000; }
