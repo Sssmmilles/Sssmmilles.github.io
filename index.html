@@ -6,37 +6,41 @@
   <link rel="icon" href="ImagesFolder/WhiteIcon-1.png" type="image/png" />
   <style>
     @font-face {
-      font-family: 'PixelFont';
-      src: url('Fonts/PixelFont.ttf') format('truetype');
+      font-family: 'KiwiSoda';
+      src: url('KiwiSoda.ttf') format('truetype');
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      background: linear-gradient(135deg, #4c5457, #2e3436);
-      font-family: 'PixelFont', sans-serif;
+      font-family: 'KiwiSoda', sans-serif;
+      background: linear-gradient(135deg, #5c5c5c, #3c3c3c);
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
     .main-box {
-      width: 720px;
+      width: 90%;
+      max-width: 720px;
       background: #bbb;
-      border-radius: 0;
+      border-radius: 4px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
       overflow: hidden;
       animation: fadeIn 1.2s ease-in-out;
     }
 
     .panel {
-      width: 100%;
-      background: linear-gradient(to right, #333, #555);
+      background: #444;
       padding: 12px 20px;
       display: flex;
       align-items: center;
-      border-bottom: 2px solid #222;
+      border-bottom: 2px solid #333;
     }
 
     .panel img {
@@ -47,43 +51,47 @@
 
     .content {
       display: flex;
+      flex-direction: row;
       align-items: center;
       padding: 20px;
+      flex-wrap: wrap;
     }
 
     .avatar {
       width: 88px;
       height: 88px;
-      border-radius: 0;
+      border-radius: 4px;
       object-fit: cover;
       margin-right: 20px;
+      flex-shrink: 0;
     }
 
     .info {
       display: flex;
       flex-direction: column;
       gap: 8px;
+      flex: 1;
     }
 
     .info .name {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: bold;
       color: #111;
     }
 
     .socials {
       display: flex;
-      gap: 10px;
       flex-wrap: wrap;
+      gap: 8px;
     }
 
     .socials a {
-      background-color: #444;
+      background-color: #555;
       color: #eee;
       text-decoration: none;
-      padding: 6px 12px;
-      border-radius: 0;
-      font-size: 14px;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 16px;
       transition: background-color 0.2s;
     }
 
@@ -96,12 +104,7 @@
       100% { transform: scale(1); opacity: 1; }
     }
 
-    /* Адаптивность для мобильных устройств */
-    @media only screen and (max-width: 600px) {
-      .main-box {
-        width: 90%;
-      }
-
+    @media (max-width: 600px) {
       .content {
         flex-direction: column;
         align-items: center;
@@ -109,7 +112,12 @@
       }
 
       .avatar {
-        margin: 0 0 20px 0;
+        margin-right: 0;
+        margin-bottom: 12px;
+      }
+
+      .info .name {
+        font-size: 24px;
       }
 
       .socials {
@@ -123,7 +131,6 @@
     <div class="panel">
       <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
     </div>
-
     <div class="content">
       <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
       <div class="info">
