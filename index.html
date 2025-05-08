@@ -1,162 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <title>Sssmmilles</title>
   <link rel="icon" href="ImagesFolder/BlackIcon-1.png" type="image/png" />
-  <style>
-    @font-face {
-      font-family: 'KiwiSoda';
-      src: url('KiwiSoda.ttf') format('truetype');
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: 'KiwiSoda', sans-serif;
-      background: #3c3c3c url('ImagesFolder/Background.png') repeat;
-      background-size: 280px;
-      animation: bgMove 30s linear infinite;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    @keyframes bgMove {
-      0% {
-        background-position: 0 0;
-      }
-      100% {
-        background-position: 1000px 1000px;
-      }
-    }
-
-    .main-box {
-      width: 90%;
-      max-width: 720px;
-      background: #bbb;
-      border-radius: 4px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-      overflow: hidden;
-      animation: fadeIn 1.2s ease-in-out;
-      position: relative;
-    }
-
-    .panel {
-      background: #444;
-      padding: 12px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #333;
-    }
-
-    .panel img {
-      width: 24px;
-      height: 24px;
-      margin-right: 10px;
-    }
-
-    .panel .work {
-      color: #eee;
-      font-size: 16px;
-      background-color: #222;
-      padding: 6px 12px;
-      border-radius: 4px;
-    }
-
-    .content {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 20px;
-      flex-wrap: wrap;
-    }
-
-    .avatar {
-      width: 88px;
-      height: 88px;
-      border-radius: 4px;
-      object-fit: cover;
-      margin-right: 20px;
-      flex-shrink: 0;
-    }
-
-    .info {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      flex: 1;
-    }
-
-    .info .name {
-      font-size: 28px;
-      font-weight: bold;
-      color: #111;
-    }
-
-    .socials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .socials a {
-      background-color: #555;
-      color: #eee;
-      text-decoration: none;
-      padding: 6px 14px;
-      border-radius: 4px;
-      font-size: 16px;
-      transition: background-color 0.2s, box-shadow 0.2s;
-    }
-
-    .socials a:hover {
-      background-color: #222;
-      box-shadow: 0 0 10px 2px #fff;
-    }
-
-    @keyframes fadeIn {
-      0% { transform: scale(0.95); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    @media (max-width: 600px) {
-      .content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .avatar {
-        margin-right: 0;
-        margin-bottom: 12px;
-      }
-
-      .info .name {
-        font-size: 24px;
-      }
-
-      .socials {
-        justify-content: center;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="background"></div>
   <div class="main-box">
     <div class="panel">
-      <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
-      <div class="work">working</div>
+      <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon" />
+      <button id="themeToggle" aria-label="Toggle theme"></button>
     </div>
     <div class="content">
-      <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
+      <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar" />
       <div class="info">
         <div class="name">Sssmmilles</div>
         <div class="socials">
@@ -171,5 +29,6 @@
       </div>
     </div>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
