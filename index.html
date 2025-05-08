@@ -20,11 +20,6 @@
       height: 100%;
       font-family: 'KiwiSoda', sans-serif;
       background-color: #3c3c3c;
-      background-image: repeating-linear-gradient(118deg, transparent 0, transparent 80px, rgba(255, 255, 255, 0.085) 80px, rgba(255, 255, 255, 0.085) 160px),
-                        url('ImagesFolder/WhiteIcon-1.png');
-      background-size: 140px, 60px;
-      background-repeat: repeat, repeat;
-      background-position: center;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -33,7 +28,7 @@
     .main-box {
       width: 90%;
       max-width: 720px;
-      background: #bcbcbc;
+      background: #bbb;
       border-radius: 4px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
       overflow: hidden;
@@ -41,10 +36,11 @@
     }
 
     .panel {
-      background: #444;
+      background: linear-gradient(to right, #333, #555);
       padding: 12px 20px;
       display: flex;
-      justify-content: flex-end;
+      align-items: center;
+      justify-content: flex-start;
     }
 
     .panel img {
@@ -100,7 +96,7 @@
 
     .socials a:hover {
       background-color: #222;
-      box-shadow: 0 0 8px #fff5;
+      box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.2);
     }
 
     @keyframes fadeIn {
@@ -133,7 +129,7 @@
 <body>
   <div class="main-box">
     <div class="panel">
-      <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
+      <img src="ImagesFolder/BlackIcon-1.png" alt="Icon">
     </div>
     <div class="content">
       <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
