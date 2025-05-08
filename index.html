@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <title>Sssmmilles</title>
-  <link rel="icon" href="ImagesFolder/BlackIcon-1.png" type="image/png" />
+  <link rel="icon" href="ImagesFolder/WhiteIcon-1.png" type="image/png" />
   <style>
+    @font-face {
+      font-family: 'PixelFont';
+      src: url('Fonts/PixelFont.ttf') format('truetype');
+    }
+
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       background: linear-gradient(135deg, #4c5457, #2e3436);
-      font-family: sans-serif;
+      font-family: 'PixelFont', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -19,7 +24,7 @@
     .main-box {
       width: 720px;
       background: #bbb;
-      border-radius: 4px;
+      border-radius: 0;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
       overflow: hidden;
       animation: fadeIn 1.2s ease-in-out;
@@ -49,7 +54,7 @@
     .avatar {
       width: 88px;
       height: 88px;
-      border-radius: 4px;
+      border-radius: 0;
       object-fit: cover;
       margin-right: 20px;
     }
@@ -77,7 +82,7 @@
       color: #eee;
       text-decoration: none;
       padding: 6px 12px;
-      border-radius: 4px;
+      border-radius: 0;
       font-size: 14px;
       transition: background-color 0.2s;
     }
@@ -90,12 +95,33 @@
       0% { transform: scale(0.95); opacity: 0; }
       100% { transform: scale(1); opacity: 1; }
     }
+
+    /* Адаптивность для мобильных устройств */
+    @media only screen and (max-width: 600px) {
+      .main-box {
+        width: 90%;
+      }
+
+      .content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .avatar {
+        margin: 0 0 20px 0;
+      }
+
+      .socials {
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="main-box">
     <div class="panel">
-      <img src="ImagesFolder/BlackIcon-1.png" alt="Icon">
+      <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
     </div>
 
     <div class="content">
