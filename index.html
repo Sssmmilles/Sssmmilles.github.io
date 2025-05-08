@@ -1,136 +1,118 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sssmmilles</title>
   <link rel="icon" href="ImagesFolder/BlackIcon-1.png" type="image/png" />
   <style>
-    * {
-      box-sizing: border-box;
-    }html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: sans-serif;
-  background: linear-gradient(135deg, #2e3436, #1c1f20);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: bgFade 8s infinite alternate;
-}
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: linear-gradient(135deg, #4c5457, #2e3436);
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-@keyframes bgFade {
-  0% { background: linear-gradient(135deg, #2e3436, #1c1f20); }
-  100% { background: linear-gradient(135deg, #3f4a4d, #1b1f21); }
-}
+    .main-box {
+      width: 720px;
+      background: #bbb;
+      border-radius: 4px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      animation: fadeIn 1.2s ease-in-out;
+    }
 
-.main-box {
-  width: 95%;
-  max-width: 720px;
-  background: #bbb;
-  border-radius: 16px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
-  overflow: hidden;
-  animation: fadeIn 1.2s ease-in-out;
-}
+    .panel {
+      width: 100%;
+      background: linear-gradient(to right, #333, #555);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid #222;
+    }
 
-.panel {
-  width: 100%;
-  background: #888;
-  padding: 14px 24px;
-  display: flex;
-  align-items: center;
-  border-bottom: 2px solid #666;
-}
+    .panel img {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
 
-.panel img {
-  width: 28px;
-  height: 28px;
-}
+    .content {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+    }
 
-.content {
-  display: flex;
-  align-items: center;
-  padding: 24px;
-  flex-wrap: wrap;
-}
+    .avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 4px;
+      object-fit: cover;
+      margin-right: 20px;
+    }
 
-.avatar {
-  width: 90px;
-  height: 90px;
-  border-radius: 14px;
-  object-fit: cover;
-  margin-right: 24px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
 
-.info {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+    .info .name {
+      font-size: 24px;
+      font-weight: bold;
+      color: #111;
+    }
 
-.info .name {
-  font-size: 26px;
-  font-weight: bold;
-  color: #111;
-}
+    .socials {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
 
-.socials {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
+    .socials a {
+      background-color: #444;
+      color: #eee;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: background-color 0.2s;
+    }
 
-.socials a {
-  background-color: #333;
-  color: #eee;
-  text-decoration: none;
-  padding: 8px 14px;
-  border-radius: 10px;
-  font-size: 15px;
-  transition: background-color 0.2s;
-}
+    .socials a:hover {
+      background-color: #222;
+    }
 
-.socials a:hover {
-  background-color: #111;
-}
-
-@keyframes fadeIn {
-  0% { transform: scale(0.95); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-@media (max-width: 480px) {
-  .content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .avatar {
-    margin: 0 0 16px 0;
-  }
-}
-
+    @keyframes fadeIn {
+      0% { transform: scale(0.95); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
   </style>
 </head>
 <body>
   <div class="main-box">
     <div class="panel">
-      <img src="ImagesFolder/BlackIcon-1.png" alt="Icon" />
-    </div><div class="content">
-  <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar" />
-  <div class="info">
-    <div class="name">Sssmmilles</div>
-    <div class="socials">
-      <a href="https://discord.com/users/1129546209485406299" target="_blank">Discord</a>
-      <a href="https://twitter.com/Sssmmilles" target="_blank">Twitter</a>
-      <a href="https://youtube.com/@Sssmmilles" target="_blank">YouTube</a>
-      <a href="https://tiktok.com/@Sssmmilles" target="_blank">TikTok</a>
+      <img src="ImagesFolder/BlackIcon-1.png" alt="Icon">
     </div>
-  </div>
-</div>
 
+    <div class="content">
+      <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
+      <div class="info">
+        <div class="name">Sssmmilles</div>
+        <div class="socials">
+          <a href="https://discord.com/users/1129546209485406299" target="_blank">Discord</a>
+          <a href="https://twitter.com/Sssmmilles" target="_blank">Twitter</a>
+          <a href="https://youtube.com/@Sssmmilles" target="_blank">YouTube</a>
+          <a href="https://tiktok.com/@Sssmmilles" target="_blank">TikTok</a>
+          <a href="https://evade-nextbot.fandom.com/wiki/User:Sssmmilles" target="_blank">Fandom</a>
+          <a href="https://github.com/Sssmmilles" target="_blank">GitHub</a>
+          <a href="https://steamcommunity.com/id/Sssmmilles/" target="_blank">Steam</a>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
