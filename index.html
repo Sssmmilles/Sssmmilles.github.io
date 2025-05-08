@@ -3,44 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <title>Sssmmilles</title>
-  <link rel="icon" href="ImagesFolder/WhiteIcon-1.png" type="image/png" />
+  <link rel="icon" href="ImagesFolder/BlackIcon-1.png" type="image/png" />
   <style>
     @font-face {
       font-family: 'KiwiSoda';
-      src: url('KiwiSoda.ttf') format('truetype');
-    }
-
-    * {
-      box-sizing: border-box;
+      src: url('Fonts/KiwiSoda.ttf') format('truetype');
     }
 
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
+      background: #444;
       font-family: 'KiwiSoda', sans-serif;
-      background: linear-gradient(135deg, #5c5c5c, #3c3c3c);
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: url('ImagesFolder/bg-image.png') repeat;
+      background-size: 300px;
+      transform: rotate(28deg);
+      animation: moveBackground 60s linear infinite;
+      opacity: 0.05;
+      z-index: -1;
+    }
+
+    @keyframes moveBackground {
+      0% { transform: rotate(28deg) translate(0, 0); }
+      100% { transform: rotate(28deg) translate(100px, 100px); }
     }
 
     .main-box {
-      width: 90%;
-      max-width: 720px;
+      width: 720px;
+      max-width: 95%;
       background: #bbb;
-      border-radius: 4px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
       overflow: hidden;
-      animation: fadeIn 1.2s ease-in-out;
+      margin: 50px auto;
+      animation: fadeIn 1s ease-in-out;
     }
 
     .panel {
-      background: #444;
+      width: 100%;
+      background: #111;
       padding: 12px 20px;
       display: flex;
       align-items: center;
-      border-bottom: 2px solid #333;
     }
 
     .panel img {
@@ -51,30 +66,28 @@
 
     .content {
       display: flex;
-      flex-direction: row;
       align-items: center;
       padding: 20px;
       flex-wrap: wrap;
+      background: rgba(255, 255, 255, 0.05);
     }
 
     .avatar {
       width: 88px;
       height: 88px;
-      border-radius: 4px;
+      border-radius: 8px;
       object-fit: cover;
       margin-right: 20px;
-      flex-shrink: 0;
     }
 
     .info {
       display: flex;
       flex-direction: column;
       gap: 8px;
-      flex: 1;
     }
 
     .info .name {
-      font-size: 28px;
+      font-size: 24px;
       font-weight: bold;
       color: #111;
     }
@@ -82,46 +95,39 @@
     .socials {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 10px;
     }
 
     .socials a {
-      background-color: #555;
+      background-color: #333;
       color: #eee;
       text-decoration: none;
       padding: 6px 14px;
-      border-radius: 4px;
+      border-radius: 8px;
       font-size: 16px;
-      transition: background-color 0.2s;
+      transition: all 0.2s;
+      box-shadow: 0 0 4px transparent;
     }
 
     .socials a:hover {
-      background-color: #222;
+      background-color: #555;
+      box-shadow: 0 0 6px #fff;
     }
 
     @keyframes fadeIn {
-      0% { transform: scale(0.95); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
     }
 
     @media (max-width: 600px) {
       .content {
         flex-direction: column;
         align-items: center;
-        text-align: center;
       }
 
       .avatar {
         margin-right: 0;
-        margin-bottom: 12px;
-      }
-
-      .info .name {
-        font-size: 24px;
-      }
-
-      .socials {
-        justify-content: center;
+        margin-bottom: 15px;
       }
     }
   </style>
@@ -131,6 +137,7 @@
     <div class="panel">
       <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
     </div>
+
     <div class="content">
       <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
       <div class="info">
