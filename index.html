@@ -7,55 +7,54 @@
   <style>
     @font-face {
       font-family: 'KiwiSoda';
-      src: url('Fonts/KiwiSoda.ttf') format('truetype');
+      src: url('KiwiSoda.ttf') format('truetype');
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      background: #444;
       font-family: 'KiwiSoda', sans-serif;
+      background: #3c3c3c url('ImagesFolder/Background.png') repeat;
+      background-size: 280px;
+      animation: bgMove 30s linear infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       overflow: hidden;
     }
 
-    body::before {
-      content: '';
-      position: fixed;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: url('ImagesFolder/bg-image.png') repeat;
-      background-size: 300px;
-      transform: rotate(28deg);
-      animation: moveBackground 60s linear infinite;
-      opacity: 0.05;
-      z-index: -1;
-    }
-
-    @keyframes moveBackground {
-      0% { transform: rotate(28deg) translate(0, 0); }
-      100% { transform: rotate(28deg) translate(100px, 100px); }
+    @keyframes bgMove {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: 1000px 1000px;
+      }
     }
 
     .main-box {
-      width: 720px;
-      max-width: 95%;
+      width: 90%;
+      max-width: 720px;
       background: #bbb;
-      border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
       overflow: hidden;
-      margin: 50px auto;
-      animation: fadeIn 1s ease-in-out;
+      animation: fadeIn 1.2s ease-in-out;
+      position: relative;
     }
 
     .panel {
-      width: 100%;
-      background: #111;
+      background: #444;
       padding: 12px 20px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
+      border-bottom: 2px solid #333;
     }
 
     .panel img {
@@ -64,30 +63,40 @@
       margin-right: 10px;
     }
 
+    .panel .work {
+      color: #eee;
+      font-size: 16px;
+      background-color: #222;
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+
     .content {
       display: flex;
+      flex-direction: row;
       align-items: center;
       padding: 20px;
       flex-wrap: wrap;
-      background: rgba(255, 255, 255, 0.05);
     }
 
     .avatar {
       width: 88px;
       height: 88px;
-      border-radius: 8px;
+      border-radius: 4px;
       object-fit: cover;
       margin-right: 20px;
+      flex-shrink: 0;
     }
 
     .info {
       display: flex;
       flex-direction: column;
       gap: 8px;
+      flex: 1;
     }
 
     .info .name {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: bold;
       color: #111;
     }
@@ -95,39 +104,47 @@
     .socials {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
     }
 
     .socials a {
-      background-color: #333;
+      background-color: #555;
       color: #eee;
       text-decoration: none;
       padding: 6px 14px;
-      border-radius: 8px;
+      border-radius: 4px;
       font-size: 16px;
-      transition: all 0.2s;
-      box-shadow: 0 0 4px transparent;
+      transition: background-color 0.2s, box-shadow 0.2s;
     }
 
     .socials a:hover {
-      background-color: #555;
-      box-shadow: 0 0 6px #fff;
+      background-color: #222;
+      box-shadow: 0 0 10px 2px #fff;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.96); }
-      to { opacity: 1; transform: scale(1); }
+      0% { transform: scale(0.95); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
     }
 
     @media (max-width: 600px) {
       .content {
         flex-direction: column;
         align-items: center;
+        text-align: center;
       }
 
       .avatar {
         margin-right: 0;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
+      }
+
+      .info .name {
+        font-size: 24px;
+      }
+
+      .socials {
+        justify-content: center;
       }
     }
   </style>
@@ -136,8 +153,8 @@
   <div class="main-box">
     <div class="panel">
       <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
+      <div class="work">working</div>
     </div>
-
     <div class="content">
       <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
       <div class="info">
