@@ -1,25 +1,173 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sssmmilles</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="ImagesFolder/BlackIcon-1.png" type="image/png" />
+  <style>
+    @font-face {
+      font-family: 'KiwiSoda';
+      src: url('KiwiSoda.ttf') format('truetype');
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'KiwiSoda', sans-serif;
+      background: #1c1c1c;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: -100px;
+      left: -200px;
+      width: 400%;
+      height: 400%;
+      background-image: url('ImagesFolder/WhiteIcon-1.png');
+      background-size: 60px;
+      background-repeat: repeat;
+      background-position: center;
+      transform: rotate(-28deg);
+      opacity: 0.85;
+      z-index: -1;
+      animation: moveBg 60s linear infinite;
+    }
+
+    @keyframes moveBg {
+      0% { background-position: 0 0; }
+      100% { background-position: 300px 300px; }
+    }
+
+    .main-box {
+      width: 90%;
+      max-width: 720px;
+      background: #2e2e2e;
+      border-radius: 4px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      margin: 40px auto;
+      animation: fadeIn 1s ease;
+    }
+
+    .panel {
+      background: #000;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      border: none;
+    }
+
+    .panel img {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      image-rendering: pixelated;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 4px;
+      object-fit: cover;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .info .name {
+      font-size: 28px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .socials a {
+      background-color: #111;
+      color: #eee;
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: box-shadow 0.2s;
+      image-rendering: pixelated;
+    }
+
+    .socials a:hover {
+      box-shadow: 0 0 8px #fff;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 600px) {
+      .content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .avatar {
+        margin-right: 0;
+        margin-bottom: 12px;
+      }
+
+      .info .name {
+        font-size: 24px;
+      }
+
+      .socials {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="panel">
-    <img src="ImagesFolder/pfp.png" alt="Avatar" class="avatar" />
-    <h1>Sssmmilles</h1>
-    <div class="links">
-      <a href="#">Discord</a>
-      <a href="#">Twitter</a>
-      <a href="#">YouTube</a>
-      <a href="#">TikTok</a>
-      <a href="#">Fandom</a>
-      <a href="#">GitHub</a>
-      <a href="#">Steam</a>
+  <div class="main-box">
+    <div class="panel">
+      <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
+    </div>
+    <div class="content">
+      <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
+      <div class="info">
+        <div class="name">Sssmmilles</div>
+        <div class="socials">
+          <a href="https://discord.com/users/1129546209485406299" target="_blank">Discord</a>
+          <a href="https://twitter.com/Sssmmilles" target="_blank">Twitter</a>
+          <a href="https://youtube.com/@Sssmmilles" target="_blank">YouTube</a>
+          <a href="https://tiktok.com/@Sssmmilles" target="_blank">TikTok</a>
+          <a href="https://evade-nextbot.fandom.com/wiki/User:Sssmmilles" target="_blank">Fandom</a>
+          <a href="https://github.com/Sssmmilles" target="_blank">GitHub</a>
+          <a href="https://steamcommunity.com/id/Sssmmilles/" target="_blank">Steam</a>
+        </div>
+      </div>
     </div>
   </div>
 </body>
-</html>
+  </html>
