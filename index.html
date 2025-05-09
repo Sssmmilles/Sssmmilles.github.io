@@ -76,6 +76,7 @@
       border-radius: 4px;
       object-fit: cover;
       display: block;
+      transition: opacity 0.3s, filter 0.3s;
     }
 
     .shine {
@@ -95,16 +96,17 @@
       background: linear-gradient(120deg, transparent 40%, white 50%, transparent 60%);
       transform: translateX(-150%) rotate(25deg);
       opacity: 0.7;
+      transition: background 0.3s;
     }
 
     .shine::after {
       width: 70%;
-      opacity: 0.5;
+      opacity: 0.4;
     }
 
-    .avatar-wrapper:hover .shine::before,
-    .avatar-wrapper:hover .shine::after {
-      animation: shineMove 0.6s forwards;
+    .shine.animate::before,
+    .shine.animate::after {
+      animation: shineMove 0.6s linear forwards;
     }
 
     .shine.golden::before,
@@ -113,8 +115,13 @@
     }
 
     @keyframes shineMove {
-      from { transform: translateX(-150%) rotate(25deg); }
-      to { transform: translateX(150%) rotate(25deg); }
+      0% { transform: translateX(-150%) rotate(25deg); }
+      100% { transform: translateX(250%) rotate(25deg); }
+    }
+
+    .avatar.blur {
+      opacity: 0.7;
+      filter: blur(2px);
     }
 
     .info {
@@ -204,9 +211,20 @@
   </div>
 
   <script>
-    let clickCount = 0;
     const avatarWrapper = document.getElementById("avatarWrapper");
+    const avatar = document.getElementById("avatar");
     const shine = document.getElementById("shine");
+    let clickCount = 0;
+
+    avatarWrapper.addEventListener("mouseenter", () => {
+      shine.classList.add("animate");
+      avatar.classList.add("blur");
+
+      setTimeout(() => {
+        shine.classList.remove("animate");
+        avatar.classList.remove("blur");
+      }, 600);
+    });
 
     avatarWrapper.addEventListener("click", () => {
       clickCount++;
@@ -216,11 +234,9 @@
     });
 
     avatarWrapper.addEventListener("mouseleave", () => {
-      shine.style.animation = "none";
-      // Force reflow to cancel animation
-      void shine.offsetWidth;
-      shine.style.animation = "";
+      shine.classList.remove("animate");
+      avatar.classList.remove("blur");
     });
   </script>
 </body>
-</html>
+  </html>
