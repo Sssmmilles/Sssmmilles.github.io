@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sssmmilles</title>
   <link rel="icon" href="ImagesFolder/BlackIcon-1.png" type="image/png" />
   <style>
@@ -21,7 +22,6 @@
       font-family: 'KiwiSoda', sans-serif;
       background-color: #3c3c3c;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
     }
@@ -34,6 +34,13 @@
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
       overflow: hidden;
       animation: fadeIn 1.2s ease-in-out;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .main-box.hide {
+      opacity: 0;
+      transform: scale(0.9);
+      pointer-events: none;
     }
 
     .panel {
@@ -137,6 +144,7 @@
       color: white;
       font-size: 28px;
       margin-top: 20px;
+      text-align: center;
     }
 
     @keyframes fadeIn {
@@ -145,6 +153,10 @@
     }
 
     @media (max-width: 600px) {
+      html, body {
+        padding: 10px;
+      }
+
       .content {
         flex-direction: column;
         align-items: center;
@@ -195,12 +207,17 @@
   <div id="bruhText">bruh.</div>
 
   <script>
-    document.getElementById("closeBtn").addEventListener("click", function() {
-      const box = document.getElementById("bruhBox");
-      const text = document.getElementById("bruhText");
-      box.style.display = "none";
-      text.style.display = "block";
+    const box = document.getElementById("bruhBox");
+    const text = document.getElementById("bruhText");
+    const button = document.getElementById("closeBtn");
+
+    button.addEventListener("click", () => {
+      box.classList.add("hide");
+      setTimeout(() => {
+        box.style.display = "none";
+        text.style.display = "block";
+      }, 400);
     });
   </script>
 </body>
-  </html>
+</html>
