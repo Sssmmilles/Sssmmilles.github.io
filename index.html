@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sssmmilles</title>
   <link rel="icon" href="ImagesFolder/BlackIcon-1.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     @font-face {
       font-family: 'KiwiSoda';
@@ -18,29 +18,57 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
       font-family: 'KiwiSoda', sans-serif;
       background-color: #3c3c3c;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
+    #bruhText {
+      position: absolute;
+      font-size: 72px;
+      color: white;
+      font-family: 'KiwiSoda', sans-serif;
+      z-index: 0;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
     .main-box {
+      position: relative;
       width: 90%;
       max-width: 720px;
       background: #bbb;
       border-radius: 4px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
       overflow: hidden;
-      animation: fadeIn 1.2s ease-in-out;
+      z-index: 1;
       transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
     .main-box.hide {
       opacity: 0;
       transform: scale(0.9);
-      pointer-events: none;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 6px;
+      right: 10px;
+      font-size: 28px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'KiwiSoda', sans-serif;
+      z-index: 2;
+      transition: transform 0.2s ease;
+    }
+
+    .close-btn:hover {
+      transform: scale(1.2);
     }
 
     .panel {
@@ -49,27 +77,11 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      position: relative;
     }
 
     .panel img {
       width: 24px;
       height: 24px;
-    }
-
-    #closeBtn {
-      margin-left: auto;
-      font-family: 'KiwiSoda', sans-serif;
-      font-size: 22px;
-      color: white;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    #closeBtn:hover {
-      transform: scale(1.2);
     }
 
     .content {
@@ -129,34 +141,16 @@
       padding: 6px 14px;
       border-radius: 4px;
       font-size: 16px;
-      transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      transition: background-color 0.2s, box-shadow 0.2s, transform 0.3s;
     }
 
     .socials a:hover {
       background-color: #222;
       box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.2);
-      transform: scale(1.08);
-    }
-
-    #bruhText {
-      display: none;
-      font-family: 'KiwiSoda', sans-serif;
-      color: white;
-      font-size: 28px;
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    @keyframes fadeIn {
-      0% { transform: scale(0.95); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
+      transform: scale(1.05);
     }
 
     @media (max-width: 600px) {
-      html, body {
-        padding: 10px;
-      }
-
       .content {
         flex-direction: column;
         align-items: center;
@@ -175,14 +169,20 @@
       .socials {
         justify-content: center;
       }
+
+      #bruhText {
+        font-size: 48px;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
-  <div id="bruhBox" class="main-box">
+  <div id="bruhText">bruh.</div>
+  <div class="main-box" id="bruhBox">
+    <button class="close-btn" id="closeBtn">X</button>
     <div class="panel">
       <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
-      <button id="closeBtn">X</button>
     </div>
     <div class="content">
       <div class="avatar-container">
@@ -204,8 +204,6 @@
     </div>
   </div>
 
-  <div id="bruhText">bruh.</div>
-
   <script>
     const box = document.getElementById("bruhBox");
     const text = document.getElementById("bruhText");
@@ -215,7 +213,7 @@
       box.classList.add("hide");
       setTimeout(() => {
         box.style.display = "none";
-        text.style.display = "block";
+        text.style.opacity = 1;
       }, 400);
     });
   </script>
