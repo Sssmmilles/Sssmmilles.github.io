@@ -24,11 +24,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    #bruhText {
+    #hiText {
       position: absolute;
-      font-size: 72px;
+      font-size: 64px;
       color: white;
       font-family: 'KiwiSoda', sans-serif;
       z-index: 0;
@@ -48,27 +50,50 @@
       transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
-    .main-box.hide {
+    .overlay-box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-width: 720px;
+      height: 100%;
+      background: rgba(20, 20, 20, 0.9);
+      border-radius: 4px;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .overlay-box.hide {
       opacity: 0;
       transform: scale(0.9);
+      pointer-events: none;
     }
 
     .close-btn {
       position: absolute;
-      top: 6px;
-      right: 10px;
-      font-size: 28px;
+      top: 10px;
+      right: 16px;
+      font-size: 32px;
       color: white;
       background: none;
       border: none;
       cursor: pointer;
       font-family: 'KiwiSoda', sans-serif;
-      z-index: 2;
+      z-index: 3;
       transition: transform 0.2s ease;
     }
 
     .close-btn:hover {
       transform: scale(1.2);
+    }
+
+    .overlay-box span {
+      color: white;
+      font-size: 72px;
+      font-family: 'KiwiSoda', sans-serif;
     }
 
     .panel {
@@ -170,17 +195,25 @@
         justify-content: center;
       }
 
-      #bruhText {
+      #hiText {
         font-size: 48px;
         text-align: center;
+      }
+
+      .overlay-box span {
+        font-size: 56px;
+      }
+
+      .close-btn {
+        font-size: 28px;
       }
     }
   </style>
 </head>
 <body>
-  <div id="bruhText">bruh.</div>
-  <div class="main-box" id="bruhBox">
-    <button class="close-btn" id="closeBtn">X</button>
+  <div id="hiText">hi :]</div>
+
+  <div class="main-box">
     <div class="panel">
       <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
     </div>
@@ -202,20 +235,22 @@
         </div>
       </div>
     </div>
+
+    <div class="overlay-box" id="overlay">
+      <button class="close-btn" id="closeBtn">X</button>
+      <span>bruh</span>
+    </div>
   </div>
 
   <script>
-    const box = document.getElementById("bruhBox");
-    const text = document.getElementById("bruhText");
-    const button = document.getElementById("closeBtn");
+    const overlay = document.getElementById("overlay");
+    const closeBtn = document.getElementById("closeBtn");
+    const hiText = document.getElementById("hiText");
 
-    button.addEventListener("click", () => {
-      box.classList.add("hide");
-      setTimeout(() => {
-        box.style.display = "none";
-        text.style.opacity = 1;
-      }, 400);
+    closeBtn.addEventListener("click", () => {
+      overlay.classList.add("hide");
+      hiText.style.opacity = 1;
     });
   </script>
 </body>
-</html>
+  </html>
