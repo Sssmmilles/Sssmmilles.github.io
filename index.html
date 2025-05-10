@@ -38,7 +38,7 @@
       transition: opacity 0.4s ease;
     }
 
-    .box {
+    .box, .box-small {
       position: relative;
       width: 90%;
       max-width: 720px;
@@ -50,49 +50,19 @@
       transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
-    .overlay-box {
+    .box-small {
+      transform: scale(0.92);
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #bbb;
-      border-radius: 4px;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.92);
       z-index: 2;
-      transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
-    .overlay-box.hide {
+    .hide {
       opacity: 0;
       transform: scale(0.95);
       pointer-events: none;
-    }
-
-    .overlay-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 16px;
-      background: linear-gradient(to right, #333, #555);
-    }
-
-    .overlay-header span {
-      font-size: 28px;
-      color: white;
-    }
-
-    .close-btn {
-      font-size: 32px;
-      color: white;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: 'KiwiSoda', sans-serif;
-      transition: transform 0.2s ease;
-    }
-
-    .close-btn:hover {
-      transform: scale(1.2);
     }
 
     .panel {
@@ -113,6 +83,7 @@
       align-items: center;
       padding: 20px;
       flex-wrap: wrap;
+      position: relative;
     }
 
     .avatar-container {
@@ -173,6 +144,34 @@
       transform: scale(1.05);
     }
 
+    .close-btn {
+      position: absolute;
+      top: 6px;
+      right: 12px;
+      font-size: 32px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'KiwiSoda', sans-serif;
+      z-index: 5;
+      transition: transform 0.2s ease;
+    }
+
+    .close-btn:hover {
+      transform: scale(1.2);
+    }
+
+    .bruh-label {
+      position: absolute;
+      top: 8px;
+      left: 12px;
+      font-size: 28px;
+      color: white;
+      z-index: 3;
+      font-family: 'KiwiSoda', sans-serif;
+    }
+
     @media (max-width: 600px) {
       .content {
         flex-direction: column;
@@ -197,8 +196,8 @@
         font-size: 48px;
       }
 
-      .overlay-header span {
-        font-size: 24px;
+      .bruh-label {
+        font-size: 22px;
       }
 
       .close-btn {
@@ -210,6 +209,22 @@
 <body>
   <div id="hiText">hi :]</div>
 
+  <!-- Второй блок (bruh) -->
+  <div class="box-small" id="bruhBox">
+    <div class="panel">
+      <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
+    </div>
+    <div class="content">
+      <div class="avatar-container">
+        <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
+      </div>
+      <div class="info"></div>
+    </div>
+    <span class="bruh-label">bruh</span>
+    <button class="close-btn" id="closeBruh">X</button>
+  </div>
+
+  <!-- Первый блок (основной) -->
   <div class="box">
     <div class="panel">
       <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
@@ -232,24 +247,23 @@
         </div>
       </div>
     </div>
-
-    <div class="overlay-box" id="overlay">
-      <div class="overlay-header">
-        <span>bruh</span>
-        <button class="close-btn" id="closeBtn">X</button>
-      </div>
-    </div>
+    <button class="close-btn" id="closeMain">X</button>
   </div>
 
   <script>
-    const overlay = document.getElementById("overlay");
-    const closeBtn = document.getElementById("closeBtn");
+    const bruhBox = document.getElementById("bruhBox");
+    const closeBruh = document.getElementById("closeBruh");
+    const closeMain = document.getElementById("closeMain");
     const hiText = document.getElementById("hiText");
 
-    closeBtn.addEventListener("click", () => {
-      overlay.classList.add("hide");
+    closeBruh.addEventListener("click", () => {
+      bruhBox.classList.add("hide");
       hiText.style.opacity = 1;
+    });
+
+    closeMain.addEventListener("click", () => {
+      document.querySelector(".box").classList.add("hide");
     });
   </script>
 </body>
-    </html>
+</html>
