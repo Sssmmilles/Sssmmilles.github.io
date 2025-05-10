@@ -33,18 +33,30 @@
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
       overflow: hidden;
       position: relative;
-      animation: fadeIn 1.2s ease-in-out;
+      animation: appearBox 0.8s ease-out;
+    }
+
+    @keyframes appearBox {
+      0% {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     .close-button {
       position: absolute;
       top: 10px;
       right: 14px;
-      font-size: 24px;
+      font-size: 28px;
       color: white;
       background: none;
       border: none;
       cursor: pointer;
+      font-family: 'KiwiSoda', sans-serif;
       z-index: 10;
       transition: transform 0.2s;
     }
@@ -139,14 +151,20 @@
       transform: translate(-50%, -50%);
       color: white;
       font-size: 48px;
-      font-weight: bold;
+      font-family: 'KiwiSoda', sans-serif;
       animation: fadeIn 0.6s ease-in-out;
       z-index: 100;
     }
 
     @keyframes fadeIn {
-      0% { opacity: 0; transform: translate(-50%, -60%); }
-      100% { opacity: 1; transform: translate(-50%, -50%); }
+      from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
     }
 
     @media (max-width: 600px) {
@@ -198,14 +216,12 @@
   </div>
 
   <div id="bruh-text">bruh.</div>
-  <audio id="bruhSound" src="Bruh.mp3" preload="auto"></audio>
 
   <script>
     function closeBox() {
       document.getElementById('mainBox').style.display = 'none';
       document.getElementById('bruh-text').style.display = 'block';
-      document.getElementById('bruhSound').play();
     }
   </script>
 </body>
-            </html>
+  </html>
