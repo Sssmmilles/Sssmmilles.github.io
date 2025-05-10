@@ -38,7 +38,7 @@
       transition: opacity 0.4s ease;
     }
 
-    .main-box {
+    .box {
       position: relative;
       width: 90%;
       max-width: 720px;
@@ -55,34 +55,39 @@
       top: 0;
       left: 0;
       width: 100%;
-      max-width: 720px;
       height: 100%;
-      background: rgba(20, 20, 20, 0.9);
+      background: #bbb;
       border-radius: 4px;
       z-index: 2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
     .overlay-box.hide {
       opacity: 0;
-      transform: scale(0.9);
+      transform: scale(0.95);
       pointer-events: none;
     }
 
+    .overlay-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 16px;
+      background: linear-gradient(to right, #333, #555);
+    }
+
+    .overlay-header span {
+      font-size: 28px;
+      color: white;
+    }
+
     .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 16px;
       font-size: 32px;
       color: white;
       background: none;
       border: none;
       cursor: pointer;
       font-family: 'KiwiSoda', sans-serif;
-      z-index: 3;
       transition: transform 0.2s ease;
     }
 
@@ -90,18 +95,11 @@
       transform: scale(1.2);
     }
 
-    .overlay-box span {
-      color: white;
-      font-size: 72px;
-      font-family: 'KiwiSoda', sans-serif;
-    }
-
     .panel {
       background: linear-gradient(to right, #333, #555);
       padding: 12px 20px;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
     }
 
     .panel img {
@@ -197,11 +195,10 @@
 
       #hiText {
         font-size: 48px;
-        text-align: center;
       }
 
-      .overlay-box span {
-        font-size: 56px;
+      .overlay-header span {
+        font-size: 24px;
       }
 
       .close-btn {
@@ -213,7 +210,7 @@
 <body>
   <div id="hiText">hi :]</div>
 
-  <div class="main-box">
+  <div class="box">
     <div class="panel">
       <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
     </div>
@@ -237,8 +234,10 @@
     </div>
 
     <div class="overlay-box" id="overlay">
-      <button class="close-btn" id="closeBtn">X</button>
-      <span>bruh</span>
+      <div class="overlay-header">
+        <span>bruh</span>
+        <button class="close-btn" id="closeBtn">X</button>
+      </div>
     </div>
   </div>
 
@@ -253,4 +252,4 @@
     });
   </script>
 </body>
-  </html>
+    </html>
