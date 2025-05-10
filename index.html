@@ -33,6 +33,32 @@
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
       overflow: hidden;
       animation: fadeIn 1.2s ease-in-out;
+      position: relative;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      font-weight: bold;
+      z-index: 2;
+      transition: color 0.2s;
+    }
+
+    .close-button:hover {
+      color: #000;
+    }
+
+    .hidden-box {
+      display: none;
+      color: white;
+      font-size: 22px;
+      margin-top: 20px;
     }
 
     .panel {
@@ -70,23 +96,6 @@
 
     .avatar-container:hover {
       transform: scale(1.05);
-    }
-
-    .avatar-container::before {
-      content: "";
-      position: absolute;
-      top: -150%;
-      left: -150%;
-      width: 400%;
-      height: 400%;
-      background: linear-gradient(120deg, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
-      transform: rotate(25deg);
-      transition: transform 1s ease;
-      pointer-events: none;
-    }
-
-    .avatar-container:hover::before {
-      transform: translateX(100%) translateY(100%) rotate(25deg);
     }
 
     .avatar {
@@ -158,7 +167,8 @@
   </style>
 </head>
 <body>
-  <div class="main-box">
+  <div class="main-box" id="mainBox">
+    <button class="close-button" onclick="closeBox()">X</button>
     <div class="panel">
       <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
     </div>
@@ -181,5 +191,13 @@
       </div>
     </div>
   </div>
+  <div class="hidden-box" id="hiddenBox">bruh.</div>
+
+  <script>
+    function closeBox() {
+      document.getElementById('mainBox').style.display = 'none';
+      document.getElementById('hiddenBox').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
