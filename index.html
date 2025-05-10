@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sssmmilles</title>
   <link rel="icon" href="ImagesFolder/BlackIcon-1.png" type="image/png" />
   <style>
@@ -22,6 +21,7 @@
       font-family: 'KiwiSoda', sans-serif;
       background-color: #3c3c3c;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
     }
@@ -42,11 +42,27 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
+      position: relative;
     }
 
     .panel img {
       width: 24px;
       height: 24px;
+    }
+
+    #closeBtn {
+      margin-left: auto;
+      font-family: 'KiwiSoda', sans-serif;
+      font-size: 22px;
+      color: white;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    #closeBtn:hover {
+      transform: scale(1.2);
     }
 
     .content {
@@ -115,6 +131,14 @@
       transform: scale(1.08);
     }
 
+    #bruhText {
+      display: none;
+      font-family: 'KiwiSoda', sans-serif;
+      color: white;
+      font-size: 28px;
+      margin-top: 20px;
+    }
+
     @keyframes fadeIn {
       0% { transform: scale(0.95); opacity: 0; }
       100% { transform: scale(1); opacity: 1; }
@@ -143,9 +167,10 @@
   </style>
 </head>
 <body>
-  <div class="main-box">
+  <div id="bruhBox" class="main-box">
     <div class="panel">
       <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
+      <button id="closeBtn">X</button>
     </div>
     <div class="content">
       <div class="avatar-container">
@@ -166,5 +191,16 @@
       </div>
     </div>
   </div>
+
+  <div id="bruhText">bruh.</div>
+
+  <script>
+    document.getElementById("closeBtn").addEventListener("click", function() {
+      const box = document.getElementById("bruhBox");
+      const text = document.getElementById("bruhText");
+      box.style.display = "none";
+      text.style.display = "block";
+    });
+  </script>
 </body>
-            </html>
+  </html>
