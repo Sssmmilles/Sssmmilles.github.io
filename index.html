@@ -2,275 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Sssmmilles</title>
-  <link rel="icon" href="ImagesFolder/BlackIcon-1.png" type="image/png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temporary Close</title>
+  <link rel="icon" type="image/png" href="ImagesFolder/BlackIcon-A.png" />
   <style>
     @font-face {
       font-family: 'KiwiSoda';
       src: url('KiwiSoda.ttf') format('truetype');
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'KiwiSoda', sans-serif;
-      background-color: #3c3c3c;
-      width: 100%;
-      height: 100%;
-    }
-
     body {
+      background-color: #1a1a1a;
+      margin: 0;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
-      position: relative;
-      overflow: hidden;
     }
 
-    #hiText {
-      position: absolute;
-      font-size: 64px;
-      color: white;
+    .container {
+      position: relative;
       font-family: 'KiwiSoda', sans-serif;
+    }
+
+    .text-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #444; /* тёмно-серый, как фоновой слой */
+      font-size: 42px;
       z-index: 0;
-      opacity: 0;
-      transition: opacity 0.4s ease;
     }
 
-    .box, .box-small {
-      width: 90%;
-      max-width: 720px;
-      background: #bbb;
-      border-radius: 4px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-      overflow: hidden;
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      margin: 20px 0;
-      position: relative;
-    }
-
-    .box {
-      z-index: 3;
-    }
-
-    .box-small {
-      transform: scale(0.92);
-      z-index: 2;
-    }
-
-    .hide {
-      opacity: 0;
-      transform: scale(0.95);
-      pointer-events: none;
-    }
-
-    .panel {
-      background: linear-gradient(to right, #333, #555);
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-    }
-
-    .panel img {
-      width: 24px;
-      height: 24px;
-    }
-
-    .content {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 20px;
-      flex-wrap: wrap;
-      position: relative;
-    }
-
-    .bruh-content {
-      display: block;
-      position: relative;
-      min-height: 100px;
-      padding: 20px;
-    }
-
-    .avatar-container {
-      position: relative;
-      display: inline-block;
-      overflow: hidden;
-      border-radius: 4px;
-      width: 88px;
-      height: 88px;
-      flex-shrink: 0;
-      margin-right: 20px;
-      transition: transform 0.4s ease;
-    }
-
-    .avatar-container:hover {
-      transform: scale(1.05);
-    }
-
-    .avatar {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .info {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      flex: 1;
-    }
-
-    .info .name {
-      font-size: 28px;
-      font-weight: bold;
-      color: #111;
-    }
-
-    .socials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .socials a {
-      background-color: #555;
-      color: #eee;
-      text-decoration: none;
-      padding: 6px 14px;
-      border-radius: 4px;
-      font-size: 16px;
-      transition: background-color 0.2s, box-shadow 0.2s, transform 0.3s;
-    }
-
-    .socials a:hover {
-      background-color: #222;
-      box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.2);
-      transform: scale(1.05);
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 6px;
-      right: 12px;
-      font-size: 32px;
+    .text-front {
       color: white;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: 'KiwiSoda', sans-serif;
-      z-index: 5;
-      transition: transform 0.2s ease;
-    }
-
-    .close-btn:hover {
-      transform: scale(1.2);
-    }
-
-    .bruh-label {
-      position: absolute;
-      top: 12px;
-      left: 20px;
-      font-size: 28px;
-      color: #111;
-    }
-
-    @media (max-width: 600px) {
-      .content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .avatar-container {
-        margin-right: 0;
-        margin-bottom: 12px;
-      }
-
-      .info .name {
-        font-size: 24px;
-      }
-
-      .socials {
-        justify-content: center;
-      }
-
-      #hiText {
-        font-size: 48px;
-      }
-
-      .bruh-label {
-        font-size: 22px;
-      }
-
-      .close-btn {
-        font-size: 28px;
-      }
+      font-size: 40px;
+      position: relative;
+      z-index: 1;
     }
   </style>
 </head>
 <body>
-  <div id="hiText">hi :]</div>
-
-  <!-- Второй блок -->
-  <div class="box-small" id="bruhBox">
-    <div class="panel">
-      <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
-    </div>
-    <div class="bruh-content">
-      <div class="bruh-label">bruh</div>
-    </div>
-    <button class="close-btn" id="closeBruh">X</button>
+  <div class="container">
+    <div class="text-back">Temporary Close</div>
+    <div class="text-front">Temporary Close</div>
   </div>
-
-  <!-- Первый блок -->
-  <div class="box" id="mainBox">
-    <div class="panel">
-      <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
-    </div>
-    <div class="content">
-      <div class="avatar-container">
-        <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
-      </div>
-      <div class="info">
-        <div class="name">Sssmmilles</div>
-        <div class="socials">
-          <a href="https://discord.com/users/1129546209485406299" target="_blank">Discord</a>
-          <a href="https://twitter.com/Sssmmilles" target="_blank">Twitter</a>
-          <a href="https://youtube.com/@Sssmmilles" target="_blank">YouTube</a>
-          <a href="https://tiktok.com/@Sssmmilles" target="_blank">TikTok</a>
-          <a href="https://evade-nextbot.fandom.com/wiki/User:Sssmmilles" target="_blank">Fandom</a>
-          <a href="https://github.com/Sssmmilles" target="_blank">GitHub</a>
-          <a href="https://steamcommunity.com/id/Sssmmilles/" target="_blank">Steam</a>
-          <a href="https://t.me/Sssmmilles" target="_blank">Telegram</a>
-        </div>
-      </div>
-    </div>
-    <button class="close-btn" id="closeMain">X</button>
-  </div>
-
-  <script>
-    const bruhBox = document.getElementById("bruhBox");
-    const closeBruh = document.getElementById("closeBruh");
-    const closeMain = document.getElementById("closeMain");
-    const hiText = document.getElementById("hiText");
-    const mainBox = document.getElementById("mainBox");
-
-    closeBruh.addEventListener("click", () => {
-      bruhBox.classList.add("hide");
-      hiText.style.opacity = 1;
-    });
-
-    closeMain.addEventListener("click", () => {
-      mainBox.classList.add("hide");
-    });
-  </script>
 </body>
-                                                </html>
+</html>
