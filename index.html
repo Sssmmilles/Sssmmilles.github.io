@@ -86,6 +86,13 @@
       position: relative;
     }
 
+    .bruh-content {
+      display: block;
+      position: relative;
+      min-height: 100px;
+      padding: 20px;
+    }
+
     .avatar-container {
       position: relative;
       display: inline-block;
@@ -164,12 +171,10 @@
 
     .bruh-label {
       position: absolute;
-      top: 8px;
-      left: 12px;
+      top: 12px;
+      left: 20px;
       font-size: 28px;
-      color: white;
-      z-index: 3;
-      font-family: 'KiwiSoda', sans-serif;
+      color: #111;
     }
 
     @media (max-width: 600px) {
@@ -214,13 +219,9 @@
     <div class="panel">
       <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
     </div>
-    <div class="content">
-      <div class="avatar-container">
-        <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
-      </div>
-      <div class="info"></div>
+    <div class="bruh-content">
+      <div class="bruh-label">bruh</div>
     </div>
-    <span class="bruh-label">bruh</span>
     <button class="close-btn" id="closeBruh">X</button>
   </div>
 
@@ -266,4 +267,4 @@
     });
   </script>
 </body>
-</html>
+                          </html>
