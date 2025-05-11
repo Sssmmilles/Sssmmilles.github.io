@@ -42,7 +42,7 @@
       transition: opacity 0.4s ease;
     }
 
-    .box, .box-small {
+    .box, .matryoshka {
       width: 90%;
       max-width: 720px;
       background: #bbb;
@@ -54,12 +54,11 @@
     }
 
     .box {
-      z-index: 3;
+      z-index: 10;
     }
 
-    .box-small {
+    .matryoshka {
       transform: scale(0.92);
-      z-index: 2;
     }
 
     .hide {
@@ -214,26 +213,45 @@
   </style>
 </head>
 <body>
-  <div id="hiText">hi :]</div>
+  <div id="hiText">satisfied?</div>
 
-  <div class="box-small" id="bruhBox">
-    <div class="panel">
-      <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
-    </div>
-    <div class="bruh-content">
-      <div class="bruh-label">bruh</div>
-    </div>
-    <button class="close-btn" id="closeBruh">X</button>
+  <div class="matryoshka" style="z-index:2">
+    <div class="panel"><img src="ImagesFolder/WhiteIcon-1.png" alt="Icon"></div>
+    <div class="bruh-content"><div class="bruh-label">I'll remember you.</div></div>
+  </div>
+  <div class="matryoshka" style="z-index:3">
+    <div class="panel"><img src="ImagesFolder/WhiteIcon-1.png" alt="Icon"></div>
+    <div class="bruh-content"><div class="bruh-label">Bruh, stop.</div></div>
+  </div>
+  <div class="matryoshka" style="z-index:4">
+    <div class="panel"><img src="ImagesFolder/WhiteIcon-1.png" alt="Icon"></div>
+    <div class="bruh-content"><div class="bruh-label">Why are you doing this?</div></div>
+  </div>
+  <div class="matryoshka" style="z-index:5">
+    <div class="panel"><img src="ImagesFolder/WhiteIcon-1.png" alt="Icon"></div>
+    <div class="bruh-content"><div class="bruh-label">ENOUGH</div></div>
+  </div>
+  <div class="matryoshka" style="z-index:6">
+    <div class="panel"><img src="ImagesFolder/WhiteIcon-1.png" alt="Icon"></div>
+    <div class="bruh-content"><div class="bruh-label">...</div></div>
+  </div>
+  <div class="matryoshka" style="z-index:7">
+    <div class="panel"><img src="ImagesFolder/WhiteIcon-1.png" alt="Icon"></div>
+    <div class="bruh-content"><div class="bruh-label">That's enough.</div></div>
+  </div>
+  <div class="matryoshka" style="z-index:8">
+    <div class="panel"><img src="ImagesFolder/WhiteIcon-1.png" alt="Icon"></div>
+    <div class="bruh-content"><div class="bruh-label">Stop.</div></div>
+  </div>
+  <div class="matryoshka" style="z-index:9">
+    <div class="panel"><img src="ImagesFolder/WhiteIcon-1.png" alt="Icon"></div>
+    <div class="bruh-content"><div class="bruh-label">bruh</div></div>
   </div>
 
   <div class="box" id="mainBox">
-    <div class="panel">
-      <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
-    </div>
+    <div class="panel"><img src="ImagesFolder/WhiteIcon-1.png" alt="Icon"></div>
     <div class="content">
-      <div class="avatar-container">
-        <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
-      </div>
+      <div class="avatar-container"><img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar"></div>
       <div class="info">
         <div class="name">Sssmmilles</div>
         <div class="socials">
@@ -252,20 +270,14 @@
   </div>
 
   <script>
-    const bruhBox = document.getElementById("bruhBox");
-    const closeBruh = document.getElementById("closeBruh");
+    const mainBox = document.getElementById("mainBox");
     const closeMain = document.getElementById("closeMain");
     const hiText = document.getElementById("hiText");
-    const mainBox = document.getElementById("mainBox");
-
-    closeBruh.addEventListener("click", () => {
-      bruhBox.classList.add("hide");
-      hiText.style.opacity = 1;
-    });
 
     closeMain.addEventListener("click", () => {
       mainBox.classList.add("hide");
+      hiText.style.opacity = 1;
     });
   </script>
 </body>
-        </html>
+                         </html>
