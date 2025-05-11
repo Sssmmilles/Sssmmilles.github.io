@@ -42,19 +42,20 @@
       transition: opacity 0.4s ease;
     }
 
-    .box, .box-small {
+    .wrapper {
+      position: relative;
       width: 90%;
       max-width: 720px;
-      background: #bbb;
-      border-radius: 4px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-      overflow: hidden;
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      position: absolute;
     }
 
-    .box {
-      z-index: 3;
+    .box, .box-small {
+      width: 100%;
+      background: #bbb;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      position: relative;
+      margin-bottom: 16px;
     }
 
     .box-small {
@@ -216,39 +217,41 @@
 <body>
   <div id="hiText">hi :]</div>
 
-  <div class="box-small" id="bruhBox">
-    <div class="panel">
-      <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
-    </div>
-    <div class="bruh-content">
-      <div class="bruh-label">bruh</div>
-    </div>
-    <button class="close-btn" id="closeBruh">X</button>
-  </div>
-
-  <div class="box" id="mainBox">
-    <div class="panel">
-      <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
-    </div>
-    <div class="content">
-      <div class="avatar-container">
-        <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
+  <div class="wrapper">
+    <div class="box-small" id="bruhBox">
+      <div class="panel">
+        <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
       </div>
-      <div class="info">
-        <div class="name">Sssmmilles</div>
-        <div class="socials">
-          <a href="https://discord.com/users/1129546209485406299" target="_blank">Discord</a>
-          <a href="https://twitter.com/Sssmmilles" target="_blank">Twitter</a>
-          <a href="https://youtube.com/@Sssmmilles" target="_blank">YouTube</a>
-          <a href="https://tiktok.com/@Sssmmilles" target="_blank">TikTok</a>
-          <a href="https://evade-nextbot.fandom.com/wiki/User:Sssmmilles" target="_blank">Fandom</a>
-          <a href="https://github.com/Sssmmilles" target="_blank">GitHub</a>
-          <a href="https://steamcommunity.com/id/Sssmmilles/" target="_blank">Steam</a>
-          <a href="https://t.me/Sssmmilles" target="_blank">Telegram</a>
+      <div class="bruh-content">
+        <div class="bruh-label">bruh</div>
+      </div>
+      <button class="close-btn" id="closeBruh">X</button>
+    </div>
+
+    <div class="box" id="mainBox">
+      <div class="panel">
+        <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
+      </div>
+      <div class="content">
+        <div class="avatar-container">
+          <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
+        </div>
+        <div class="info">
+          <div class="name">Sssmmilles</div>
+          <div class="socials">
+            <a href="https://discord.com/users/1129546209485406299" target="_blank">Discord</a>
+            <a href="https://twitter.com/Sssmmilles" target="_blank">Twitter</a>
+            <a href="https://youtube.com/@Sssmmilles" target="_blank">YouTube</a>
+            <a href="https://tiktok.com/@Sssmmilles" target="_blank">TikTok</a>
+            <a href="https://evade-nextbot.fandom.com/wiki/User:Sssmmilles" target="_blank">Fandom</a>
+            <a href="https://github.com/Sssmmilles" target="_blank">GitHub</a>
+            <a href="https://steamcommunity.com/id/Sssmmilles/" target="_blank">Steam</a>
+            <a href="https://t.me/Sssmmilles" target="_blank">Telegram</a>
+          </div>
         </div>
       </div>
+      <button class="close-btn" id="closeMain">X</button>
     </div>
-    <button class="close-btn" id="closeMain">X</button>
   </div>
 
   <script>
@@ -268,4 +271,4 @@
     });
   </script>
 </body>
-  </html>
+</html>
