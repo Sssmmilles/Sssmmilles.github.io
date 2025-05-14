@@ -32,9 +32,20 @@
       overflow: hidden;
     }
 
+    #hiText {
+      position: absolute;
+      font-size: 64px;
+      color: white;
+      font-family: 'KiwiSoda', sans-serif;
+      z-index: 0;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      text-align: center;
+    }
+
     .box, .box-small {
-      width: 90%;
-      max-width: 720px;
+      width: 92%;
+      max-width: 760px;
       background: #bbb;
       border-radius: 4px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
@@ -50,6 +61,12 @@
     .box-small {
       transform: scale(0.92);
       z-index: 2;
+    }
+
+    .hide {
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
     }
 
     .panel {
@@ -73,7 +90,7 @@
       position: relative;
     }
 
-    .dynamic-content {
+    .side-content {
       padding: 20px;
       position: relative;
       min-height: 100px;
@@ -155,29 +172,23 @@
       transform: scale(1.2);
     }
 
-    .random-box {
+    .random-text-container {
       position: absolute;
-      bottom: 8px;
-      left: 8px;
+      bottom: 12px;
+      left: 20px;
       display: flex;
-      flex-direction: row;
+      align-items: baseline;
       gap: 8px;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 6px 10px;
-      border-radius: 4px;
-      flex-wrap: wrap;
     }
 
     .random-text {
-      color: black;
-      font-size: 16px;
-      white-space: nowrap;
+      font-size: 20px;
+      color: #999;
     }
 
-    .random-timer {
-      color: rgba(255, 255, 255, 0.4);
+    .timer {
       font-size: 14px;
-      align-self: center;
+      color: rgba(200, 200, 200, 0.3);
     }
 
     @media (max-width: 600px) {
@@ -200,25 +211,18 @@
         justify-content: center;
       }
 
-      .close-btn {
-        font-size: 28px;
+      #hiText {
+        font-size: 48px;
       }
 
-      .random-box {
-        flex-direction: column;
-        align-items: flex-start;
+      .close-btn {
+        font-size: 28px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="box-small" id="dynamicBox">
-    <div class="panel">
-      <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
-    </div>
-    <div class="dynamic-content"></div>
-    <button class="close-btn" id="closeDynamic">X</button>
-  </div>
+  <div id="hiText">text</div>
 
   <div class="box" id="mainBox">
     <div class="panel">
@@ -241,43 +245,47 @@
           <a href="https://t.me/Sssmmilles" target="_blank">Telegram</a>
         </div>
       </div>
+      <div class="random-text-container">
+        <div class="random-text" id="randomText">Hello</div>
+        <div class="timer" id="countdown">3</div>
+      </div>
     </div>
     <button class="close-btn" id="closeMain">X</button>
   </div>
 
-  <div class="random-box">
-    <div class="random-text" id="randomText">Loading...</div>
-    <div class="random-timer" id="timer">0s</div>
-  </div>
-
   <script>
-    const randomText = document.getElementById('randomText');
-    const timer = document.getElementById('timer');
-    const interval = 5000;
-    let currentTime = 0;
+    const closeMain = document.getElementById("closeMain");
+    const hiText = document.getElementById("hiText");
+    const mainBox = document.getElementById("mainBox");
+    const randomText = document.getElementById("randomText");
+    const countdown = document.getElementById("countdown");
 
-    const randomLines = [
+    const lines = [
       "Yupe", "Yipe", "Hi :)", "I know where you live", "Bruh", "Brah",
       "Do you actually like cats?", "Rumor has it you're being watched", "BOO. Scared?",
       "Lets it happen.", "Better Call Saul", "Better not call Saul", "Better recall Saul",
-      "I'm not Saul Goodman", "Get lost", ":)", "I’ll ban you",
-      "Do you trust me? I don’t trust you.",
-      "Look who finally showed up", "Error 404"
+      "I'm not Saul Goodman", "Get lost", ":)", "I’ll ban you"
     ];
 
+    let currentIndex = 0;
+    let seconds = 3;
+
     function updateText() {
-      const text = randomLines[Math.floor(Math.random() * randomLines.length)];
-      randomText.textContent = text;
-      currentTime = 0;
+      randomText.textContent = lines[currentIndex];
+      currentIndex = (currentIndex + 1) % lines.length;
+      seconds = 3;
     }
 
-    setInterval(() => {
-      currentTime += 1;
-      timer.textContent = currentTime + 's';
-      if (currentTime >= interval / 1000) updateText();
-    }, 1000);
+    function tick() {
+      countdown.textContent = seconds;
+      seconds--;
+      if (seconds < 0) {
+        updateText();
+      }
+    }
 
     updateText();
+    setInterval(tick, 1000);
   </script>
 </body>
-          </html>
+</html>
