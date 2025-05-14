@@ -43,6 +43,18 @@
       text-align: center;
     }
 
+    #textNote {
+      position: absolute;
+      bottom: 12px;
+      font-size: 14px;
+      color: #aaa;
+      font-family: 'KiwiSoda', sans-serif;
+      text-align: center;
+      width: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
     .box, .box-small {
       width: 90%;
       max-width: 720px;
@@ -56,11 +68,6 @@
 
     .box {
       z-index: 3;
-    }
-
-    .box-small {
-      transform: scale(0.92);
-      z-index: 2;
     }
 
     .hide {
@@ -88,12 +95,6 @@
       padding: 20px;
       flex-wrap: wrap;
       position: relative;
-    }
-
-    .fucking-content {
-      padding: 20px;
-      position: relative;
-      min-height: 100px;
     }
 
     .avatar-container {
@@ -172,14 +173,6 @@
       transform: scale(1.2);
     }
 
-    .fucking-label {
-      position: absolute;
-      top: 12px;
-      left: 20px;
-      font-size: 28px;
-      color: #111;
-    }
-
     @media (max-width: 600px) {
       .content {
         flex-direction: column;
@@ -204,28 +197,19 @@
         font-size: 48px;
       }
 
-      .fucking-label {
-        font-size: 22px;
-      }
-
       .close-btn {
         font-size: 28px;
+      }
+
+      #textNote {
+        font-size: 12px;
       }
     }
   </style>
 </head>
 <body>
   <div id="hiText">text</div>
-
-  <div class="box-small" id="fuckingBox">
-    <div class="panel">
-      <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
-    </div>
-    <div class="fucking-content">
-      <div class="fucking-label">bruh</div>
-    </div>
-    <button class="close-btn" id="closeFucking">X</button>
-  </div>
+  <div id="textNote">this text always changes</div>
 
   <div class="box" id="mainBox">
     <div class="panel">
@@ -253,18 +237,15 @@
   </div>
 
   <script>
-    const fuckingBox = document.getElementById("fuckingBox");
-    const closeFucking = document.getElementById("closeFucking");
-    const closeMain = document.getElementById("closeMain");
     const hiText = document.getElementById("hiText");
     const mainBox = document.getElementById("mainBox");
+    const closeMain = document.getElementById("closeMain");
 
     const randomLines = [
       "Yupe", "Yipe", "Hi :)", "I know where you live", "Bruh", "Brah",
       "Do you actually like cats?", "Rumor has it you're being watched", "BOO. Scared?",
       "Lets it happen.", "Better Call Saul", "Better not call Saul", "Better recall Saul",
       "I'm not Saul Goodman", "Get lost", ":)", "I’ll ban you",
-      "Fun fact: this text always changes",
       "Do you trust me? I don’t trust you.",
       "Look who finally showed up", "Error 404",
       "Fun fact: humans can breathe",
@@ -274,14 +255,9 @@
 
     hiText.textContent = randomLines[Math.floor(Math.random() * randomLines.length)];
 
-    closeFucking.addEventListener("click", () => {
-      fuckingBox.classList.add("hide");
-      hiText.style.opacity = 1;
-    });
-
     closeMain.addEventListener("click", () => {
       mainBox.classList.add("hide");
     });
   </script>
 </body>
-</html>
+    </html>
