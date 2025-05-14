@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Sssmmilles</title>
@@ -9,224 +8,209 @@
     @font-face {
       font-family: 'KiwiSoda';
       src: url('KiwiSoda.ttf') format('truetype');
-    }
+    }* {
+  box-sizing: border-box;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'KiwiSoda', sans-serif;
+  background-color: #3c3c3c;
+  width: 100%;
+  height: 100%;
+}
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'KiwiSoda', sans-serif;
-      background-color: #3c3c3c;
-      width: 100%;
-      height: 100%;
-    }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
 
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
+#hiText {
+  position: absolute;
+  font-size: 64px;
+  color: white;
+  font-family: 'KiwiSoda', sans-serif;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  text-align: center;
+}
 
-    #hiText {
-      position: absolute;
-      font-size: 64px;
-      color: white;
-      font-family: 'KiwiSoda', sans-serif;
-      z-index: 0;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      text-align: center;
-    }
+.main-box, .small-box {
+  width: 90%;
+  max-width: 720px;
+  background: #bbb;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  position: absolute;
+}
 
-    .box, .box-small {
-      width: 92%;
-      max-width: 760px;
-      background: #bbb;
-      border-radius: 4px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-      overflow: hidden;
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      position: absolute;
-    }
+.main-box {
+  z-index: 3;
+}
 
-    .box {
-      z-index: 3;
-    }
+.small-box {
+  transform: scale(0.92);
+  z-index: 2;
+}
 
-    .box-small {
-      transform: scale(0.92);
-      z-index: 2;
-    }
+.hide {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
 
-    .hide {
-      opacity: 0;
-      transform: scale(0.95);
-      pointer-events: none;
-    }
+.panel {
+  background: linear-gradient(to right, #333, #555);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+}
 
-    .panel {
-      background: linear-gradient(to right, #333, #555);
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-    }
+.panel img {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+}
 
-    .panel img {
-      width: 24px;
-      height: 24px;
-    }
+.panel-text {
+  color: white;
+  font-size: 20px;
+}
 
-    .content {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 20px;
-      flex-wrap: wrap;
-      position: relative;
-    }
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+  position: relative;
+}
 
-    .side-content {
-      padding: 20px;
-      position: relative;
-      min-height: 100px;
-    }
+.content-body {
+  padding: 20px;
+  position: relative;
+  min-height: 100px;
+}
 
-    .avatar-container {
-      position: relative;
-      display: inline-block;
-      overflow: hidden;
-      border-radius: 4px;
-      width: 88px;
-      height: 88px;
-      flex-shrink: 0;
-      margin-right: 20px;
-      transition: transform 0.4s ease;
-    }
+.avatar-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 4px;
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
+  margin-right: 20px;
+  transition: transform 0.4s ease;
+}
 
-    .avatar-container:hover {
-      transform: scale(1.05);
-    }
+.avatar-container:hover {
+  transform: scale(1.05);
+}
 
-    .avatar {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-    .info {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      flex: 1;
-    }
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
 
-    .info .name {
-      font-size: 28px;
-      font-weight: bold;
-      color: #111;
-    }
+.info .name {
+  font-size: 28px;
+  font-weight: bold;
+  color: #111;
+}
 
-    .socials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
 
-    .socials a {
-      background-color: #555;
-      color: #eee;
-      text-decoration: none;
-      padding: 6px 14px;
-      border-radius: 4px;
-      font-size: 16px;
-      transition: background-color 0.2s, box-shadow 0.2s, transform 0.3s;
-    }
+.socials a {
+  background-color: #555;
+  color: #eee;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.3s;
+}
 
-    .socials a:hover {
-      background-color: #222;
-      box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.2);
-      transform: scale(1.05);
-    }
+.socials a:hover {
+  background-color: #222;
+  box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
 
-    .close-btn {
-      position: absolute;
-      top: 6px;
-      right: 12px;
-      font-size: 32px;
-      color: white;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: 'KiwiSoda', sans-serif;
-      z-index: 5;
-      transition: transform 0.2s ease;
-    }
+.close-btn {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  font-size: 32px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'KiwiSoda', sans-serif;
+  z-index: 5;
+  transition: transform 0.2s ease;
+}
 
-    .close-btn:hover {
-      transform: scale(1.2);
-    }
+.close-btn:hover {
+  transform: scale(1.2);
+}
 
-    .random-text-container {
-      position: absolute;
-      bottom: 12px;
-      left: 20px;
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-    }
+@media (max-width: 600px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    .random-text {
-      font-size: 20px;
-      color: #999;
-    }
+  .avatar-container {
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
 
-    .timer {
-      font-size: 14px;
-      color: rgba(200, 200, 200, 0.3);
-    }
+  .info .name {
+    font-size: 24px;
+  }
 
-    @media (max-width: 600px) {
-      .content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
+  .socials {
+    justify-content: center;
+  }
 
-      .avatar-container {
-        margin-right: 0;
-        margin-bottom: 12px;
-      }
+  #hiText {
+    font-size: 48px;
+  }
 
-      .info .name {
-        font-size: 24px;
-      }
+  .close-btn {
+    font-size: 28px;
+  }
+}
 
-      .socials {
-        justify-content: center;
-      }
-
-      #hiText {
-        font-size: 48px;
-      }
-
-      .close-btn {
-        font-size: 28px;
-      }
-    }
   </style>
 </head>
 <body>
-  <div id="hiText">text</div>
-
-  <div class="box" id="mainBox">
+  <div id="hiText">text</div>  <div class="main-box" id="mainBox">
     <div class="panel">
       <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
+      <div class="panel-text" id="randomText">Sssmmilles.exe</div>
     </div>
     <div class="content">
       <div class="avatar-container">
@@ -245,47 +229,28 @@
           <a href="https://t.me/Sssmmilles" target="_blank">Telegram</a>
         </div>
       </div>
-      <div class="random-text-container">
-        <div class="random-text" id="randomText">Hello</div>
-        <div class="timer" id="countdown">3</div>
-      </div>
     </div>
     <button class="close-btn" id="closeMain">X</button>
-  </div>
-
-  <script>
+  </div>  <script>
     const closeMain = document.getElementById("closeMain");
     const hiText = document.getElementById("hiText");
-    const mainBox = document.getElementById("mainBox");
     const randomText = document.getElementById("randomText");
-    const countdown = document.getElementById("countdown");
 
-    const lines = [
+    const randomLines = [
       "Yupe", "Yipe", "Hi :)", "I know where you live", "Bruh", "Brah",
       "Do you actually like cats?", "Rumor has it you're being watched", "BOO. Scared?",
       "Lets it happen.", "Better Call Saul", "Better not call Saul", "Better recall Saul",
-      "I'm not Saul Goodman", "Get lost", ":)", "I’ll ban you"
+      "I'm not Saul Goodman", "Get lost", ":)", "I’ll ban you",
+      "Do you trust me? I don’t trust you.",
+      "Look who finally showed up", "Error 404", "Fun fact: humans can breathe"
     ];
 
-    let currentIndex = 0;
-    let seconds = 3;
-
-    function updateText() {
-      randomText.textContent = lines[currentIndex];
-      currentIndex = (currentIndex + 1) % lines.length;
-      seconds = 3;
-    }
-
-    function tick() {
-      countdown.textContent = seconds;
-      seconds--;
-      if (seconds < 0) {
-        updateText();
-      }
-    }
-
-    updateText();
-    setInterval(tick, 1000);
-  </script>
-</body>
-</html>
+    setTimeout(() => {
+      let index = 0;
+      setInterval(() => {
+        randomText.textContent = randomLines[index];
+        index = (index + 1) % randomLines.length;
+      }, 3000);
+    }, 7000);
+  </script></body>
+  </html>
