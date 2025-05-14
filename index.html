@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Sssmmilles</title>
@@ -9,210 +8,216 @@
     @font-face {
       font-family: 'KiwiSoda';
       src: url('KiwiSoda.ttf') format('truetype');
-    }
+    }* {
+  box-sizing: border-box;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'KiwiSoda', sans-serif;
+  background-color: #3c3c3c;
+  width: 100%;
+  height: 100%;
+}
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'KiwiSoda', sans-serif;
-      background-color: #3c3c3c;
-      width: 100%;
-      height: 100%;
-    }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
 
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
+#hiText {
+  position: absolute;
+  font-size: 64px;
+  color: white;
+  font-family: 'KiwiSoda', sans-serif;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  text-align: center;
+}
 
-    #hiText {
-      position: absolute;
-      font-size: 64px;
-      color: white;
-      font-family: 'KiwiSoda', sans-serif;
-      z-index: 0;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      text-align: center;
-    }
+.main-box, .main-box-small {
+  width: 90%;
+  max-width: 720px;
+  background: #bbb;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  position: absolute;
+}
 
-    .box, .box-small {
-      width: 90%;
-      max-width: 720px;
-      background: #bbb;
-      border-radius: 4px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-      overflow: hidden;
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      position: absolute;
-    }
+.main-box {
+  z-index: 3;
+}
 
-    .box {
-      z-index: 3;
-    }
+.main-box-small {
+  transform: scale(0.92);
+  z-index: 2;
+}
 
-    .box-small {
-      transform: scale(0.92);
-      z-index: 2;
-    }
+.hide {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
 
-    .hide {
-      opacity: 0;
-      transform: scale(0.95);
-      pointer-events: none;
-    }
+.panel {
+  background: linear-gradient(to right, #333, #555);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+}
 
-    .panel {
-      background: linear-gradient(to right, #333, #555);
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-    }
+.panel img {
+  width: 24px;
+  height: 24px;
+}
 
-    .panel img {
-      width: 24px;
-      height: 24px;
-    }
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+  position: relative;
+}
 
-    .content {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 20px;
-      flex-wrap: wrap;
-      position: relative;
-    }
+.main-content {
+  padding: 20px;
+  position: relative;
+  min-height: 100px;
+}
 
-    .alt-content {
-      padding: 20px;
-      position: relative;
-      min-height: 100px;
-      text-align: center;
-    }
+.avatar-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 4px;
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
+  margin-right: 20px;
+  transition: transform 0.4s ease;
+}
 
-    .random-caption {
-      font-size: 13px;
-      color: #888;
-      margin-top: 6px;
-    }
+.avatar-container:hover {
+  transform: scale(1.05);
+}
 
-    .avatar-container {
-      position: relative;
-      display: inline-block;
-      overflow: hidden;
-      border-radius: 4px;
-      width: 88px;
-      height: 88px;
-      flex-shrink: 0;
-      margin-right: 20px;
-      transition: transform 0.4s ease;
-    }
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-    .avatar-container:hover {
-      transform: scale(1.05);
-    }
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
 
-    .avatar {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+.info .name {
+  font-size: 28px;
+  font-weight: bold;
+  color: #111;
+}
 
-    .info {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      flex: 1;
-    }
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
 
-    .info .name {
-      font-size: 28px;
-      font-weight: bold;
-      color: #111;
-    }
+.socials a {
+  background-color: #555;
+  color: #eee;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.3s;
+}
 
-    .socials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+.socials a:hover {
+  background-color: #222;
+  box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
 
-    .socials a {
-      background-color: #555;
-      color: #eee;
-      text-decoration: none;
-      padding: 6px 14px;
-      border-radius: 4px;
-      font-size: 16px;
-      transition: background-color 0.2s, box-shadow 0.2s, transform 0.3s;
-    }
+.close-btn {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  font-size: 32px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'KiwiSoda', sans-serif;
+  z-index: 5;
+  transition: transform 0.2s ease;
+}
 
-    .socials a:hover {
-      background-color: #222;
-      box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.2);
-      transform: scale(1.05);
-    }
+.close-btn:hover {
+  transform: scale(1.2);
+}
 
-    .close-btn {
-      position: absolute;
-      top: 6px;
-      right: 12px;
-      font-size: 32px;
-      color: white;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: 'KiwiSoda', sans-serif;
-      z-index: 5;
-      transition: transform 0.2s ease;
-    }
+.random-text {
+  position: absolute;
+  bottom: 12px;
+  left: 20px;
+  font-size: 18px;
+  color: white;
+}
 
-    .close-btn:hover {
-      transform: scale(1.2);
-    }
+.timer-text {
+  position: absolute;
+  bottom: 12px;
+  right: 20px;
+  font-size: 18px;
+  color: white;
+}
 
-    @media (max-width: 600px) {
-      .content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
+@media (max-width: 600px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-      .avatar-container {
-        margin-right: 0;
-        margin-bottom: 12px;
-      }
+  .avatar-container {
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
 
-      .info .name {
-        font-size: 24px;
-      }
+  .info .name {
+    font-size: 24px;
+  }
 
-      .socials {
-        justify-content: center;
-      }
+  .socials {
+    justify-content: center;
+  }
 
-      #hiText {
-        font-size: 48px;
-      }
+  #hiText {
+    font-size: 48px;
+  }
 
-      .close-btn {
-        font-size: 28px;
-      }
-    }
+  .close-btn {
+    font-size: 28px;
+  }
+}
+
   </style>
 </head>
 <body>
-  <div id="hiText">text</div>
-
-  <div class="box" id="mainBox">
+  <div id="hiText">text</div>  <div class="main-box" id="mainBox">
     <div class="panel">
       <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
     </div>
@@ -234,18 +239,15 @@
         </div>
       </div>
     </div>
-    <div class="alt-content">
-      <div id="randomText"></div>
-      <div class="random-caption">this text always changing</div>
-    </div>
+    <div class="random-text" id="randomText"></div>
+    <div class="timer-text" id="timerText"></div>
     <button class="close-btn" id="closeMain">X</button>
-  </div>
-
-  <script>
+  </div>  <script>
     const closeMain = document.getElementById("closeMain");
     const hiText = document.getElementById("hiText");
     const mainBox = document.getElementById("mainBox");
     const randomText = document.getElementById("randomText");
+    const timerText = document.getElementById("timerText");
 
     const randomLines = [
       "Yupe", "Yipe", "Hi :)", "I know where you live", "Bruh", "Brah",
@@ -253,21 +255,18 @@
       "Lets it happen.", "Better Call Saul", "Better not call Saul", "Better recall Saul",
       "I'm not Saul Goodman", "Get lost", ":)", "I’ll ban you",
       "Do you trust me? I don’t trust you.",
-      "Look who finally showed up", "Error 404",
-      "Fun fact: humans can breathe"
+      "Look who finally showed up", "Error 404"
     ];
 
-    function setRandomText() {
-      const text = randomLines[Math.floor(Math.random() * randomLines.length)];
-      randomText.textContent = text;
+    function updateRandomText() {
+      const line = randomLines[Math.floor(Math.random() * randomLines.length)];
+      const now = new Date();
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      randomText.textContent = line;
+      timerText.textContent = `:${seconds}`;
     }
 
-    setRandomText();
-    setInterval(setRandomText, 4000);
-
-    closeMain.addEventListener("click", () => {
-      mainBox.classList.add("hide");
-    });
-  </script>
-</body>
-</html>
+    setInterval(updateRandomText, 3000);
+    updateRandomText();
+  </script></body>
+  </html>
