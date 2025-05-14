@@ -43,18 +43,6 @@
       text-align: center;
     }
 
-    #textNote {
-      position: absolute;
-      bottom: 12px;
-      font-size: 14px;
-      color: #aaa;
-      font-family: 'KiwiSoda', sans-serif;
-      text-align: center;
-      width: 100%;
-      z-index: 1;
-      pointer-events: none;
-    }
-
     .box, .box-small {
       width: 90%;
       max-width: 720px;
@@ -68,6 +56,11 @@
 
     .box {
       z-index: 3;
+    }
+
+    .box-small {
+      transform: scale(0.92);
+      z-index: 2;
     }
 
     .hide {
@@ -95,6 +88,19 @@
       padding: 20px;
       flex-wrap: wrap;
       position: relative;
+    }
+
+    .alt-content {
+      padding: 20px;
+      position: relative;
+      min-height: 100px;
+      text-align: center;
+    }
+
+    .random-caption {
+      font-size: 13px;
+      color: #888;
+      margin-top: 6px;
     }
 
     .avatar-container {
@@ -200,16 +206,11 @@
       .close-btn {
         font-size: 28px;
       }
-
-      #textNote {
-        font-size: 12px;
-      }
     }
   </style>
 </head>
 <body>
   <div id="hiText">text</div>
-  <div id="textNote">this text always changes</div>
 
   <div class="box" id="mainBox">
     <div class="panel">
@@ -233,13 +234,18 @@
         </div>
       </div>
     </div>
+    <div class="alt-content">
+      <div id="randomText"></div>
+      <div class="random-caption">this text always changing</div>
+    </div>
     <button class="close-btn" id="closeMain">X</button>
   </div>
 
   <script>
+    const closeMain = document.getElementById("closeMain");
     const hiText = document.getElementById("hiText");
     const mainBox = document.getElementById("mainBox");
-    const closeMain = document.getElementById("closeMain");
+    const randomText = document.getElementById("randomText");
 
     const randomLines = [
       "Yupe", "Yipe", "Hi :)", "I know where you live", "Bruh", "Brah",
@@ -248,16 +254,20 @@
       "I'm not Saul Goodman", "Get lost", ":)", "I’ll ban you",
       "Do you trust me? I don’t trust you.",
       "Look who finally showed up", "Error 404",
-      "Fun fact: humans can breathe",
-      "Fun fact: if you try to pet a lion, it might bite your f***ing arm off… maybe more",
-      "Fun fact: you’re gay.", "Fun fact: uhh… I forgot.", "F*** off — with love", ":3"
+      "Fun fact: humans can breathe"
     ];
 
-    hiText.textContent = randomLines[Math.floor(Math.random() * randomLines.length)];
+    function setRandomText() {
+      const text = randomLines[Math.floor(Math.random() * randomLines.length)];
+      randomText.textContent = text;
+    }
+
+    setRandomText();
+    setInterval(setRandomText, 4000);
 
     closeMain.addEventListener("click", () => {
       mainBox.classList.add("hide");
     });
   </script>
 </body>
-    </html>
+</html>
