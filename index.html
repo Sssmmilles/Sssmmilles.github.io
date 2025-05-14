@@ -40,7 +40,7 @@ body {
   text-align: center;
 }
 
-.main-box, .small-box {
+.main-container, .main-container-small {
   width: 90%;
   max-width: 720px;
   background: #bbb;
@@ -51,11 +51,11 @@ body {
   position: absolute;
 }
 
-.main-box {
+.main-container {
   z-index: 3;
 }
 
-.small-box {
+.main-container-small {
   transform: scale(0.92);
   z-index: 2;
 }
@@ -76,12 +76,14 @@ body {
 .panel img {
   width: 24px;
   height: 24px;
-  margin-right: 12px;
 }
 
-.panel-text {
+.random-text {
   color: white;
-  font-size: 20px;
+  opacity: 0.9;
+  margin-left: 12px;
+  font-size: 16px;
+  transition: opacity 0.3s;
 }
 
 .content {
@@ -93,7 +95,7 @@ body {
   position: relative;
 }
 
-.content-body {
+.main-content {
   padding: 20px;
   position: relative;
   min-height: 100px;
@@ -207,10 +209,10 @@ body {
   </style>
 </head>
 <body>
-  <div id="hiText">text</div>  <div class="main-box" id="mainBox">
+  <div id="hiText">text</div>  <div class="main-container" id="mainBox">
     <div class="panel">
       <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
-      <div class="panel-text" id="randomText">Sssmmilles.exe</div>
+      <div class="random-text" id="randomText"></div>
     </div>
     <div class="content">
       <div class="avatar-container">
@@ -234,6 +236,7 @@ body {
   </div>  <script>
     const closeMain = document.getElementById("closeMain");
     const hiText = document.getElementById("hiText");
+    const mainBox = document.getElementById("mainBox");
     const randomText = document.getElementById("randomText");
 
     const randomLines = [
@@ -242,15 +245,21 @@ body {
       "Lets it happen.", "Better Call Saul", "Better not call Saul", "Better recall Saul",
       "I'm not Saul Goodman", "Get lost", ":)", "I’ll ban you",
       "Do you trust me? I don’t trust you.",
-      "Look who finally showed up", "Error 404", "Fun fact: humans can breathe"
+      "Look who finally showed up", "Error 404"
     ];
 
-    setTimeout(() => {
-      let index = 0;
-      setInterval(() => {
-        randomText.textContent = randomLines[index];
-        index = (index + 1) % randomLines.length;
-      }, 3000);
-    }, 7000);
+    function setRandomText() {
+      const random = randomLines[Math.floor(Math.random() * randomLines.length)];
+      randomText.textContent = random;
+    }
+
+    setInterval(setRandomText, 1500);
+    setRandomText();
+
+    closeMain.addEventListener("click", () => {
+      mainBox.classList.add("hide");
+      hiText.textContent = "bruh";
+      hiText.style.opacity = 1;
+    });
   </script></body>
-  </html>
+</html>
