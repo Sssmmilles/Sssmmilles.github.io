@@ -1,127 +1,287 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sssmmilles</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kiwi+Soda&display=swap" />
-  <style>
-    body {
-      font-family: 'Kiwi Soda', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: black;
-      color: white;
-    }
-
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      gap: 20px;
-    }
-
-    .box, .box-small {
-      background: #222;
-      padding: 30px;
-      border-radius: 10px;
-      text-align: center;
-      width: 300px;
-      position: relative;
-    }
-
-    .random-text {
-      margin-top: 20px;
-      font-size: 1.1rem;
-      opacity: 0.1; /* 90% прозрачности */
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .bruh {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      font-size: 0.8rem;
-      color: gray;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="box">
-      <img src="ImagesFolder/avatar.png" alt="Avatar" width="80" />
-      <h2>@Sssmmilles</h2>
-      <div class="random-text" id="randomLine"></div>
-      <div class="bruh hidden">bruh</div>
-    </div>
-    <div class="box-small">
-      <a href="https://github.com/Sssmmilles" target="_blank">GitHub</a><br/>
-      <a href="https://twitter.com/Sssmmilles" target="_blank">Twitter</a><br/>
-      <a href="https://youtube.com/@Sssmmilles" target="_blank">YouTube</a>
-    </div>
-  </div>
-
-  <script>
-    const randomLines = [
-      "Saul Goodman was here",
-      "Now 3:00, Go to sleep",
-      "You can call me Smy, not smile",
-      "Never search User with nickname: Sssmmilles",
-      "Math or Meth",
-      "No one can understand me.",
-      "Why.",
-      "When.",
-      "101% this text never changing",
-      "I always lie, trust me :troll:",
-      "A.",
-      "B.",
-      "C.",
-      "Do you know what the...",
-      "I won",
-      "Yo Mr. White",
-      "You got scammed",
-      "Yo",
-      "This is so sad",
-      "Can we get 5 stars?",
-      "Get real",
-      "Nah fam",
-      "Oh hell nah",
-      "Don’t sus me bro",
-      "Cringe",
-      "You called?",
-      "Bro, what?",
-      "I'm in",
-      "FBI open up",
-      "Saul badman",
-      "No wifi in jail",
-      "Call me maybe",
-      "My name is not Saul",
-      "Say it again",
-      "It’s just business",
-      "Cry about it",
-      "I'm a businessman",
-      "Plea deal or nah",
-      "Game over, man",
-      "Legal trouble?",
-      "Sleep with one eye open",
-      "I have rights",
-      "Just call Saul",
-      "Not my problem",
-      "Just business",
-      "I’ll allow it",
-      "Proof? Never heard of it",
-      "I know a guy",
-      "He’s the guy",
-      "Call your mom"
-    ];
-
-    const randomLineElement = document.getElementById('randomLine');
-    const randomIndex = Math.floor(Math.random() * randomLines.length);
-    randomLineElement.textContent = randomLines[randomIndex];
-  </script>
-</body>
-</html>
+<!DOCTYPE html>                
+<html lang="en">                
+<head>                
+  <meta charset="UTF-8" />                
+  <title>Sssmmilles</title>                
+  <link rel="icon" href="ImagesFolder/BlackIcon-1.png" type="image/png" />                
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />                
+  <style>                
+    @font-face {                
+      font-family: 'KiwiSoda';                
+      src: url('KiwiSoda.ttf') format('truetype');                
+    }                
+                
+    * {                
+      box-sizing: border-box;                
+    }                
+                
+    html, body {                
+      margin: 0;                
+      padding: 0;                
+      font-family: 'KiwiSoda', sans-serif;                
+      background-color: #3c3c3c;                
+      width: 100%;                
+      height: 100%;                
+    }                
+                
+    body {                
+      display: flex;                
+      justify-content: center;                
+      align-items: center;                
+      position: relative;                
+      overflow: hidden;                
+    }                
+                
+    #hiText {                
+      position: absolute;                
+      font-size: 64px;                
+      color: white;                
+      font-family: 'KiwiSoda', sans-serif;                
+      z-index: 0;                
+      opacity: 0;                
+      transition: opacity 0.4s ease;                
+      text-align: center;                
+    }                
+                
+    .box, .box-small {                
+      width: 90%;                
+      max-width: 720px;                
+      background: #bbb;                
+      border-radius: 4px;                
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);                
+      overflow: hidden;                
+      transition: opacity 0.4s ease, transform 0.4s ease;                
+      position: absolute;                
+    }                
+                
+    .box {                
+      z-index: 3;                
+    }                
+                
+    .box-small {                
+      transform: scale(0.92);                
+      z-index: 2;                
+    }                
+                
+    .hide {                
+      opacity: 0;                
+      transform: scale(0.95);                
+      pointer-events: none;                
+    }                
+                
+    .panel {                
+      background: linear-gradient(to right, #333, #555);                
+      padding: 12px 20px;                
+      display: flex;                
+      align-items: center;                
+    }                
+                
+    .panel img {                
+      width: 24px;                
+      height: 24px;                
+    }                
+                
+    .content {                
+      display: flex;                
+      flex-direction: row;                
+      align-items: center;                
+      padding: 20px;                
+      flex-wrap: wrap;                
+      position: relative;                
+    }                
+                
+    .fucking-content {                
+      padding: 20px;                
+      position: relative;                
+      min-height: 100px;                
+    }                
+                
+    .avatar-container {                
+      position: relative;                
+      display: inline-block;                
+      overflow: hidden;                
+      border-radius: 4px;                
+      width: 88px;                
+      height: 88px;                
+      flex-shrink: 0;                
+      margin-right: 20px;                
+      transition: transform 0.4s ease;                
+    }                
+                
+    .avatar-container:hover {                
+      transform: scale(1.05);                
+    }                
+                
+    .avatar {                
+      width: 100%;                
+      height: 100%;                
+      object-fit: cover;                
+      display: block;                
+    }                
+                
+    .info {                
+      display: flex;                
+      flex-direction: column;                
+      gap: 8px;                
+      flex: 1;                
+    }                
+                
+    .info .name {                
+      font-size: 28px;                
+      font-weight: bold;                
+      color: #111;                
+    }                
+                
+    .socials {                
+      display: flex;                
+      flex-wrap: wrap;                
+      gap: 8px;                
+    }                
+                
+    .socials a {                
+      background-color: #555;                
+      color: #eee;                
+      text-decoration: none;                
+      padding: 6px 14px;                
+      border-radius: 4px;                
+      font-size: 16px;                
+      transition: background-color 0.2s, box-shadow 0.2s, transform 0.3s;                
+    }                
+                
+    .socials a:hover {                
+      background-color: #222;                
+      box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.2);                
+      transform: scale(1.05);                
+    }                
+                
+    .close-btn {                
+      position: absolute;                
+      top: 6px;                
+      right: 12px;                
+      font-size: 32px;                
+      color: white;                
+      background: none;                
+      border: none;                
+      cursor: pointer;                
+      font-family: 'KiwiSoda', sans-serif;                
+      z-index: 5;                
+      transition: transform 0.2s ease;                
+    }                
+                
+    .close-btn:hover {                
+      transform: scale(1.2);                
+    }                
+                
+    .fucking-label {                
+      position: absolute;                
+      top: 12px;                
+      left: 20px;                
+      font-size: 28px;                
+      color: #111;                
+    }                
+                
+    @media (max-width: 600px) {                
+      .content {                
+        flex-direction: column;                
+        align-items: center;                
+        text-align: center;                
+      }                
+                
+      .avatar-container {                
+        margin-right: 0;                
+        margin-bottom: 12px;                
+      }                
+                
+      .info .name {                
+        font-size: 24px;                
+      }                
+                
+      .socials {                
+        justify-content: center;                
+      }                
+                
+      #hiText {                
+        font-size: 48px;                
+      }                
+                
+      .fucking-label {                
+        font-size: 22px;                
+      }                
+                
+      .close-btn {                
+        font-size: 28px;                
+      }                
+    }                
+  </style>                
+</head>                
+<body>                
+  <div id="hiText">text</div>                
+                
+  <div class="box-small" id="fuckingBox">                
+    <div class="panel">                
+      <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">                
+    </div>                
+    <div class="fucking-content">                
+      <div class="fucking-label">bruh</div>                
+    </div>                
+    <button class="close-btn" id="closeFucking">X</button>                
+  </div>                
+                
+  <div class="box" id="mainBox">                
+    <div class="panel">                
+      <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">                
+    </div>                
+    <div class="content">                
+      <div class="avatar-container">                
+        <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">                
+      </div>                
+      <div class="info">                
+        <div class="name">Sssmmilles</div>                
+        <div class="socials">                
+          <a href="https://discord.com/users/1129546209485406299" target="_blank">Discord</a>                
+          <a href="https://twitter.com/Sssmmilles" target="_blank">Twitter</a>                
+          <a href="https://youtube.com/@Sssmmilles" target="_blank">YouTube</a>                
+          <a href="https://tiktok.com/@Sssmmilles" target="_blank">TikTok</a>                
+          <a href="https://evade-nextbot.fandom.com/wiki/User:Sssmmilles" target="_blank">Fandom</a>                
+          <a href="https://github.com/Sssmmilles" target="_blank">GitHub</a>                
+          <a href="https://steamcommunity.com/id/Sssmmilles/" target="_blank">Steam</a>                
+          <a href="https://t.me/Sssmmilles" target="_blank">Telegram</a>                
+        </div>                
+      </div>                
+    </div>                
+    <button class="close-btn" id="closeMain">X</button>                
+  </div>                
+                
+  <script>                
+    const fuckingBox = document.getElementById("fuckingBox");                
+    const closeFucking = document.getElementById("closeFucking");                
+    const closeMain = document.getElementById("closeMain");                
+    const hiText = document.getElementById("hiText");                
+    const mainBox = document.getElementById("mainBox");                
+                
+    const randomLines = [                
+      "Yupe", "Yipe", "Hi :)", "I know where you live", "Bruh", "Brah",                
+      "Do you actually like cats?", "Rumor has it you're being watched", "BOO. Scared?",                
+      "Lets it happen.", "Better Call Saul", "Better not call Saul", "Better recall Saul",                
+      "I'm not Saul Goodman", "Get lost", ":)", "I’ll ban you",                
+      "Fun fact: this text always changes",                
+      "Do you trust me? I don’t trust you.",                
+      "Look who finally showed up", "Error 404",                
+      "Fun fact: humans can breathe",                
+      "Fun fact: if you try to pet a lion, it might bite your f***ing arm off… maybe more",                
+      "Fun fact: you’re gay.", "Fun fact: uhh… I forgot.", "F*** off — with love", ":3"                
+    ];                
+                
+    hiText.textContent = randomLines[Math.floor(Math.random() * randomLines.length)];                
+                
+    closeFucking.addEventListener("click", () => {                
+      fuckingBox.classList.add("hide");                
+      hiText.style.opacity = 1;                
+    });                
+                
+    closeMain.addEventListener("click", () => {                
+      mainBox.classList.add("hide");                
+    });                
+  </script>                
+</body>                
+  </html>
