@@ -13,6 +13,8 @@
 
     * {
       box-sizing: border-box;
+      image-rendering: crisp-edges;
+      image-rendering: pixelated;
     }
 
     html, body {
@@ -49,6 +51,7 @@
       height: auto;
       display: block;
       margin: 0;
+      image-rendering: pixelated;
     }
 
     .content {
@@ -81,6 +84,7 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      image-rendering: pixelated;
     }
 
     .info {
@@ -118,24 +122,6 @@
       transform: scale(1.05);
     }
 
-    .close-btn {
-      position: absolute;
-      top: 6px;
-      right: 12px;
-      font-size: 32px;
-      color: white;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: 'KiwiSoda', sans-serif;
-      z-index: 5;
-      transition: transform 0.2s ease;
-    }
-
-    .close-btn:hover {
-      transform: scale(1.2);
-    }
-
     @media (max-width: 600px) {
       .content {
         flex-direction: column;
@@ -155,17 +141,12 @@
       .socials {
         justify-content: center;
       }
-
-      .close-btn {
-        font-size: 28px;
-      }
     }
   </style>
 </head>
 <body>
   <div class="box" id="mainBox">
     <img src="ImagesFolder/SssBanner.png" alt="Banner" class="banner" />
-
     <div class="content">
       <div class="avatar-container">
         <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
@@ -187,17 +168,6 @@
         </div>
       </div>
     </div>
-
-    <button class="close-btn" id="closeMain">X</button>
   </div>
-
-  <script>
-    const closeMain = document.getElementById("closeMain");
-    const mainBox = document.getElementById("mainBox");
-
-    closeMain.addEventListener("click", () => {
-      mainBox.classList.add("hide");
-    });
-  </script>
 </body>
 </html>
