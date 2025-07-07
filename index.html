@@ -32,17 +32,6 @@
       overflow: hidden;
     }
 
-    #hiText {
-      position: absolute;
-      font-size: 64px;
-      color: white;
-      font-family: 'KiwiSoda', sans-serif;
-      z-index: 0;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      text-align: center;
-    }
-
     .box {
       width: 90%;
       max-width: 720px;
@@ -55,24 +44,11 @@
       z-index: 3;
     }
 
-    .panel {
-      background: linear-gradient(to right, #333, #555);
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-    }
-
-    .panel img {
-      width: 24px;
-      height: 24px;
-    }
-
     .banner {
       width: 100%;
-      max-width: 680px;
       height: auto;
-      margin: 0 auto;
       display: block;
+      margin: 0;
     }
 
     .content {
@@ -180,10 +156,6 @@
         justify-content: center;
       }
 
-      #hiText {
-        font-size: 48px;
-      }
-
       .close-btn {
         font-size: 28px;
       }
@@ -191,14 +163,8 @@
   </style>
 </head>
 <body>
-  <div id="hiText">text</div>
-
   <div class="box" id="mainBox">
-    <div class="panel">
-      <img src="ImagesFolder/WhiteIcon-1.png" alt="Icon">
-    </div>
-
-    <img src="ImagesFolder/SssBanner.png" alt="Banner" class="banner">
+    <img src="ImagesFolder/SssBanner.png" alt="Banner" class="banner" />
 
     <div class="content">
       <div class="avatar-container">
@@ -227,34 +193,10 @@
 
   <script>
     const closeMain = document.getElementById("closeMain");
-    const hiText = document.getElementById("hiText");
     const mainBox = document.getElementById("mainBox");
-    const randomLines = [
-      "Yupe", "Yipe", "Hi :)", "I know where you live", "Bruh", "Brah",
-      "Do you actually like cats?", "Rumor has it you're being watched", "BOO. Scared?",
-      "Lets it happen.", "Better Call Saul", "Better not call Saul", "Better recall Saul",
-      "I'm not Saul Goodman", "Get lost", ":)", "I’ll ban you",
-      "Fun fact: this text always changes",
-      "Do you trust me? I don’t trust you.",
-      "Look who finally showed up", "Error 404",
-      "Fun fact: humans can breathe",
-      "Fun fact: if you try to pet a lion, it might bite your f***ing arm off… maybe more",
-      "Fun fact: you’re gay.", "Fun fact: uhh… I forgot.", "F*** off — with love", ":3",
-      "Saul Goodman was here", "Now 3:00, Go to sleep", "You can call me Smy, not smile",
-      "Never search User with nickname: Sssmmilles", "Math or Meth", "No one can understand me.",
-      "Why.", "When.", "101% this text never changing", "I always lie, trust me :troll:",
-      "A.", "B.", "C.", "Do you know what the...", "I won", "Yo Mr. White", "You got scammed",
-      "Yo", "This is so sad", "Can we get 5 stars?", "Get real", "Nah fam", "Oh hell nah",
-      "Don’t sus me bro", "Cringe", "You called?", "Bro, what?", "I'm in", "FBI open up",
-      "Saul badman", "No wifi in jail", "Call me maybe", "My name is not Saul", "Say it again",
-      "It’s just business", "Cry about it", "I'm a businessman", "Plea deal or nah",
-      "Game over, man", "Legal trouble?", "Sleep with one eye open", "I have rights",
-      "Just call Saul", "Not my problem", "Just business", "I’ll allow it", "Proof? Never heard of it"
-    ];
-    hiText.textContent = randomLines[Math.floor(Math.random() * randomLines.length)];
+
     closeMain.addEventListener("click", () => {
       mainBox.classList.add("hide");
-      hiText.style.opacity = 1;
     });
   </script>
 </body>
