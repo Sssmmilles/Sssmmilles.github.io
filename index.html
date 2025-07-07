@@ -13,8 +13,6 @@
 
     * {
       box-sizing: border-box;
-      image-rendering: crisp-edges;
-      image-rendering: pixelated;
     }
 
     html, body {
@@ -41,17 +39,9 @@
       border-radius: 4px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
       overflow: hidden;
-      transition: opacity 0.4s ease, transform 0.4s ease;
       position: absolute;
-      z-index: 3;
-    }
-
-    .banner {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0;
-      image-rendering: pixelated;
+      top: 20px;
+      padding-bottom: 20px;
     }
 
     .content {
@@ -84,7 +74,6 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      image-rendering: pixelated;
     }
 
     .info {
@@ -122,6 +111,33 @@
       transform: scale(1.05);
     }
 
+    .bottom-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px;
+      gap: 12px;
+    }
+
+    .block {
+      flex: 1;
+      aspect-ratio: 16/9;
+      background: #222;
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+    }
+
+    .block img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     @media (max-width: 600px) {
       .content {
         flex-direction: column;
@@ -141,12 +157,15 @@
       .socials {
         justify-content: center;
       }
+
+      .bottom-row {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="box" id="mainBox">
-    <img src="ImagesFolder/SssBanner.png" alt="Banner" class="banner" />
+  <div class="box">
     <div class="content">
       <div class="avatar-container">
         <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
@@ -167,6 +186,12 @@
           <a href="https://www.reddit.com/user/Tasty-Chemistry6085/" target="_blank">Reddit</a>
         </div>
       </div>
+    </div>
+    <div class="bottom-row">
+      <div class="block">
+        <img src="ImagesFolder/test-image.png" alt="Preview">
+      </div>
+      <div class="block">test123</div>
     </div>
   </div>
 </body>
