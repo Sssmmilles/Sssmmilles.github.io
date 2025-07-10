@@ -125,25 +125,6 @@
       box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.2);  
       transform: scale(1.05);  
     }  
-    .refresh-icon-container {
-      position: absolute;
-      top: 6px;
-      right: 6px;
-      background-color: #e0e0e0;
-      padding: 4px;
-      border-radius: 4px;
-      z-index: 10;
-    }
-    .refresh-icon {
-      width: 18px;
-      height: 18px;
-      cursor: pointer;
-      opacity: 0.8;
-      transition: opacity 0.2s ease;
-    }
-    .refresh-icon:hover {
-      opacity: 1;
-    }
     @media (max-width: 600px) {  
       .content {  
         flex-direction: column;  
@@ -167,9 +148,6 @@
   </style>  
 </head>  
 <body>  
-  <div class="refresh-icon-container">
-    <img src="ImagesFolder/Reload.png" class="refresh-icon" onclick="location.reload()" alt="Reload">
-  </div>
   <div class="box" id="mainBox">  
     <img src="ImagesFolder/SssBanner.png" alt="Banner" class="banner" />  
     <div class="content">  
