@@ -36,7 +36,7 @@
       transition: opacity 0.4s ease, transform 0.4s ease;  
       position: absolute;  
       z-index: 3;  
-      padding-bottom: 0;  
+      padding-bottom: 0px;  
     }  
     .banner {  
       width: 100%;  
@@ -47,9 +47,8 @@
     }  
     .bottom-line {
       width: 100%;
-      height: auto;
+      height: 10px;
       display: block;
-      margin: 0;
       image-rendering: pixelated;
     }
     .content {  
@@ -90,23 +89,11 @@
     .info .name {  
       font-size: 28px;  
       font-weight: bold;  
+      color: #111;  
       display: flex;  
       align-items: center;  
       gap: 10px;  
-      background: linear-gradient(to right, #25B169, #3B7575);  
-      -webkit-background-clip: text;  
-      -webkit-text-fill-color: transparent;  
-      position: relative;
     }  
-    .info .name::after {
-      content: 'Sssmmilles';
-      position: absolute;
-      left: 0;
-      top: 0;
-      -webkit-background-clip: initial;
-      -webkit-text-fill-color: #111;
-      z-index: -1;
-    }
     .tag-label {  
       display: flex;  
       align-items: center;  
@@ -143,6 +130,16 @@
       box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.2);  
       transform: scale(1.05);  
     }  
+    .update-date {
+      position: absolute;
+      bottom: 8px;
+      right: 14px;
+      font-size: 14px;
+      color: #111;
+      font-family: 'KiwiSoda', sans-serif;
+      opacity: 0.6;
+      z-index: 1;
+    }
     @media (max-width: 600px) {  
       .content {  
         flex-direction: column;  
@@ -195,7 +192,8 @@
         </div>  
       </div>  
     </div>  
-    <img src="ImagesFolder/SssLine.png" alt="Line" class="bottom-line" />
+    <img src="ImagesFolder/SssLine.png" alt="Bottom Line" class="bottom-line" />
   </div>  
+  <div class="update-date">Updated: 5/7/2025</div>
 </body>  
 </html>
