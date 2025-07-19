@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Sssmmilles</title>
-  <link rel="icon" href="ImagesFolder/Favicon.png" type="image/png" />
+  <link rel="icon" href="ImagesFolder/BlackIcon-1.png" type="image/png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     @font-face {
@@ -32,16 +32,16 @@ body {
 }
 
 .box {
-  width: 95%;
+  width: 90%;
   max-width: 720px;
   background: #bbb;
   border-radius: 4px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   transition: opacity 0.4s ease, transform 0.4s ease;
-  position: relative;
+  position: absolute;
   z-index: 3;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 .banner {
@@ -50,15 +50,6 @@ body {
   display: block;
   margin: 0;
   image-rendering: pixelated;
-}
-
-.line {
-  width: 100%;
-  height: 10px;
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
 }
 
 .content {
@@ -105,66 +96,81 @@ body {
   font-size: 28px;
   font-weight: bold;
   color: #111;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.tag-label {
-  display: flex;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.13);
-  padding: 2px 8px;
-  border-radius: 4px;
-  transition: transform 0.4s ease;
-}
-
-.tag-label:hover {
-  transform: scale(1.05);
-}
-
-.tag-label img {
-  width: 20px;
-  height: 20px;
-  margin-right: 6px;
-  image-rendering: pixelated;
-}
-
-.tag-label span {
-  color: #111;
-  font-size: 16px;
 }
 
 .socials {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
   display: flex;
-  flex-wrap: wrap;
   gap: 8px;
 }
 
 .socials a {
-  background-color: #555;
-  color: #eee;
-  text-decoration: none;
-  padding: 6px 14px;
+  width: 32px;
+  height: 32px;
+  display: block;
+  background-size: cover;
+  background-position: center;
   border-radius: 4px;
-  font-size: 16px;
-  transition: background-color 0.2s, box-shadow 0.2s, transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .socials a:hover {
-  background-color: #222;
-  box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.2);
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
-.update-label {
+.socials a.discord {
+  background-image: url('Discord.png');
+}
+
+.socials a.twitter {
+  background-image: url('Twitter.png');
+}
+
+.socials a.youtube {
+  background-image: url('Youtube.png');
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  gap: 12px;
+}
+
+.block {
+  flex: 1;
+  aspect-ratio: 16 / 9;
+  background: #1c1c1c;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+}
+
+.block::before {
+  content: "text";
+}
+
+.line {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.update-date {
+  position: absolute;
+  bottom: -28px;
+  right: 12px;
+  color: #111;
   font-family: 'KiwiSoda', sans-serif;
   font-size: 14px;
-  color: #111;
-  opacity: 0.7;
 }
 
 @media (max-width: 600px) {
@@ -181,13 +187,6 @@ body {
 
   .info .name {
     font-size: 24px;
-    flex-direction: column;
-    gap: 4px;
-    align-items: center;
-  }
-
-  .socials {
-    justify-content: center;
   }
 }
 
@@ -201,30 +200,19 @@ body {
         <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
       </div>
       <div class="info">
-        <div class="name">
-          Sssmmilles
-          <div class="tag-label">
-            <img src="ImagesFolder/Tag.png" alt="Tag Icon">
-            <span>deS'z</span>
-          </div>
-        </div>
-        <div class="socials">
-          <a href="https://discord.com/users/1129546209485406299" target="_blank">Discord</a>
-          <a href="https://twitter.com/Sssmmilles" target="_blank">Twitter</a>
-          <a href="https://youtube.com/@Sssmmilles" target="_blank">YouTube</a>
-          <a href="https://tiktok.com/@Sssmmilles" target="_blank">TikTok</a>
-          <a href="https://evade-nextbot.fandom.com/wiki/User:Sssmmilles" target="_blank">Fandom</a>
-          <a href="https://github.com/Sssmmilles" target="_blank">GitHub</a>
-          <a href="https://steamcommunity.com/id/Sssmmilles/" target="_blank">Steam</a>
-          <a href="https://t.me/Sssmmilles" target="_blank">Telegram</a>
-          <a href="https://www.pixilart.com/sssmmilles/about" target="_blank">Pixil Art</a>
-          <a href="https://discord.gg/sdQvRUbWkU" target="_blank">Discord Server</a>
-          <a href="https://www.reddit.com/user/Tasty-Chemistry6085/" target="_blank">Reddit</a>
-        </div>
+        <div class="name">Sssmmilles</div>
       </div>
     </div>
+    <div class="bottom-row">
+      <div class="block"></div>
+    </div>
+    <div class="socials">
+      <a href="https://discord.com/users/1129546209485406299" class="discord" target="_blank"></a>
+      <a href="https://twitter.com/Sssmmilles" class="twitter" target="_blank"></a>
+      <a href="https://youtube.com/@Sssmmilles" class="youtube" target="_blank"></a>
+    </div>
     <img src="ImagesFolder/SssLine.png" alt="Line" class="line" />
+    <div class="update-date">Updated: 5/7/2025</div>
   </div>
-  <div class="update-label">Updated: 5/7/2025</div>
 </body>
 </html>
