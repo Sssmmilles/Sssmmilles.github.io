@@ -1,218 +1,164 @@
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Sssmmilles</title>
-  <link rel="icon" href="ImagesFolder/BlackIcon-1.png" type="image/png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SSSMMILLES</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
   <style>
-    @font-face {
-      font-family: 'KiwiSoda';
-      src: url('KiwiSoda.ttf') format('truetype');
-    }* {
-  box-sizing: border-box;
-  image-rendering: crisp-edges;
-  image-rendering: pixelated;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'KiwiSoda', sans-serif;
-  background-color: #3c3c3c;
-  width: 100%;
-  height: 100%;
-}
-
-body {
+    body {
+      margin: 0;
+      background: #0a0a0a;
+      font-family: 'Kanit', sans-serif;
+      overflow: hidden;
+    }.container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: center;
+  height: 100vh;
   position: relative;
-  overflow: hidden;
 }
 
-.box {
-  width: 90%;
-  max-width: 720px;
-  background: #bbb;
-  border-radius: 4px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  position: absolute;
-  z-index: 3;
-  padding-bottom: 40px;
-}
-
-.banner {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0;
-  image-rendering: pixelated;
-}
-
-.content {
+.main-box {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
+  background: #fff;
+  background-color: #1b1b1b;
+  border-radius: 28px;
   padding: 20px;
-  flex-wrap: wrap;
+  width: 660px;
+  height: 160px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   position: relative;
-}
-
-.avatar-container {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  border-radius: 4px;
-  width: 88px;
-  height: 88px;
-  flex-shrink: 0;
-  margin-right: 20px;
-  transition: transform 0.4s ease;
-}
-
-.avatar-container:hover {
-  transform: scale(1.05);
 }
 
 .avatar {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  image-rendering: pixelated;
+  width: 96px;
+  height: 96px;
+  border-radius: 20px;
+  background: url("avatar.png") center/cover no-repeat;
+  margin-right: 20px;
 }
 
-.info {
+.text-block {
+  background: #2a2a2a;
+  border-radius: 16px;
+  padding: 12px 16px;
+  flex-grow: 1;
+  color: white;
+  font-size: 18px;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex: 1;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
-.info .name {
-  font-size: 28px;
-  font-weight: bold;
-  color: #111;
-}
-
-.socials {
+.tag {
   position: absolute;
-  bottom: 8px;
-  right: 8px;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.13);
+  border-radius: 12px;
+  padding: 4px 8px;
   display: flex;
-  gap: 8px;
-}
-
-.socials a {
-  width: 32px;
-  height: 32px;
-  display: block;
-  background-size: cover;
-  background-position: center;
-  border-radius: 4px;
+  align-items: center;
+  gap: 6px;
   transition: transform 0.3s ease;
 }
 
-.socials a:hover {
-  transform: scale(1.1);
+.tag:hover {
+  transform: scale(1.07);
 }
 
-.socials a.discord {
-  background-image: url('Discord.png');
+.tag img {
+  width: 18px;
+  height: 18px;
 }
 
-.socials a.twitter {
-  background-image: url('Twitter.png');
-}
-
-.socials a.youtube {
-  background-image: url('Youtube.png');
-}
-
-.bottom-row {
-  display: flex;
-  justify-content: center;
-  margin: 20px;
-  gap: 12px;
-}
-
-.block {
-  flex: 1;
-  aspect-ratio: 16 / 9;
-  background: #1c1c1c;
-  border-radius: 6px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.tag span {
+  font-size: 14px;
   color: white;
-  font-size: 20px;
 }
 
-.block::before {
-  content: "text";
+.name {
+  position: absolute;
+  top: 20px;
+  left: 140px;
+  font-size: 20px;
+  color: #cfcfcf;
 }
 
 .line {
   position: absolute;
-  bottom: 0;
+  bottom: -6px;
   left: 0;
   width: 100%;
-  height: auto;
+  height: 6px;
+  background: url("SssLine.png") center/contain no-repeat;
 }
 
 .update-date {
   position: absolute;
-  bottom: -28px;
-  right: 12px;
-  color: #111;
-  font-family: 'KiwiSoda', sans-serif;
+  bottom: 16px;
+  right: 20px;
   font-size: 14px;
+  color: #444;
+  opacity: 0.7;
 }
 
-@media (max-width: 600px) {
-  .content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+.socials {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
 
-  .avatar-container {
-    margin-right: 0;
-    margin-bottom: 12px;
-  }
+.socials img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
 
-  .info .name {
-    font-size: 24px;
-  }
+.socials img:hover {
+  transform: scale(1.15);
+}
+
+.former-buttons-area {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 6px 10px;
+  border-radius: 10px;
+  color: white;
+  font-size: 12px;
 }
 
   </style>
 </head>
 <body>
-  <div class="box" id="mainBox">
-    <img src="ImagesFolder/SssBanner.png" alt="Banner" class="banner" />
-    <div class="content">
-      <div class="avatar-container">
-        <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
+  <div class="container">
+    <div class="main-box">
+      <div class="avatar"></div>
+      <div class="text-block">
+        <span>This text always changes</span>
       </div>
-      <div class="info">
-        <div class="name">Sssmmilles</div>
+      <div class="tag">
+        <img src="Tag.png" alt="tag" />
+        <span>deS'z</span>
       </div>
+      <div class="name">Sssmmilles</div>
+      <div class="line"></div>
+      <div class="update-date">Updated: 5/7/2025</div>
+      <div class="socials">
+        <a href="#"><img src="Discord.png" alt="Discord" /></a>
+        <a href="#"><img src="Twitter.png" alt="Twitter" /></a>
+        <a href="#"><img src="Youtube.png" alt="YouTube" /></a>
+      </div>
+      <div class="former-buttons-area">text</div>
     </div>
-    <div class="bottom-row">
-      <div class="block"></div>
-    </div>
-    <div class="socials">
-      <a href="https://discord.com/users/1129546209485406299" class="discord" target="_blank"></a>
-      <a href="https://twitter.com/Sssmmilles" class="twitter" target="_blank"></a>
-      <a href="https://youtube.com/@Sssmmilles" class="youtube" target="_blank"></a>
-    </div>
-    <img src="ImagesFolder/SssLine.png" alt="Line" class="line" />
-    <div class="update-date">Updated: 5/7/2025</div>
   </div>
 </body>
 </html>
