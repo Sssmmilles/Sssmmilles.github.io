@@ -40,7 +40,6 @@
       border-radius: 4px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
       overflow: hidden;
-      transition: opacity 0.4s ease, transform 0.4s ease;
       position: relative;
       z-index: 3;
       padding-bottom: 20px;
@@ -48,15 +47,13 @@
 
     .banner {
       width: 100%;
-      height: auto;
       display: block;
-      margin: 0;
       image-rendering: pixelated;
     }
 
     .line {
       width: 100%;
-      height: 10px;
+      height: auto;
       display: block;
       position: absolute;
       bottom: 0;
@@ -113,6 +110,7 @@
       flex-wrap: wrap;
     }
 
+    /* Тег */
     .tag-label {
       display: flex;
       align-items: center;
@@ -127,10 +125,11 @@
     }
 
     .tag-label img {
-      width: 20px;
-      height: 20px;
+      width: 16px; /* уменьшено на 4px */
+      height: 16px;
       margin-right: 6px;
       image-rendering: pixelated;
+      transition: none; /* иконка не увеличивается */
     }
 
     .tag-label span {
@@ -138,25 +137,25 @@
       font-size: 16px;
     }
 
-    /* Блок с иконками-бейджами */
+    /* Бейджи */
     .badges {
       display: flex;
       align-items: center;
       gap: 4px;
+      background-color: rgba(0, 0, 0, 0.13);
+      border-radius: 4px;
+      padding: 2px 4px;
     }
 
     .badges img {
       width: 20px;
       height: 20px;
       image-rendering: pixelated;
-      background-color: rgba(0, 0, 0, 0.13); /* фон как у тега */
-      border-radius: 4px;
-      padding: 2px;
       transition: transform 0.4s ease;
     }
 
     .badges img:hover {
-      transform: scale(1.05);
+      transform: scale(1.2);
     }
 
     .socials {
@@ -218,7 +217,7 @@
           Sssmmilles
           <div class="tag-label">
             <img src="ImagesFolder/SssTag.png" alt="Tag Icon">
-            <span>SMLY</span>
+            <span>deS'z</span>
           </div>
           <div class="badges">
             <img src="ImagesFolder/1Badge.png" alt="Badge 1">
