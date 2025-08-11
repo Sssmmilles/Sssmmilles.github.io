@@ -125,11 +125,11 @@
     }    
     
     .tag-label img {    
-      width: 16px;    
+      width: 16px; /* уменьшено на 4px */    
       height: 16px;    
       margin-right: 6px;    
       image-rendering: pixelated;    
-      transition: none;    
+      transition: none; /* иконка не увеличивается */    
     }    
     
     .tag-label span {    
@@ -141,22 +141,21 @@
     .badges {    
       display: flex;    
       align-items: center;    
-      gap: 6px;    
+      gap: 4px;    
       background-color: rgba(0, 0, 0, 0.13);    
       border-radius: 4px;    
-      padding: 2px 8px;    
+      padding: 2px 4px;    
     }    
     
     .badges img {    
-      width: 16px;    
-      height: 16px;    
+      width: 20px;    
+      height: 20px;    
       image-rendering: pixelated;    
-      transition: none;    
-      margin: 0;    
+      transition: transform 0.4s ease;    
     }    
     
     .badges img:hover {    
-      transform: none;    
+      transform: scale(1.2);    
     }    
     
     .socials {    
