@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Sssmmilles</title>
@@ -112,12 +113,6 @@
       flex-wrap: wrap;
     }
 
-    .tag-container {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
     .tag-label {
       display: flex;
       align-items: center;
@@ -143,8 +138,10 @@
       font-size: 16px;
     }
 
+    /* Блок с иконками-бейджами */
     .badges {
       display: flex;
+      align-items: center;
       gap: 4px;
     }
 
@@ -176,16 +173,6 @@
       transform: scale(1.05);
     }
 
-    .update-label {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      font-family: 'KiwiSoda', sans-serif;
-      font-size: 14px;
-      color: #111;
-      opacity: 0.7;
-    }
-
     @media (max-width: 600px) {
       .content {
         flex-direction: column;
@@ -209,208 +196,6 @@
         justify-content: center;
       }
     }
-
-  </style>
-</head>
-<body>
-  <div class="box" id="mainBox">
-    <img src="ImagesFolder/SssBanner.png" alt="Banner" class="banner" />
-    <div class="content">
-      <div class="avatar-container">
-        <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
-      </div>
-      <div class="info">
-        <div class="name">
-          Sssmmilles
-          <div class="tag-container">
-            <div class="tag-label">
-              <img src="ImagesFolder/Tag.png" alt="Tag Icon">
-              <span>deS'z</span>
-            </div>
-            <div class="badges">
-              <img src="ImagesFolder/1badge.png" alt="Badge 1">
-              <img src="ImagesFolder/2badge.png" alt="Badge 2">
-              <img src="ImagesFolder/3badge.png" alt="Badge 3">
-              <img src="ImagesFolder/4badge.png" alt="Badge 4">
-            </div>
-          </div>
-        </div>
-        <div class="socials">
-          <a href="https://discord.com/users/1129546209485406299" target="_blank">Discord</a>
-          <a href="https://twitter.com/Sssmmilles" target="_blank">Twitter</a>
-          <a href="https://youtube.com/@Sssmmilles" target="_blank">YouTube</a>
-          <a href="https://tiktok.com/@Sssmmilles" target="_blank">TikTok</a>
-          <a href="https://evade-nextbot.fandom.com/wiki/User:Sssmmilles" target="_blank">Fandom</a>
-          <a href="https://github.com/Sssmmilles" target="_blank">GitHub</a>
-          <a href="https://steamcommunity.com/id/Sssmmilles/" target="_blank">Steam</a>
-          <a href="https://t.me/Sssmmilles" target="_blank">Telegram</a>
-          <a href="https://www.pixilart.com/sssmmilles/about" target="_blank">Pixil Art</a>
-          <a href="https://discord.gg/sdQvRUbWkU" target="_blank">Discord Server</a>
-          <a href="https://www.reddit.com/user/Tasty-Chemistry6085/" target="_blank">Reddit</a>
-        </div>
-      </div>
-    </div>
-    <img src="ImagesFolder/SssLine.png" alt="Line" class="line" />
-  </div>
-  <div class="update-label">Updated: 5/7/2025</div>
-</body>
-</html>  background: #bbb;
-  border-radius: 4px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  position: relative;
-  z-index: 3;
-  padding-bottom: 20px;
-}
-
-.banner {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0;
-  image-rendering: pixelated;
-}
-
-.line {
-  width: 100%;
-  height: 10px;
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-.content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 20px;
-  flex-wrap: wrap;
-  position: relative;
-}
-
-.avatar-container {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  border-radius: 4px;
-  width: 88px;
-  height: 88px;
-  flex-shrink: 0;
-  margin-right: 20px;
-  transition: transform 0.4s ease;
-}
-
-.avatar-container:hover {
-  transform: scale(1.05);
-}
-
-.avatar {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  image-rendering: pixelated;
-}
-
-.info {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex: 1;
-}
-
-.info .name {
-  font-size: 28px;
-  font-weight: bold;
-  color: #111;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.tag-label {
-  display: flex;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.13);
-  padding: 2px 8px;
-  border-radius: 4px;
-  transition: transform 0.4s ease;
-}
-
-.tag-label:hover {
-  transform: scale(1.05);
-}
-
-.tag-label img {
-  width: 20px;
-  height: 20px;
-  margin-right: 6px;
-  image-rendering: pixelated;
-}
-
-.tag-label span {
-  color: #111;
-  font-size: 16px;
-}
-
-.socials {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.socials a {
-  background-color: #555;
-  color: #eee;
-  text-decoration: none;
-  padding: 6px 14px;
-  border-radius: 4px;
-  font-size: 16px;
-  transition: background-color 0.2s, box-shadow 0.2s, transform 0.3s;
-}
-
-.socials a:hover {
-  background-color: #222;
-  box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.2);
-  transform: scale(1.05);
-}
-
-.update-label {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  font-family: 'KiwiSoda', sans-serif;
-  font-size: 14px;
-  color: #111;
-  opacity: 0.7;
-}
-
-@media (max-width: 600px) {
-  .content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .avatar-container {
-    margin-right: 0;
-    margin-bottom: 12px;
-  }
-
-  .info .name {
-    font-size: 24px;
-    flex-direction: column;
-    gap: 4px;
-    align-items: center;
-  }
-
-  .socials {
-    justify-content: center;
-  }
-}
-
   </style>
 </head>
 <body>
@@ -427,6 +212,12 @@
             <img src="ImagesFolder/Tag.png" alt="Tag Icon">
             <span>deS'z</span>
           </div>
+          <div class="badges">
+            <img src="ImagesFolder/1Badge.png" alt="Badge 1">
+            <img src="ImagesFolder/2Badge.png" alt="Badge 2">
+            <img src="ImagesFolder/3Badge.png" alt="Badge 3">
+            <img src="ImagesFolder/4Badge.png" alt="Badge 4">
+          </div>
         </div>
         <div class="socials">
           <a href="https://discord.com/users/1129546209485406299" target="_blank">Discord</a>
@@ -445,6 +236,5 @@
     </div>
     <img src="ImagesFolder/SssLine.png" alt="Line" class="line" />
   </div>
-  <div class="update-label">Updated: 5/7/2025</div>
 </body>
-  </html>
+                                                                          </html>
