@@ -34,7 +34,7 @@
     width: 95%;
     max-width: 720px;
     background: #bbb;
-    border-radius: 4px;
+    border-radius: 3px; /* уменьшено закругление */
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
     overflow: hidden;
     position: relative;
@@ -66,7 +66,7 @@
     position: relative;
     display: inline-block;
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: 3px;
     width: 88px;
     height: 88px;
     flex-shrink: 0;
@@ -103,9 +103,10 @@
     align-items: center;
     background-color: rgba(0,0,0,0.13);
     padding: 2px 8px;
-    border-radius: 4px;
+    border-radius: 3px;
     transition: transform 0.4s ease;
     cursor: pointer;
+    position: relative;
   }
   .tag-label:hover {
     transform: scale(1.05);
@@ -125,7 +126,7 @@
     align-items: center;
     gap: 4px;
     background-color: rgba(0,0,0,0.13);
-    border-radius: 4px;
+    border-radius: 3px;
     padding: 2px 4px;
   }
   .badges img {
@@ -147,7 +148,7 @@
     color: #eee;
     text-decoration: none;
     padding: 6px 14px;
-    border-radius: 4px;
+    border-radius: 3px;
     font-size: 16px;
     transition: background-color 0.2s, box-shadow 0.2s, transform 0.3s;
   }
@@ -178,22 +179,22 @@
   }
   .popup {
     position: absolute;
-    top: 120px;
-    left: 50%;
-    transform: translateX(-50%) scale(0.9);
+    top: 100%;
+    left: 0;
+    transform: translateY(10px) scale(0.95);
     width: 300px;
     background-color: #2b2b2b;
-    border-radius: 8px;
+    border-radius: 6px; /* меньшее закругление */
     box-shadow: 0 4px 12px rgba(0,0,0,0.5);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition: opacity 0.25s ease, transform 0.25s ease;
     z-index: 1000;
     overflow: hidden;
   }
   .popup.open {
     opacity: 1;
-    transform: translateX(-50%) scale(1);
+    transform: translateY(0) scale(1);
     pointer-events: auto;
   }
   .popup-banner {
@@ -211,13 +212,21 @@
   .popup-icon {
     width: 48px;
     height: 48px;
-    border-radius: 8px;
+    border-radius: 6px;
     margin-right: 10px;
     image-rendering: pixelated;
   }
   .popup-name {
     font-size: 18px;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .popup-name img {
+    width: 20px;
+    height: 20px;
+    image-rendering: pixelated;
   }
   .popup-discord-btn {
     position: absolute;
@@ -251,6 +260,19 @@
         <div class="tag-label" id="openPanel">
           <img src="ImagesFolder/SssTag.png" alt="Tag Icon">
           <span>Sss</span>
+          <div class="popup" id="serverPopup">
+            <img src="ImagesFolder/ServerBanner.png" alt="Banner" class="popup-banner">
+            <div class="popup-content">
+              <img src="ImagesFolder/ServerIcon.png" alt="Server Icon" class="popup-icon">
+              <div class="popup-name">
+                Smilelandium
+                <img src="ImagesFolder/Smile.png" alt="Smile">
+              </div>
+            </div>
+            <a href="https://discord.gg/sdQvRUbWkU" target="_blank" class="popup-discord-btn">
+              <img src="ImagesFolder/DiscordIcon.png" alt="Discord">
+            </a>
+          </div>
         </div>
         <div class="badges">
           <img src="ImagesFolder/1Badge.png" alt="Badge 1">
@@ -275,16 +297,6 @@
     </div>
   </div>
   <img src="ImagesFolder/SssLine.png" alt="Line" class="line" />
-</div>
-<div class="popup" id="serverPopup">
-  <img src="ImagesFolder/ServerBanner.png" alt="Banner" class="popup-banner">
-  <div class="popup-content">
-    <img src="ImagesFolder/ServerIcon.png" alt="Server Icon" class="popup-icon">
-    <div class="popup-name">Smilelandium</div>
-  </div>
-  <a href="https://discord.gg/sdQvRUbWkU" target="_blank" class="popup-discord-btn">
-    <img src="ImagesFolder/DiscordIcon.png" alt="Discord">
-  </a>
 </div>
 <script>
   const popup = document.getElementById('serverPopup');
