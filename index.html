@@ -178,13 +178,12 @@
     }  
   }  
 
-  /* Новый стиль попапа */
   .popup {  
     position: absolute;  
     top: 100%;  
-    left: 0;  
-    transform: translateY(10px) scale(0.95);  
-    width: 400px;  
+    left: 50%;  
+    transform: translate(-50%, 10px) scale(0.95);  
+    width: 520px;  
     background-color: #2b2b2b;  
     border-radius: 6px;  
     box-shadow: 0 4px 12px rgba(0,0,0,0.5);  
@@ -198,21 +197,27 @@
   }  
   .popup.open {  
     opacity: 1;  
-    transform: translateY(0) scale(1);  
+    transform: translate(-50%, 0) scale(1);  
     pointer-events: auto;  
   }  
   .popup-banner {  
     width: 100%;  
-    height: 140px;  
+    height: 200px;  
     object-fit: cover;  
+    object-position: center;  
     image-rendering: pixelated;  
+    display: block;  
+    flex-shrink: 0;  
+    border-top-left-radius: 6px;  
+    border-top-right-radius: 6px;  
+    margin: 0;  
   }  
   .popup-bottom {  
     background-color: #1f1f1f;  
     display: flex;  
     justify-content: space-between;  
     align-items: center;  
-    padding: 10px;  
+    padding: 12px;  
   }  
   .popup-left {  
     display: flex;  
@@ -220,8 +225,8 @@
     gap: 8px;  
   }  
   .popup-icon {  
-    width: 48px;  
-    height: 48px;  
+    width: 88px;  
+    height: 88px;  
     border-radius: 6px;  
     image-rendering: pixelated;  
     cursor: pointer;  
@@ -239,8 +244,8 @@
     gap: 6px;  
   }  
   .popup-name img {  
-    width: 20px;  
-    height: 20px;  
+    width: 16px;  
+    height: 16px;  
     image-rendering: pixelated;  
   }  
   .popup-discord-btn {  
@@ -323,6 +328,9 @@
   tagLabel.addEventListener('click', (e) => {  
     e.stopPropagation();  
     popup.classList.toggle('open');  
+  });  
+  popup.addEventListener('click', (e) => {  
+    e.stopPropagation();  
   });  
   document.addEventListener('click', (e) => {  
     if (!popup.contains(e.target) && !tagLabel.contains(e.target)) {  
