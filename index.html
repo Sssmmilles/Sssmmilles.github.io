@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>  
 <html lang="en">  
 <head>  
@@ -177,28 +178,6 @@
       justify-content: center;  
     }  
   }  
-  .popup {  
-    position: absolute;  
-    width: 80px;  
-    height: 200px;  
-    background-color: #2b2b2b;  
-    border-radius: 6px;  
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);  
-    opacity: 0;  
-    pointer-events: none;  
-    transition: opacity 0.25s ease;  
-    z-index: 1000;  
-    overflow: hidden;  
-    display: flex;  
-    flex-direction: column;  
-  }  
-  .popup.open {  
-    opacity: 1;  
-    pointer-events: auto;  
-  }  
-  .popup-banner, .popup-bottom {  
-    display: none;  
-  }  
 </style>  
 </head>  
 <body>  
@@ -214,7 +193,6 @@
         <div class="tag-label" id="openPanel">  
           <img src="ImagesFolder/SssTag.png" alt="Tag Icon">  
           <span>Sss</span>  
-          <div class="popup" id="serverPopup"></div>  
         </div>  
         <div class="badges">  
           <img src="ImagesFolder/1Badge.png" alt="Badge 1">  
@@ -233,36 +211,12 @@
         <a href="https://steamcommunity.com/id/Sssmmilles/" target="_blank">Steam</a>  
         <a href="https://t.me/Sssmmilles" target="_blank">Telegram</a>  
         <a href="https://www.pixilart.com/sssmmilles/about" target="_blank">Pixil Art</a>  
-        <a href="https://discord.gg/sdQvRUbWkU" target="_blank">Discord Server</a>  
+        <a href="https://discord.gg/PqXbZV3BW4" target="_blank">Discord Server</a>  
         <a href="https://www.reddit.com/user/Tasty-Chemistry6085/" target="_blank">Reddit</a>  
       </div>  
     </div>  
   </div>  
   <img src="ImagesFolder/SssLine.png" alt="Line" class="line" />  
 </div>  
-<script>  
-  const popup = document.getElementById('serverPopup');  
-  const tagLabel = document.getElementById('openPanel');  
-  tagLabel.addEventListener('click', (e) => {  
-    e.stopPropagation();  
-    if (popup.classList.contains('open')) {  
-      popup.classList.remove('open');  
-      return;  
-    }  
-    const rect = tagLabel.getBoundingClientRect();  
-    const bodyRect = document.body.getBoundingClientRect();  
-    popup.style.top = (rect.top - bodyRect.top) + 'px';  
-    popup.style.left = (rect.right - bodyRect.left + 5) + 'px';  
-    popup.classList.add('open');  
-  });  
-  popup.addEventListener('click', (e) => {  
-    e.stopPropagation();  
-  });  
-  document.addEventListener('click', (e) => {  
-    if (!popup.contains(e.target) && !tagLabel.contains(e.target)) {  
-      popup.classList.remove('open');  
-    }  
-  });  
-</script>  
 </body>  
-                                                                                           </html>
+            </html>
