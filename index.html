@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>  
 <html lang="en">  
 <head>  
@@ -84,6 +83,17 @@
     display: block;  
     image-rendering: pixelated;  
   }  
+
+  /* sticker над аватаркой */
+  .sticker {  
+    position: absolute;  
+    bottom: 0;  
+    right: 0;  
+    width: 32px;  
+    height: 32px;  
+    image-rendering: pixelated;  
+  }  
+
   .info {  
     display: flex;  
     flex-direction: column;  
@@ -111,6 +121,11 @@
   }  
   .tag-label:hover {  
     transform: scale(1.05);  
+  }  
+  .tag-label:focus,  
+  .tag-label:active {  
+    outline: none;  
+    background-color: rgba(0,0,0,0.13); /* оставляем тот же фон, без синего */  
   }  
   .tag-label img {  
     width: 16px;  
@@ -186,6 +201,7 @@
   <div class="content">  
     <div class="avatar-container">  
       <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">  
+      <img src="ImagesFolder/Sticker.png" alt="Sticker" class="sticker">  
     </div>  
     <div class="info">  
       <div class="name">  
@@ -197,8 +213,6 @@
         <div class="badges">  
           <img src="ImagesFolder/1Badge.png" alt="Badge 1">  
           <img src="ImagesFolder/2Badge.png" alt="Badge 2">  
-          <img src="ImagesFolder/3Badge.png" alt="Badge 3">  
-          <img src="ImagesFolder/4Badge.png" alt="Badge 4">  
         </div>  
       </div>  
       <div class="socials">  
@@ -219,4 +233,4 @@
   <img src="ImagesFolder/SssLine.png" alt="Line" class="line" />  
 </div>  
 </body>  
-            </html>
+</html>
