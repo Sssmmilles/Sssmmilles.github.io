@@ -34,7 +34,7 @@
     width: 95%;  
     max-width: 720px;  
     background: #bbb;  
-    border-radius: 12px; /* старое закругление */  
+    border-radius: 3px;  
     box-shadow: 0 0 20px rgba(0,0,0,0.4);  
     overflow: hidden;  
     position: relative;  
@@ -45,8 +45,6 @@
     width: 100%;  
     display: block;  
     image-rendering: pixelated;  
-    border-top-left-radius: 12px;  
-    border-top-right-radius: 12px;  
   }  
   .line {  
     width: 100%;  
@@ -67,14 +65,12 @@
   .avatar-container {  
     position: relative;  
     display: inline-block;  
-    border-radius: 50%;  
     width: 88px;  
     height: 88px;  
     flex-shrink: 0;  
     margin-right: 20px;  
     transition: transform 0.4s ease;  
     z-index: 1;  
-    overflow: hidden;  
   }  
   .avatar-container:hover {  
     transform: scale(1.05);  
@@ -85,7 +81,7 @@
     object-fit: cover;  
     display: block;  
     image-rendering: pixelated;  
-    border-radius: 50%;  
+    border-radius: 12px; /* ← старое закругление */  
   }  
   .info {  
     display: flex;  
@@ -220,4 +216,4 @@
   <img src="ImagesFolder/SssLine.png" alt="Line" class="line" />  
 </div>  
 </body>  
-  </html>
+    </html>
