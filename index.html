@@ -71,10 +71,6 @@
     height: 88px;  
     flex-shrink: 0;  
     margin-right: 20px;  
-    transition: transform 0.4s ease;  
-  }  
-  .avatar-container:hover {  
-    transform: scale(1.05);  
   }  
   .avatar {  
     width: 100%;  
@@ -82,15 +78,20 @@
     object-fit: cover;  
     display: block;  
     image-rendering: pixelated;  
+    transition: transform 0.4s ease;  
+  }  
+  .avatar-container:hover .avatar {  
+    transform: scale(1.05);  
   }  
   .sticker {  
     position: absolute;  
-    bottom: 4px;  
-    right: 4px;  
+    right: -4px;  
+    bottom: -4px;  
     width: 32px;  
     height: 32px;  
     image-rendering: pixelated;  
     transition: transform 0.3s ease;  
+    z-index: 5;  
   }  
   .sticker:hover {  
     transform: scale(1.2);  
@@ -234,4 +235,4 @@
   <img src="ImagesFolder/SssLine.png" alt="Line" class="line" />  
 </div>  
 </body>  
-  </html>
+        </html>
