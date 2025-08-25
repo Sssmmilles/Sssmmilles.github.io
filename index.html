@@ -34,7 +34,7 @@
     width: 95%;  
     max-width: 720px;  
     background: #bbb;  
-    border-radius: 3px;  
+    border-radius: 12px; /* старое закругление */  
     box-shadow: 0 0 20px rgba(0,0,0,0.4);  
     overflow: hidden;  
     position: relative;  
@@ -45,6 +45,8 @@
     width: 100%;  
     display: block;  
     image-rendering: pixelated;  
+    border-top-left-radius: 12px;  
+    border-top-right-radius: 12px;  
   }  
   .line {  
     width: 100%;  
@@ -83,6 +85,7 @@
     object-fit: cover;  
     display: block;  
     image-rendering: pixelated;  
+    border-radius: 50%;  
   }  
   .info {  
     display: flex;  
