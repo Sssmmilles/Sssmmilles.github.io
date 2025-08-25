@@ -65,13 +65,14 @@
   .avatar-container {  
     position: relative;  
     display: inline-block;  
-    border-radius: 3px;  
+    border-radius: 50%;  
     width: 88px;  
     height: 88px;  
     flex-shrink: 0;  
     margin-right: 20px;  
     transition: transform 0.4s ease;  
     z-index: 1;  
+    overflow: hidden;  
   }  
   .avatar-container:hover {  
     transform: scale(1.05);  
@@ -82,20 +83,6 @@
     object-fit: cover;  
     display: block;  
     image-rendering: pixelated;  
-  }  
-  .sticker {  
-    position: absolute;  
-    right: -16px;  
-    bottom: -16px;  
-    width: 40px;  
-    height: 40px;  
-    image-rendering: pixelated;  
-    transition: transform 0.3s ease;  
-    z-index: 5;  
-    pointer-events: auto;  
-  }  
-  .sticker:hover {  
-    transform: scale(1.2);  
   }  
   .info {  
     display: flex;  
@@ -199,7 +186,6 @@
   <div class="content">  
     <div class="avatar-container">  
       <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">  
-      <img src="ImagesFolder/Sticker.png" alt="Sticker" class="sticker">  
     </div>  
     <div class="info">  
       <div class="name">  
@@ -231,4 +217,4 @@
   <img src="ImagesFolder/SssLine.png" alt="Line" class="line" />  
 </div>  
 </body>  
-</html>
+  </html>
