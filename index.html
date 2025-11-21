@@ -60,9 +60,6 @@
     width: 100%;  
     height: auto;  
     display: block;  
-    position: absolute;  
-    bottom: 0;  
-    left: 0;  
   }  
   .content {  
     display: flex;  
@@ -75,8 +72,8 @@
   .avatar-container {  
     position: relative;  
     display: inline-block;  
-    width: 88px;  
-    height: 88px;  
+    width: 188px;  
+    height: 188px;  
     flex-shrink: 0;  
     margin-right: 20px;  
     transition: transform 0.4s ease;  
@@ -167,6 +164,7 @@
     box-shadow: 0 0 6px 2px rgba(255,255,255,0.2);  
     transform: scale(1.05);  
   }  
+
   .gallery-container {  
     background: #aaa;  
     padding: 6px;  
@@ -191,31 +189,31 @@
     z-index: 2;  
   }  
 
-  /* --- НОВЫЙ БЛОК --- */
-  .bottom-box {
-    background: #bdbdbd;
-    padding: 20px;
+  .new-block {
+    width: 95%;
+    max-width: 720px;
+    background: #bbb;
     border-radius: 3px;
-    margin: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    padding: 20px;
+    margin-top: 20px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
   }
 
-  .smilelandium-logo {
-    width: 140px;
+  .new-block img {
+    width: 240px;
     height: auto;
     image-rendering: pixelated;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 
-  .bottom-buttons {
+  .new-buttons {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    align-items: center;
   }
 
-  .bottom-buttons a {
+  .new-buttons a {
     background-color: #555;
     color: #eee;
     text-decoration: none;
@@ -225,36 +223,18 @@
     transition: background-color 0.2s, transform 0.3s;
   }
 
-  .bottom-buttons a:hover {
+  .new-buttons a:hover {
     background-color: #222;
     transform: scale(1.05);
   }
-  /* --- конец нового блока --- */
-
-  @media (max-width: 600px) {  
-    .content {  
-      flex-direction: column;  
-      align-items: center;  
-      text-align: center;  
-    }  
-    .avatar-container {  
-      margin-right: 0;  
-      margin-bottom: 12px;  
-    }  
-    .info .name {  
-      font-size: 24px;  
-      flex-direction: column;  
-      gap: 4px;  
-      align-items: center;  
-    }  
-    .socials {  
-      justify-content: center;  
-    }  
-  }  
 </style>  
 </head>  
 <body>  
-<div class="box" id="mainBox">  
+
+<div class="box" id="mainBox">
+
+  <img src="ImagesFolder/SssLine.png" class="line">
+
   <img src="ImagesFolder/SssBanner.png" alt="Banner" class="banner" />  
 
   <div class="content">  
@@ -294,29 +274,32 @@
   </div>  
 
   <div class="gallery-container">  
-    <img src="ImagesFolder/pic1.png" alt="pic1">  
-    <img src="ImagesFolder/pic2.png" alt="pic2">  
-    <img src="ImagesFolder/pic3.png" alt="pic3">  
-    <img src="ImagesFolder/pic4.png" alt="pic4">  
-    <img src="ImagesFolder/pic5.png" alt="pic5">  
-    <img src="ImagesFolder/pic6.png" alt="pic6">  
-    <img src="ImagesFolder/pic7.png" alt="pic7">  
-    <img src="ImagesFolder/pic8.png" alt="pic8">  
-    <img src="ImagesFolder/pic9.gif" alt="pic9">  
+    <img src="ImagesFolder/pic1.png">  
+    <img src="ImagesFolder/pic2.png">  
+    <img src="ImagesFolder/pic3.png">  
+    <img src="ImagesFolder/pic4.png">  
+    <img src="ImagesFolder/pic5.png">  
+    <img src="ImagesFolder/pic6.png">  
+    <img src="ImagesFolder/pic7.png">  
+    <img src="ImagesFolder/pic8.png">  
+    <img src="ImagesFolder/pic9.gif">  
   </div>  
 
-  <!-- Новый блок Smilelandium -->
-  <div class="bottom-box">
-    <img src="ImagesFolder/SmilelandiumLogo.png" class="smilelandium-logo" alt="Smilelandium Logo">
+  <img src="ImagesFolder/SssLine.png" class="line">
 
-    <div class="bottom-buttons">
-      <a href="https://www.roblox.com/communities/35162017" target="_blank">Roblox Group</a>
-      <a href="https://t.me/Smilelandium" target="_blank">Telegram Channel</a>
-      <a href="https://discord.gg/PqXbZV3BW4" target="_blank">Discord Server</a>
-    </div>
+</div>
+
+<div class="new-block">
+  <img src="ImagesFolder/SmilelandiumLogo.png">
+
+  <div class="new-buttons">
+    <a href="https://www.roblox.com/communities/35162017" target="_blank">Roblox Group</a>
+    <a href="https://t.me/Smilelandium" target="_blank">Telegram Channel</a>
+    <a href="https://discord.gg/PqXbZV3BW4" target="_blank">Discord Server</a>
   </div>
 
-  <img src="ImagesFolder/SssLine.png" alt="Line" class="line" />  
-</div>  
+  <img src="ImagesFolder/SssLine.png" class="line">
+</div>
+
 </body>  
   </html>
