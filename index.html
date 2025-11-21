@@ -34,12 +34,13 @@
   }  
   body {  
     display: flex;  
+    flex-direction: column;
     justify-content: center;  
     align-items: center;  
     position: relative;  
     overflow: hidden;  
   }  
-  .box {  
+  .box, .block-two {
     width: 95%;  
     max-width: 720px;  
     background: #bbb;  
@@ -47,10 +48,10 @@
     box-shadow: 0 0 20px rgba(0,0,0,0.4);  
     overflow: hidden;  
     position: relative;  
-    z-index: 3;  
     padding-bottom: 20px;  
-    margin-bottom: 82px;  
-  }  
+    margin-bottom: 20px;  
+    text-align: center;
+  }
   .banner {  
     width: 100%;  
     display: block;  
@@ -59,7 +60,7 @@
   .line {  
     width: 100%;  
     height: auto;  
-    display: block;  
+    image-rendering: pixelated;  
   }  
   .content {  
     display: flex;  
@@ -70,14 +71,11 @@
     position: relative;  
   }  
   .avatar-container {  
-    position: relative;  
-    display: inline-block;  
     width: 188px;  
     height: 188px;  
     flex-shrink: 0;  
     margin-right: 20px;  
     transition: transform 0.4s ease;  
-    z-index: 1;  
   }  
   .avatar-container:hover {  
     transform: scale(1.05);  
@@ -86,7 +84,6 @@
     width: 100%;  
     height: 100%;  
     object-fit: cover;  
-    display: block;  
     image-rendering: pixelated;  
     border-radius: 4px;  
   }  
@@ -113,125 +110,39 @@
     border-radius: 3px;  
     transition: transform 0.4s ease;  
     cursor: pointer;  
-    position: relative;  
   }  
   .tag-label:hover {  
     transform: scale(1.05);  
   }  
-  .tag-label img {  
-    width: 16px;  
-    height: 16px;  
-    margin-right: 6px;  
-    image-rendering: pixelated;  
-  }  
-  .tag-label span {  
-    color: #111;  
-    font-size: 16px;  
-  }  
-  .badges {  
-    display: flex;  
-    align-items: center;  
-    gap: 4px;  
-    background-color: rgba(0,0,0,0.13);  
-    border-radius: 3px;  
-    padding: 2px 4px;  
-  }  
-  .badges img {  
-    width: 20px;  
-    height: 20px;  
-    image-rendering: pixelated;  
-    transition: transform 0.4s ease;  
-  }  
-  .badges img:hover {  
-    transform: scale(1.2);  
-  }  
-  .socials {  
-    display: flex;  
-    flex-wrap: wrap;  
-    gap: 8px;  
-  }  
-  .socials a {  
-    background-color: #555;  
-    color: #eee;  
-    text-decoration: none;  
-    padding: 6px 14px;  
-    border-radius: 3px;  
-    font-size: 16px;  
-    transition: background-color 0.2s, box-shadow 0.2s, transform 0.3s;  
-  }  
-  .socials a:hover {  
-    background-color: #222;  
-    box-shadow: 0 0 6px 2px rgba(255,255,255,0.2);  
-    transform: scale(1.05);  
-  }  
+  .tag-label img { width: 16px; height: 16px; margin-right: 6px; image-rendering: pixelated; }  
+  .tag-label span { color: #111; font-size: 16px; }  
+  .badges { display: flex; align-items: center; gap: 4px; background-color: rgba(0,0,0,0.13); border-radius: 3px; padding: 2px 4px; }  
+  .badges img { width: 20px; height: 20px; image-rendering: pixelated; transition: transform 0.4s ease; }  
+  .badges img:hover { transform: scale(1.2); }  
+  .socials { display: flex; flex-wrap: wrap; gap: 8px; }  
+  .socials a { background-color: #555; color: #eee; text-decoration: none; padding: 6px 14px; border-radius: 3px; font-size: 16px; transition: background-color 0.2s, box-shadow 0.2s, transform 0.3s; }  
+  .socials a:hover { background-color: #222; box-shadow: 0 0 6px 2px rgba(255,255,255,0.2); transform: scale(1.05); }  
+  .gallery-container { background: #aaa; padding: 6px; margin: 4px 10px; border-radius: 3px; overflow-x: auto; display: flex; justify-content: flex-start; gap: 12px; scroll-behavior: smooth; }  
+  .gallery-container img { width: 100px; height: 100px; object-fit: cover; border-radius: 3px; transition: transform 0.4s ease; flex-shrink: 0; }  
+  .gallery-container img:hover { transform: scale(1.05); z-index: 2; }  
 
-  .gallery-container {  
-    background: #aaa;  
-    padding: 6px;  
-    margin: 4px 10px;  
-    border-radius: 3px;  
-    overflow-x: auto;  
-    display: flex;  
-    justify-content: flex-start;  
-    gap: 12px;  
-    scroll-behavior: smooth;  
+  .smilelandium-logo { width: 280px; height: auto; image-rendering: pixelated; margin-bottom: 20px; }  
+
+  .new-buttons { display: flex; flex-direction: column; gap: 10px; align-items: center; }  
+  .new-buttons a { background-color: #555; color: #eee; text-decoration: none; padding: 6px 14px; border-radius: 3px; font-size: 16px; transition: background-color 0.2s, box-shadow 0.2s, transform 0.3s; }  
+  .new-buttons a:hover { background-color: #222; box-shadow: 0 0 6px 2px rgba(255,255,255,0.2); transform: scale(1.05); }  
+
+  @media (max-width: 600px) {  
+    .content { flex-direction: column; align-items: center; text-align: center; }  
+    .avatar-container { margin-right: 0; margin-bottom: 12px; }  
+    .info .name { font-size: 24px; flex-direction: column; gap: 4px; align-items: center; }  
+    .socials { justify-content: center; }  
   }  
-  .gallery-container img {  
-    width: 100px;  
-    height: 100px;  
-    object-fit: cover;  
-    border-radius: 3px;  
-    transition: transform 0.4s ease;  
-    flex-shrink: 0;  
-  }  
-  .gallery-container img:hover {  
-    transform: scale(1.05);  
-    z-index: 2;  
-  }  
-
-  .new-block {
-    width: 95%;
-    max-width: 720px;
-    background: #bbb;
-    border-radius: 3px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
-    padding: 20px;
-    margin-top: 20px;
-    text-align: center;
-  }
-
-  .new-block img {
-    width: 240px;
-    height: auto;
-    image-rendering: pixelated;
-    margin-bottom: 20px;
-  }
-
-  .new-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .new-buttons a {
-    background-color: #555;
-    color: #eee;
-    text-decoration: none;
-    padding: 8px 20px;
-    border-radius: 3px;
-    font-size: 18px;
-    transition: background-color 0.2s, transform 0.3s;
-  }
-
-  .new-buttons a:hover {
-    background-color: #222;
-    transform: scale(1.05);
-  }
 </style>  
 </head>  
 <body>  
 
-<div class="box" id="mainBox">
+<div class="box">
 
   <img src="ImagesFolder/SssLine.png" class="line">
 
@@ -244,7 +155,7 @@
     <div class="info">  
       <div class="name">  
         Sssmmilles  
-        <div class="tag-label" id="openPanel">  
+        <div class="tag-label">  
           <img src="ImagesFolder/SssTag.png" alt="Tag Icon">  
           <span>Sss</span>  
         </div>  
@@ -288,23 +199,22 @@
   <img src="ImagesFolder/SssLine.png" class="line">
 
 </div>
-  
+
 <div class="block-two">
 
-  <img src="ImagesFolder/SssLine.png" alt="Line" class="line" />
+  <img src="ImagesFolder/SssLine.png" class="line" />
 
-  <div class="bottom-box">
-    <img src="ImagesFolder/SmilelandiumLogo.png" class="smilelandium-logo" alt="Smilelandium Logo">
+  <img src="ImagesFolder/SmilelandiumLogo.png" class="smilelandium-logo" alt="Smilelandium Logo">
 
-    <div class="bottom-buttons">
-      <a href="https://www.roblox.com/communities/35162017" target="_blank">Roblox Group</a>
-      <a href="https://t.me/Smilelandium" target="_blank">Telegram Channel</a>
-      <a href="https://discord.gg/PqXbZV3BW4" target="_blank">Discord Server</a>
-    </div>
+  <div class="new-buttons">
+    <a href="https://www.roblox.com/communities/35162017" target="_blank">Roblox Group</a>
+    <a href="https://t.me/Smilelandium" target="_blank">Telegram Channel</a>
+    <a href="https://discord.gg/PqXbZV3BW4" target="_blank">Discord Server</a>
   </div>
 
-  <img src="ImagesFolder/SssLine.png" alt="Line" class="line" />
+  <img src="ImagesFolder/SssLine.png" class="line" />
 
 </div>
-</body>
-</html>
+
+</body>  
+  </html>
