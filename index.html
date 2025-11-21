@@ -190,6 +190,47 @@
     transform: scale(1.05);  
     z-index: 2;  
   }  
+
+  /* --- НОВЫЙ БЛОК --- */
+  .bottom-box {
+    background: #bdbdbd;
+    padding: 20px;
+    border-radius: 3px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+
+  .smilelandium-logo {
+    width: 140px;
+    height: auto;
+    image-rendering: pixelated;
+    margin-bottom: 15px;
+  }
+
+  .bottom-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .bottom-buttons a {
+    background-color: #555;
+    color: #eee;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 3px;
+    font-size: 18px;
+    transition: background-color 0.2s, transform 0.3s;
+  }
+
+  .bottom-buttons a:hover {
+    background-color: #222;
+    transform: scale(1.05);
+  }
+  /* --- конец нового блока --- */
+
   @media (max-width: 600px) {  
     .content {  
       flex-direction: column;  
@@ -215,6 +256,7 @@
 <body>  
 <div class="box" id="mainBox">  
   <img src="ImagesFolder/SssBanner.png" alt="Banner" class="banner" />  
+
   <div class="content">  
     <div class="avatar-container">  
       <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">  
@@ -250,6 +292,7 @@
       </div>  
     </div>  
   </div>  
+
   <div class="gallery-container">  
     <img src="ImagesFolder/pic1.png" alt="pic1">  
     <img src="ImagesFolder/pic2.png" alt="pic2">  
@@ -261,7 +304,19 @@
     <img src="ImagesFolder/pic8.png" alt="pic8">  
     <img src="ImagesFolder/pic9.gif" alt="pic9">  
   </div>  
+
+  <!-- Новый блок Smilelandium -->
+  <div class="bottom-box">
+    <img src="ImagesFolder/SmilelandiumLogo.png" class="smilelandium-logo" alt="Smilelandium Logo">
+
+    <div class="bottom-buttons">
+      <a href="https://www.roblox.com/communities/35162017" target="_blank">Roblox Group</a>
+      <a href="https://t.me/Smilelandium" target="_blank">Telegram Channel</a>
+      <a href="https://discord.gg/PqXbZV3BW4" target="_blank">Discord Server</a>
+    </div>
+  </div>
+
   <img src="ImagesFolder/SssLine.png" alt="Line" class="line" />  
 </div>  
 </body>  
-      </html>
+  </html>
