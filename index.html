@@ -1,10 +1,10 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-<meta charset="UTF-8" />  
-<title>Sssmmilles</title>  
-<link rel="icon" href="ImagesFolder/Favicon.png" type="image/png" />  
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Sssmmilles</title>
+<link rel="icon" href="ImagesFolder/Favicon.png" type="image/png" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="Official website of Sssmmilles — links, projects, art and social media.">
 <meta name="keywords" content="Sssmmilles, sssmmilles.github.io, Sss, Sssmmilles, Smile, Discord, Social links.">
 <meta name="author" content="Sssmmilles">
@@ -14,207 +14,213 @@
 <meta property="og:url" content="https://sssmmilles.github.io/">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://sssmmilles.github.io/">
-<style>  
-  @font-face {  
-    font-family: 'KiwiSoda';  
-    src: url('KiwiSoda.ttf') format('truetype');  
-  }  
-  * {  
-    box-sizing: border-box;  
-    image-rendering: crisp-edges;  
-    image-rendering: pixelated;  
-  }  
-  html, body {  
-    margin: 0;  
-    padding: 0;  
-    font-family: 'KiwiSoda', sans-serif;  
-    background-color: #3c3c3c;  
-    width: 100%;  
-    height: 100%;  
-  }  
-  body {  
-    display: flex;  
-    flex-direction: column;
-    justify-content: center;  
-    align-items: center;  
-    position: relative;  
-    overflow: hidden;  
-  }  
-  .box, .block-two {
-    width: 95%;  
-    max-width: 720px;  
-    background: #bbb;  
-    border-radius: 3px;  
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);  
-    overflow: hidden;  
-    position: relative;  
-    padding-bottom: 20px;  
-    margin-bottom: 20px;  
-    text-align: center;
-  }
-  .banner {  
-    width: 100%;  
-    display: block;  
-    image-rendering: pixelated;  
-  }  
-  .line {  
-    width: 100%;  
-    height: auto;  
-    image-rendering: pixelated;  
-  }  
-  .content {  
-    display: flex;  
-    flex-direction: row;  
-    align-items: center;  
-    padding: 20px;  
-    flex-wrap: wrap;  
-    position: relative;  
-  }  
-  .avatar-container {  
-    width: 188px;  
-    height: 188px;  
-    flex-shrink: 0;  
-    margin-right: 20px;  
-    transition: transform 0.4s ease;  
-  }  
-  .avatar-container:hover {  
-    transform: scale(1.05);  
-  }  
-  .avatar {  
-    width: 100%;  
-    height: 100%;  
-    object-fit: cover;  
-    image-rendering: pixelated;  
-    border-radius: 4px;  
-  }  
-  .info {  
-    display: flex;  
-    flex-direction: column;  
-    gap: 8px;  
-    flex: 1;  
-  }  
-  .info .name {  
-    font-size: 28px;  
-    font-weight: bold;  
-    color: #111;  
-    display: flex;  
-    align-items: center;  
-    gap: 10px;  
-    flex-wrap: wrap;  
-  }  
-  .tag-label {  
-    display: flex;  
-    align-items: center;  
-    background-color: rgba(0,0,0,0.13);  
-    padding: 2px 8px;  
-    border-radius: 3px;  
-    transition: transform 0.4s ease;  
-    cursor: pointer;  
-  }  
-  .tag-label:hover {  
-    transform: scale(1.05);  
-  }  
-  .tag-label img { width: 16px; height: 16px; margin-right: 6px; image-rendering: pixelated; }  
-  .tag-label span { color: #111; font-size: 16px; }  
-  .badges { display: flex; align-items: center; gap: 4px; background-color: rgba(0,0,0,0.13); border-radius: 3px; padding: 2px 4px; }  
-  .badges img { width: 20px; height: 20px; image-rendering: pixelated; transition: transform 0.4s ease; }  
-  .badges img:hover { transform: scale(1.2); }  
-  .socials { display: flex; flex-wrap: wrap; gap: 8px; }  
-  .socials a { background-color: #555; color: #eee; text-decoration: none; padding: 6px 14px; border-radius: 3px; font-size: 16px; transition: background-color 0.2s, box-shadow 0.2s, transform 0.3s; }  
-  .socials a:hover { background-color: #222; box-shadow: 0 0 6px 2px rgba(255,255,255,0.2); transform: scale(1.05); }  
-  .gallery-container { background: #aaa; padding: 6px; margin: 4px 10px; border-radius: 3px; overflow-x: auto; display: flex; justify-content: flex-start; gap: 12px; scroll-behavior: smooth; }  
-  .gallery-container img { width: 100px; height: 100px; object-fit: cover; border-radius: 3px; transition: transform 0.4s ease; flex-shrink: 0; }  
-  .gallery-container img:hover { transform: scale(1.05); z-index: 2; }  
 
-  .smilelandium-logo { width: 280px; height: auto; image-rendering: pixelated; margin-bottom: 20px; }  
+<style>
+@font-face {
+  font-family: 'KiwiSoda';
+  src: url('KiwiSoda.ttf') format('truetype');
+}
+* {
+  box-sizing: border-box;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'KiwiSoda', sans-serif;
+  background-color: #3c3c3c;
+  width: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
 
-  .new-buttons { display: flex; flex-direction: column; gap: 10px; align-items: center; }  
-  .new-buttons a { background-color: #555; color: #eee; text-decoration: none; padding: 6px 14px; border-radius: 3px; font-size: 16px; transition: background-color 0.2s, box-shadow 0.2s, transform 0.3s; }  
-  .new-buttons a:hover { background-color: #222; box-shadow: 0 0 6px 2px rgba(255,255,255,0.2); transform: scale(1.05); }  
+/* Первый блок */
+.box {
+  width: 95%;
+  max-width: 720px;
+  background: #bbb;
+  border-radius: 3px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.banner {
+  width: 100%;
+  display: block;
+  image-rendering: pixelated;
+}
+.line {
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.avatar-container {
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
+  margin-right: 20px;
+  transition: transform 0.4s ease;
+}
+.avatar-container:hover { transform: scale(1.05); }
+.avatar { width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; border-radius: 4px; }
+.info { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.info .name {
+  font-size: 28px; font-weight: bold; color: #111;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.tag-label {
+  display: flex; align-items: center;
+  background-color: rgba(0,0,0,0.13);
+  padding: 2px 8px; border-radius: 3px;
+  transition: transform 0.4s ease; cursor: pointer;
+}
+.tag-label:hover { transform: scale(1.05); }
+.tag-label img { width:16px; height:16px; margin-right:6px; }
+.tag-label span { color:#111; font-size:16px; }
+.badges { display:flex; align-items:center; gap:4px; background-color: rgba(0,0,0,0.13); border-radius:3px; padding:2px 4px;}
+.badges img { width:20px; height:20px; transition:transform 0.4s ease;}
+.badges img:hover { transform: scale(1.2); }
+.socials { display:flex; flex-wrap:wrap; gap:8px; }
+.socials a {
+  background-color:#555; color:#eee; text-decoration:none;
+  padding:6px 14px; border-radius:3px; font-size:16px;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.3s;
+}
+.socials a:hover { background-color:#222; box-shadow:0 0 6px 2px rgba(255,255,255,0.2); transform:scale(1.05); }
 
-  @media (max-width: 600px) {  
-    .content { flex-direction: column; align-items: center; text-align: center; }  
-    .avatar-container { margin-right: 0; margin-bottom: 12px; }  
-    .info .name { font-size: 24px; flex-direction: column; gap: 4px; align-items: center; }  
-    .socials { justify-content: center; }  
-  }  
-</style>  
-</head>  
-<body>  
+.gallery-container {
+  background:#aaa; padding:6px; margin:4px 10px;
+  border-radius:3px; overflow-x:auto;
+  display:flex; justify-content:flex-start; gap:12px; scroll-behavior:smooth;
+}
+.gallery-container img {
+  width:100px; height:100px; object-fit:cover;
+  border-radius:3px; transition:transform 0.4s ease; flex-shrink:0;
+}
+.gallery-container img:hover { transform: scale(1.05); z-index:2; }
 
+/* Второй блок */
+.block-two {
+  width: 95%;
+  max-width: 720px;
+  background:#bbb;
+  border-radius:3px;
+  box-shadow:0 0 20px rgba(0,0,0,0.4);
+  overflow:hidden;
+  padding:20px;
+  margin-bottom: 40px;
+  text-align:center;
+}
+.block-two .smilelandium-logo {
+  width: 320px;
+  height: auto;
+  margin-bottom: 20px;
+  image-rendering: pixelated;
+}
+.block-two .new-buttons {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+}
+.block-two .new-buttons a {
+  background-color:#555; color:#eee; text-decoration:none;
+  padding:6px 14px; border-radius:3px; font-size:16px;
+  transition:background-color 0.2s, box-shadow 0.2s, transform 0.3s;
+}
+.block-two .new-buttons a:hover { background-color:#222; box-shadow:0 0 6px 2px rgba(255,255,255,0.2); transform:scale(1.05); }
+
+/* Мобильная поддержка */
+@media (max-width: 600px) {
+  .content { flex-direction: column; align-items:center; text-align:center; }
+  .avatar-container { margin-right:0; margin-bottom:12px; }
+  .info .name { font-size:24px; flex-direction: column; gap:4px; align-items:center; }
+  .socials { justify-content:center; }
+  .block-two .smilelandium-logo { width:240px; }
+  .block-two .new-buttons { flex-direction:column; }
+}
+</style>
+</head>
+<body>
+
+<!-- Первый блок -->
 <div class="box">
-
-  <img src="ImagesFolder/SssLine.png" class="line">
-
-  <img src="ImagesFolder/SssBanner.png" alt="Banner" class="banner" />  
-
-  <div class="content">  
-    <div class="avatar-container">  
-      <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">  
-    </div>  
-    <div class="info">  
-      <div class="name">  
-        Sssmmilles  
-        <div class="tag-label">  
-          <img src="ImagesFolder/SssTag.png" alt="Tag Icon">  
-          <span>Sss</span>  
-        </div>  
-        <div class="badges">  
-          <img src="ImagesFolder/1Badge.png" alt="Badge 1">  
-          <img src="ImagesFolder/2Badge.png" alt="Badge 2">  
-          <img src="ImagesFolder/3Badge.png" alt="Badge 3">  
-        </div>  
-      </div>  
-      <div class="socials">  
-        <a href="https://discord.com/users/1129546209485406299" target="_blank">Discord</a>  
-        <a href="https://twitter.com/Sssmmilles" target="_blank">Twitter</a>  
-        <a href="https://youtube.com/@Sssmmilles" target="_blank">YouTube</a>  
-        <a href="https://tiktok.com/@Sssmmilles" target="_blank">TikTok</a>  
-        <a href="https://evade-nextbot.fandom.com/wiki/User:Sssmmilles" target="_blank">Fandom</a>  
-        <a href="https://github.com/Sssmmilles" target="_blank">GitHub</a>  
-        <a href="https://steamcommunity.com/id/Sssmmilles/" target="_blank">Steam</a>  
-        <a href="https://t.me/Sssmmilles" target="_blank">Telegram</a>  
-        <a href="https://www.pixilart.com/sssmmilles/about" target="_blank">Pixil Art</a>  
-        <a href="https://discord.gg/PqXbZV3BW4" target="_blank">Discord Server</a>  
-        <a href="https://www.reddit.com/user/Tasty-Chemistry6085/" target="_blank">Reddit</a>  
-        <a href="https://boosty.to/sssmmilles" target="_blank">Boosty</a>  
-        <a href="https://spotify.link/40h9ssOxMXb" target="_blank">Spotify</a>  
-        <a href="https://www.roblox.com/communities/35162017" target="_blank">Roblox Group</a>  
-      </div>  
-    </div>  
-  </div>  
-
-  <div class="gallery-container">  
-    <img src="ImagesFolder/pic1.png">  
-    <img src="ImagesFolder/pic2.png">  
-    <img src="ImagesFolder/pic3.png">  
-    <img src="ImagesFolder/pic4.png">  
-    <img src="ImagesFolder/pic5.png">  
-    <img src="ImagesFolder/pic6.png">  
-    <img src="ImagesFolder/pic7.png">  
-    <img src="ImagesFolder/pic8.png">  
-    <img src="ImagesFolder/pic9.gif">  
-  </div>  
-
-  <img src="ImagesFolder/SssLine.png" class="line">
-
+  <img src="ImagesFolder/SssBanner.png" alt="Banner" class="banner" />
+  <div class="content">
+    <div class="avatar-container">
+      <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
+    </div>
+    <div class="info">
+      <div class="name">
+        Sssmmilles
+        <div class="tag-label">
+          <img src="ImagesFolder/SssTag.png" alt="Tag Icon">
+          <span>Sss</span>
+        </div>
+        <div class="badges">
+          <img src="ImagesFolder/1Badge.png" alt="Badge 1">
+          <img src="ImagesFolder/2Badge.png" alt="Badge 2">
+          <img src="ImagesFolder/3Badge.png" alt="Badge 3">
+        </div>
+      </div>
+      <div class="socials">
+        <a href="https://discord.com/users/1129546209485406299" target="_blank">Discord</a>
+        <a href="https://twitter.com/Sssmmilles" target="_blank">Twitter</a>
+        <a href="https://youtube.com/@Sssmmilles" target="_blank">YouTube</a>
+        <a href="https://tiktok.com/@Sssmmilles" target="_blank">TikTok</a>
+        <a href="https://evade-nextbot.fandom.com/wiki/User:Sssmmilles" target="_blank">Fandom</a>
+        <a href="https://github.com/Sssmmilles" target="_blank">GitHub</a>
+        <a href="https://steamcommunity.com/id/Sssmmilles/" target="_blank">Steam</a>
+        <a href="https://t.me/Sssmmilles" target="_blank">Telegram</a>
+        <a href="https://www.pixilart.com/sssmmilles/about" target="_blank">Pixil Art</a>
+        <a href="https://discord.gg/PqXbZV3BW4" target="_blank">Discord Server</a>
+        <a href="https://www.reddit.com/user/Tasty-Chemistry6085/" target="_blank">Reddit</a>
+        <a href="https://boosty.to/sssmmilles" target="_blank">Boosty</a>
+        <a href="https://spotify.link/40h9ssOxMXb" target="_blank">Spotify</a>
+        <a href="https://www.roblox.com/communities/35162017" target="_blank">Roblox Group</a>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-container">
+    <img src="ImagesFolder/pic1.png" alt="pic1">
+    <img src="ImagesFolder/pic2.png" alt="pic2">
+    <img src="ImagesFolder/pic3.png" alt="pic3">
+    <img src="ImagesFolder/pic4.png" alt="pic4">
+    <img src="ImagesFolder/pic5.png" alt="pic5">
+    <img src="ImagesFolder/pic6.png" alt="pic6">
+    <img src="ImagesFolder/pic7.png" alt="pic7">
+    <img src="ImagesFolder/pic8.png" alt="pic8">
+    <img src="ImagesFolder/pic9.gif" alt="pic9">
+  </div>
+  <img src="ImagesFolder/SssLine.png" alt="Line" class="line" />
 </div>
 
 <div class="block-two">
-
-  <img src="ImagesFolder/SssLine.png" class="line" />
-
+  <img src="ImagesFolder/SssLine.png" alt="Line" class="line" />
   <img src="ImagesFolder/SmilelandiumLogo.png" class="smilelandium-logo" alt="Smilelandium Logo">
-
   <div class="new-buttons">
     <a href="https://www.roblox.com/communities/35162017" target="_blank">Roblox Group</a>
     <a href="https://t.me/Smilelandium" target="_blank">Telegram Channel</a>
     <a href="https://discord.gg/PqXbZV3BW4" target="_blank">Discord Server</a>
   </div>
-
-  <img src="ImagesFolder/SssLine.png" class="line" />
-
+  <img src="ImagesFolder/SssLine.png" alt="Line" class="line" />
 </div>
 
-</body>  
-    </html>
+</body>
+  </html>
