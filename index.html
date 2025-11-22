@@ -5,6 +5,9 @@
 <title>Sssmmilles</title>
 <link rel="icon" href="ImagesFolder/Favicon.png" type="image/png" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Official website of Sssmmilles — links, projects, art and social media.">
+<meta name="keywords" content="Sssmmilles, sssmmilles.github.io, Sss, Sssmmilles, Smile, Discord, Social links.">
+<meta name="author" content="Sssmmilles">
 
 <style>
 @font-face {
@@ -13,6 +16,7 @@
 }
 * {
   box-sizing: border-box;
+  image-rendering: crisp-edges;
   image-rendering: pixelated;
 }
 html, body {
@@ -26,20 +30,23 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 40px 0;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
-.full-line {
-  width: 100vw;
-  max-width: 100%;
+/* Линии */
+.line-full {
+  width: 100%;
   display: block;
   image-rendering: pixelated;
   margin: 0;
   padding: 0;
+  border: 0;
 }
 
+/* Первый блок */
 .box {
   width: 95%;
   max-width: 720px;
@@ -47,115 +54,77 @@ body {
   border-radius: 3px;
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
   overflow: hidden;
-  margin: 40px 0;
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
   text-align: center;
 }
 .banner {
   width: 100%;
   display: block;
+  image-rendering: pixelated;
 }
-
 .content {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 20px;
   flex-wrap: wrap;
-  justify-content: center;
 }
-
 .avatar-container {
   width: 88px;
   height: 88px;
-  flex-shrink: 0;
   margin-right: 20px;
   transition: transform 0.4s ease;
 }
 .avatar-container:hover { transform: scale(1.05); }
-.avatar { width: 100%; height: 100%; border-radius: 4px; object-fit: cover; }
+.avatar { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
 
-.info {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.name {
+.info { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+
+.info .name {
   font-size: 28px;
   font-weight: bold;
   color: #111;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   gap: 10px;
-  justify-content: center;
+  flex-wrap: wrap;
 }
-
 .tag-label {
-  display: flex;
-  align-items: center;
+  display: flex; align-items: center;
   background-color: rgba(0,0,0,0.13);
-  padding: 2px 8px;
-  border-radius: 3px;
-  transition: transform 0.4s ease;
+  padding: 2px 8px; border-radius: 3px;
+  transition: transform 0.4s ease; cursor: pointer;
 }
 .tag-label:hover { transform: scale(1.05); }
-.tag-label img { width: 16px; height: 16px; margin-right: 6px; }
-.tag-label span { color: #111; font-size: 16px; }
+.tag-label img { width:16px; height:16px; margin-right:6px; }
+.tag-label span { color:#111; font-size:16px; }
 
-.badges {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  background-color: rgba(0,0,0,0.13);
-  padding: 2px 4px;
-  border-radius: 3px;
-}
-.badges img {
-  width: 20px;
-  height: 20px;
-  transition: transform 0.4s ease;
-}
+.badges { display:flex; align-items:center; gap:4px; background-color: rgba(0,0,0,0.13); border-radius:3px; padding:2px 4px;}
+.badges img { width:20px; height:20px; transition:transform 0.4s ease;}
 .badges img:hover { transform: scale(1.2); }
 
-.socials {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-}
+.socials { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
 .socials a {
-  background-color:#555;
-  color:#eee;
-  text-decoration:none;
-  padding:6px 14px;
-  border-radius:3px;
-  font-size:16px;
-  transition:background-color 0.2s, box-shadow 0.2s, transform 0.3s;
+  background-color:#555; color:#eee; text-decoration:none;
+  padding:6px 14px; border-radius:3px; font-size:16px;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.3s;
 }
-.socials a:hover {
-  background-color:#222;
-  box-shadow:0 0 6px 2px rgba(255,255,255,0.2);
-  transform:scale(1.05);
-}
+.socials a:hover { background-color:#222; box-shadow:0 0 6px 2px rgba(255,255,255,0.2); transform:scale(1.05); }
 
 .gallery-container {
-  background:#aaa;
-  padding:6px;
-  margin:4px 10px;
-  border-radius:3px;
-  overflow-x:auto;
-  display:flex;
-  gap:12px;
-  scroll-behavior:smooth;
+  background:#aaa; padding:6px; margin:4px 10px;
+  border-radius:3px; overflow-x:auto;
+  display:flex; justify-content:flex-start; gap:12px; scroll-behavior:smooth;
 }
 .gallery-container img {
-  width:100px;
-  height:100px;
-  border-radius:3px;
-  transition:transform 0.4s ease;
+  width:100px; height:100px; object-fit:cover;
+  border-radius:3px; transition:transform 0.4s ease; flex-shrink:0;
 }
-.gallery-container img:hover { transform:scale(1.05); }
+.gallery-container img:hover { transform: scale(1.05); z-index:2; }
 
+/* Второй блок */
 .block-two {
   width: 95%;
   max-width: 720px;
@@ -164,66 +133,58 @@ body {
   box-shadow:0 0 20px rgba(0,0,0,0.4);
   overflow:hidden;
   padding:20px;
-  margin:40px 0;
+  margin-bottom: 40px;
   text-align:center;
 }
-
-.smilelandium-logo {
+.block-two .smilelandium-logo {
   width: 360px;
   height: auto;
   margin-bottom: 20px;
-  image-rendering: pixelated;
 }
-
-.new-buttons {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  flex-wrap: wrap;
+.block-two .new-buttons {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
 }
-.new-buttons a {
-  background-color:#555;
-  color:#eee;
-  text-decoration:none;
-  padding:6px 14px;
-  border-radius:3px;
-  font-size:16px;
+.block-two .new-buttons a {
+  background-color:#555; color:#eee; text-decoration:none;
+  padding:6px 14px; border-radius:3px; font-size:16px;
   transition:background-color 0.2s, box-shadow 0.2s, transform 0.3s;
 }
-.new-buttons a:hover {
-  background-color:#222;
-  box-shadow:0 0 6px 2px rgba(255,255,255,0.2);
-  transform:scale(1.05);
-}
+.block-two .new-buttons a:hover { background-color:#222; box-shadow:0 0 6px 2px rgba(255,255,255,0.2); transform:scale(1.05); }
 
 @media (max-width: 600px) {
-  .content { flex-direction:column; margin-right:0; }
-  .name { flex-direction:column; }
-  .smilelandium-logo { width: 260px; }
+  .content { flex-direction: column; align-items:center; text-align:center; }
+  .avatar-container { margin-right:0; margin-bottom:12px; }
+  .info .name { font-size:24px; flex-direction: column; gap:4px; align-items:center; }
+  .socials { justify-content:center; }
+  .block-two .smilelandium-logo { width:280px; }
 }
 </style>
 </head>
 <body>
 
-<img src="ImagesFolder/SssLine.png" class="full-line">
-
+<!-- Первый блок -->
 <div class="box">
-  <img src="ImagesFolder/SssBanner.png" class="banner">
+  <img src="ImagesFolder/SssBanner.png" alt="Banner" class="banner" />
+
   <div class="content">
     <div class="avatar-container">
-      <img src="ImagesFolder/SssAvatar.png" class="avatar">
+      <img src="ImagesFolder/SssAvatar.png" alt="Avatar" class="avatar">
     </div>
+
     <div class="info">
       <div class="name">
         Sssmmilles
         <div class="tag-label">
-          <img src="ImagesFolder/SssTag.png">
+          <img src="ImagesFolder/SssTag.png" alt="Tag Icon">
           <span>Sss</span>
         </div>
         <div class="badges">
-          <img src="ImagesFolder/1Badge.png">
-          <img src="ImagesFolder/2Badge.png">
-          <img src="ImagesFolder/3Badge.png">
+          <img src="ImagesFolder/1Badge.png" alt="Badge 1">
+          <img src="ImagesFolder/2Badge.png" alt="Badge 2">
+          <img src="ImagesFolder/3Badge.png" alt="Badge 3">
         </div>
       </div>
 
@@ -246,31 +207,25 @@ body {
     </div>
   </div>
 
-  <div class="gallery-container">
-    <img src="ImagesFolder/pic1.png">
-    <img src="ImagesFolder/pic2.png">
-    <img src="ImagesFolder/pic3.png">
-    <img src="ImagesFolder/pic4.png">
-    <img src="ImagesFolder/pic5.png">
-    <img src="ImagesFolder/pic6.png">
-    <img src="ImagesFolder/pic7.png">
-    <img src="ImagesFolder/pic8.png">
-    <img src="ImagesFolder/pic9.gif">
-  </div>
+  <img src="ImagesFolder/SssLine.png" class="line-full" />
 </div>
 
-<img src="ImagesFolder/SssLine.png" class="full-line">
-
-<img src="ImagesFolder/SssLine.png" class="full-line">
+<!-- Второй блок -->
 <div class="block-two">
-  <img src="ImagesFolder/SmilelandiumLogo.png" class="smilelandium-logo">
+
+  <img src="ImagesFolder/SssLine.png" class="line-full" />
+
+  <img src="ImagesFolder/SmilelandiumLogo.png" class="smilelandium-logo" alt="Smilelandium Logo">
+
   <div class="new-buttons">
     <a href="https://www.roblox.com/communities/35162017" target="_blank">Roblox Group</a>
     <a href="https://t.me/Smilelandium" target="_blank">Telegram Channel</a>
     <a href="https://discord.gg/PqXbZV3BW4" target="_blank">Discord Server</a>
   </div>
+
+  <img src="ImagesFolder/SssLine.png" class="line-full" />
+
 </div>
-<img src="ImagesFolder/SssLine.png" class="full-line">
 
 </body>
-  </html>
+          </html>
