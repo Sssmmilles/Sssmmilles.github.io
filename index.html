@@ -4,15 +4,6 @@
 <meta charset="UTF-8" />
 <title>Sssmmilles</title>
 <link rel="icon" href="ImagesFolder/Favicon.png" type="image/png" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Official website of Sssmmilles — links, projects, art and social media.">
-<meta name="keywords" content="Sssmmilles, sssmmilles.github.io, Sss, Sssmmilles, Smile, Discord, Social links.">
-<meta name="author" content="Sssmmilles">
-<meta property="og:title" content="Sssmmilles — Official Website">
-<meta property="og:description" content="Welcome! Everything about Sssmmilles — projects, art, social links and more.">
-<meta property="og:image" content="https://sssmmilles.github.io/ImagesFolder/SssAvatar.png">
-<meta property="og:url" content="https://sssmmilles.github.io/">
-<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://sssmmilles.github.io/">
 <style>
   @font-face {
@@ -70,7 +61,6 @@
     align-items: center;
     padding: 20px;
     flex-wrap: wrap;
-    position: relative;
   }
   .avatar-container {
     position: relative;
@@ -108,6 +98,8 @@
     gap: 10px;
     flex-wrap: wrap;
   }
+
+  /* tag-label → теперь ссылка */
   .tag-label {
     display: flex;
     align-items: center;
@@ -116,6 +108,7 @@
     border-radius: 3px;
     transition: transform 0.4s ease;
     cursor: pointer;
+    text-decoration: none;
   }
   .tag-label:hover {
     transform: scale(1.05);
@@ -130,6 +123,7 @@
     color: #111;
     font-size: 16px;
   }
+
   .badges {
     display: flex;
     align-items: center;
@@ -141,12 +135,12 @@
   .badges img {
     width: 20px;
     height: 20px;
-    image-rendering: pixelated;
     transition: transform 0.4s ease;
   }
   .badges img:hover {
     transform: scale(1.2);
   }
+
   .socials {
     display: flex;
     flex-wrap: wrap;
@@ -167,6 +161,7 @@
     transform: scale(1.05);
   }
 
+  /* smilelandium hover */
   .smilelandium-logo {
     margin-top: 18px;
     width: 60%;
@@ -174,6 +169,10 @@
     margin-left: auto;
     margin-right: auto;
     image-rendering: pixelated;
+    transition: transform 0.4s ease;
+  }
+  .smilelandium-logo:hover {
+    transform: scale(1.05);
   }
 
   hr.section-line {
@@ -242,10 +241,13 @@
     <div class="info">
       <div class="name">
         Sssmmilles
-        <div class="tag-label" id="openPanel">
+
+        <!-- tag-label теперь ссылка -->
+        <a class="tag-label" href="https://discord.gg/PqXbZV3BW4" target="_blank">
           <img src="ImagesFolder/Smile.png" alt="Tag Icon">
           <span>Smilelandium</span>
-        </div>
+        </a>
+
         <div class="badges">
           <img src="ImagesFolder/1Badge.png" alt="Badge 1">
           <img src="ImagesFolder/2Badge.png" alt="Badge 2">
@@ -271,7 +273,7 @@
   </div>
 
   <hr class="section-line">
-  <!-- smilelandium -->
+
   <img src="ImagesFolder/Smilelandium.png" class="smilelandium-logo" alt="Smilelandium">
 
   <div class="bottom-links">
@@ -283,4 +285,4 @@
   <img src="ImagesFolder/SssLine.png" alt="Line" class="line" />
 </div>
 </body>
-        </html>
+  </html>
