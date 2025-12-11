@@ -116,7 +116,6 @@
     border-radius: 3px;
     transition: transform 0.4s ease;
     cursor: pointer;
-    position: relative;
   }
   .tag-label:hover {
     transform: scale(1.05);
@@ -167,6 +166,8 @@
     box-shadow: 0 0 6px 2px rgba(255,255,255,0.2);
     transform: scale(1.05);
   }
+
+  /* smilelandium-logo */
   .smilelandium-logo {
     margin-top: 18px;
     width: 60%;
@@ -175,8 +176,20 @@
     margin-right: auto;
     image-rendering: pixelated;
   }
+
+  /* NEW — линия после верхних ссылок */
+  hr.section-line {
+    width: 90%;
+    border: none;
+    height: 2px;
+    background: #6d6f78;
+    opacity: 0.4;
+    margin: 22px auto 18px auto;
+  }
+
   .bottom-links {
     margin-top: 12px;
+    margin-bottom: 16px; /* пустое пространство снизу */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -196,6 +209,7 @@
     box-shadow: 0 0 6px 2px rgba(255,255,255,0.2);
     transform: scale(1.05);
   }
+
   @media (max-width: 600px) {
     .content {
       flex-direction: column;
@@ -215,14 +229,6 @@
     .socials {
       justify-content: center;
     }
-  }
-
-  hr.section-line {
-    width: 90%;
-    border: none;
-    height: 2px;
-    background: #6d6f78;
-    margin: 18px auto;
   }
 </style>
 </head>
@@ -269,9 +275,10 @@
     </div>
   </div>
 
-  <img src="ImagesFolder/Smilelandium.png" class="smilelandium-logo" alt="Smilelandium">
-
+  <!-- линия ПЕРЕД smilelandium -->
   <hr class="section-line">
+
+  <img src="ImagesFolder/Smilelandium.png" class="smilelandium-logo" alt="Smilelandium">
 
   <div class="bottom-links">
     <a href="#">Example Link 1</a>
@@ -282,4 +289,4 @@
   <img src="ImagesFolder/SssLine.png" alt="Line" class="line" />
 </div>
 </body>
-          </html>
+        </html>
