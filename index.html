@@ -19,7 +19,7 @@
     margin: 0;
     padding: 0;
     font-family: 'KiwiSoda', sans-serif;
-    background-color: #36373d;
+    background-color: #14181c;
     width: 100%;
     height: 100%;
   }
@@ -33,14 +33,13 @@
   .box {
     width: 95%;
     max-width: 800px;
-    background: #aeafb5;
-    border-radius: 3px;
+    background: linear-gradient(to top, #0d0c22, #24996c);
+    border-radius: 4px;
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
     overflow: hidden;
     position: relative;
     z-index: 3;
     padding-bottom: 20px;
-    margin-bottom: 20px;
   }
   .banner {
     width: 100%;
@@ -54,6 +53,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    opacity: 0.5;
   }
   .content {
     display: flex;
@@ -91,8 +91,8 @@
   }
   .info .name {
     font-size: 28px;
-    font-weight: bold;
-    color: #111;
+    font-weight: 500;
+    color: #fff;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -119,8 +119,9 @@
     image-rendering: pixelated;
   }
   .tag-label span {
-    color: #111;
+    color: #fff;
     font-size: 16px;
+    font-weight: 300;
   }
 
   .badges {
@@ -130,6 +131,7 @@
     background-color: rgba(0,0,0,0.13);
     border-radius: 3px;
     padding: 2px 4px;
+    filter: invert(1) hue-rotate(80deg);
   }
   .badges img {
     width: 20px;
@@ -146,7 +148,7 @@
     gap: 8px;
   }
   .socials a {
-    background-color: #6d6f78;
+    background-color: #31534e;
     color: #eee;
     text-decoration: none;
     padding: 6px 14px;
@@ -155,9 +157,9 @@
     transition: background-color 0.2s, box-shadow 0.2s, transform 0.3s;
   }
   .socials a:hover {
-    background-color: #5e6069;
+    background-color: #4c786f;
     box-shadow: 0 0 6px 2px rgba(255,255,255,0.2);
-    transform: scale(1.05);
+    transform: scale(1.04);
   }
 
   .smilelandium-logo {
@@ -167,10 +169,12 @@
     margin-left: auto;
     margin-right: auto;
     image-rendering: pixelated;
-    transition: transform 0.4s ease;
+    transition: 0.4s ease;
+    filter: brightness(0) invert(0.08);
   }
   .smilelandium-logo:hover {
-    transform: scale(1.05);
+    transform: scale(1.0);
+    filter: brightness(0.8) invert(0);
   }
 
   hr.section-line {
@@ -191,7 +195,7 @@
     gap: 8px;
   }
   .bottom-links a {
-    background-color: #6d6f78;
+    background-color: #31534e;
     color: #eee;
     text-decoration: none;
     padding: 6px 14px;
@@ -200,9 +204,9 @@
     transition: background-color 0.2s, box-shadow 0.2s, transform 0.3s;
   }
   .bottom-links a:hover {
-    background-color: #5e6069;
+    background-color: #4c786f;
     box-shadow: 0 0 6px 2px rgba(255,255,255,0.2);
-    transform: scale(1.05);
+    transform: scale(1.04);
   }
 
   @media (max-width: 600px) {
