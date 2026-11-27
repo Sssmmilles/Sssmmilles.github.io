@@ -7,7 +7,7 @@
 <meta name="description" content="Sssmmilles Infoz.">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Sssmmilles">
-<meta property="og:description" content="Profile, announcements, pixel art and Smilelandium.">
+<meta property="og:description" content="About Sssmmilles">
 <meta property="og:url" content="https://sssmmilles.github.io/">
 <meta property="og:image" content="https://sssmmilles.github.io/Images/Profile/SssAvatar.png">
 <meta name="theme-color" content="#17372f">
@@ -154,21 +154,8 @@
   .name.dragging span { cursor: grabbing; }
   .name span.dragging-letter { position: relative; z-index: 50; }
   .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 6px; font-size: 15px; }
-  .tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 3px 9px;
-    border-radius: 7px;
-    background: var(--button);
-    font-family: 'KiwiSoda', sans-serif;
-    font-size: 16px;
-    transition: background .2s;
-  }
-  .tag:hover { background: var(--button-hover); }
-  .tag img { width: 16px; height: 16px; }
 
-  .badges { position: relative; display: inline-flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; padding: 3px 5px; border-radius: 8px; background: var(--button); }
+  .badges { position: relative; display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 3px 5px; border-radius: 8px; background: var(--button); }
   .badges:empty { display: none; }
   .badge { display: grid; padding: 3px; }
   .badge img { width: 20px; height: 20px; transition: transform .3s; }
@@ -281,8 +268,8 @@
   .rich a:hover { text-decoration: underline; }
 
   .connections { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-  .connections a { display: flex; align-items: center; gap: 10px; padding: 7px 9px; border-radius: 9px; background: var(--panel); transition: background .2s, transform .2s; }
-  .connections a:hover { background: var(--button-hover); transform: translateY(-2px); }
+  .connections a { display: flex; align-items: center; gap: 10px; padding: 7px 9px; border-radius: 9px; background: var(--panel); box-shadow: 0 0 0 transparent; transition: background .2s, transform .2s, box-shadow .2s; }
+  .connections a:hover { background: var(--button-hover); transform: translateY(-2px); box-shadow: 0 3px 0 #535c5c63; }
   .logo-box { flex: 0 0 30px; height: 30px; display: grid; place-items: center; border-radius: 7px; background: var(--c, #333); color: #fff; }
   img.logo-box { padding: 2px; }
   .connections span {
@@ -453,12 +440,8 @@
       <h1 class="name" id="name">Sssmmilles</h1>
       <div class="meta">
         <span id="meta">sssmmilles</span>
-        <a class="tag" href="https://discord.gg/4tZgcEUP8T" target="_blank" rel="noopener">
-          <img src="Images/Profile/Smile.png" alt="" class="pixel">IUM
-        </a>
+        <div class="badges" id="badges"></div>
       </div>
-
-      <div class="badges" id="badges"></div>
 
       <div class="actions">
         <a class="btn primary" href="https://discord.com/users/1129546209485406299" target="_blank" rel="noopener">
