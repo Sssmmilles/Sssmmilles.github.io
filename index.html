@@ -17,7 +17,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap">
 <script>
-  // плавное открытие: прячем страницу, пока она грузится (максимум 2.5 секунды)
   document.documentElement.classList.add('js');
   setTimeout(() => document.documentElement.classList.add('ready'), 2500);
 </script>
@@ -179,7 +178,6 @@
     transition: opacity .15s, transform .15s, visibility .15s;
   }
   .badge-card.show { opacity: 1; visibility: visible; transform: none; }
-  /* стрелочка к значку */
   .badge-card::after {
     content: "";
     position: absolute;
@@ -208,7 +206,7 @@
   .badge-card b { display: block; font-size: 20px; line-height: 1.25; overflow-wrap: anywhere; }
   .badge-card p { margin-top: 4px; color: var(--muted); font-size: 14px; white-space: pre-line; overflow-wrap: anywhere; }
 
-  .actions { position: relative; display: flex; gap: 10px; margin-top: 20px; }
+  .actions { position: relative; display: flex; gap: 10px; margin-top: 8px; }
   .btn {
     display: inline-flex;
     align-items: center;
@@ -295,7 +293,7 @@
   .content { padding-top: 22px; min-width: 0; }
   .tabs { display: flex; gap: 26px; margin-bottom: 18px; border-bottom: 1px solid rgba(255, 255, 255, .08); overflow-x: auto; }
   .tabs .icon { width: 18px; height: 18px; flex: none; }
-  .tabs button { display: inline-flex; align-items: center; gap: 8px; padding-bottom: 12px; border-bottom: 2px solid transparent; font-size: 16px; font-weight: 500; color: var(--muted); white-space: nowrap; transition: color .2s, border-color .2s; }
+  .tabs button { display: inline-flex; align-items: center; gap: 8px; padding-bottom: 12px; border-bottom: 2px solid transparent; font-size: 16px; font-weight: 500; color: var(--muted); white-space: nowrap; transition: color .2s, border-color .2s; padding-top: 12px; margin-top: -12px; }
   .tabs button:hover { color: var(--text); }
   .tabs button:focus-visible { outline-offset: -2px; }
   .tabs button[aria-selected="true"] { color: #fff; border-bottom-color: #fff; }
@@ -364,7 +362,7 @@
     .connections { display: flex; flex-wrap: wrap; gap: 10px; }
     .connections a { padding: 0; background: none; border-radius: 11px; }
     .connections .logo-box { flex-basis: 46px; width: 46px; height: 46px; border-radius: 11px; }
-    .connections .logo-box .icon { width: 24px; height: 24px; }
+    .connections .logo-box .icon { width: 30px; height: 30px; }
     .connections span { position: absolute; width: 1px; height: 1px; clip-path: inset(50%); }
 
     /* нижняя панель */
