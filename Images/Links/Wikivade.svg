@@ -1,0 +1,38 @@
+<!-- Credits: Evade Wiki -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2.5 1.75 250 250" width="512" height="512">
+  <defs>
+    <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="115" y1="23.5" x2="115" y2="217" gradientTransform="rotate(-0.0 115 120)">
+      <stop offset="0" stop-color="#F9E2C0"/>
+      <stop offset="1" stop-color="#FEB775"/>
+    </linearGradient>
+    <g id="dark" transform="rotate(0.0 115 120)">
+      <path d="M52.50 23.50 L205.00 23.50 L200.64 83.70 L188.14 83.70 L183.23 151.60 L194.89 163.26 L191.00 217.00 L30.00 217.00 L99.50 118.00 Z" fill="#181818" stroke="#181818" stroke-width="32" stroke-linejoin="round"/>
+    </g>
+  </defs>
+
+  <g>
+    <use href="#dark" x="0.00" y="0.00"/>
+    <use href="#dark" x="0.50" y="0.65"/>
+    <use href="#dark" x="1.00" y="1.30"/>
+    <use href="#dark" x="1.50" y="1.95"/>
+    <use href="#dark" x="2.00" y="2.60"/>
+    <use href="#dark" x="2.50" y="3.25"/>
+    <use href="#dark" x="3.00" y="3.90"/>
+    <use href="#dark" x="3.50" y="4.55"/>
+    <use href="#dark" x="4.00" y="5.20"/>
+    <use href="#dark" x="4.50" y="5.85"/>
+    <use href="#dark" x="5.00" y="6.50"/>
+    <use href="#dark" x="5.50" y="7.15"/>
+    <use href="#dark" x="6.00" y="7.80"/>
+    <use href="#dark" x="6.50" y="8.45"/>
+    <use href="#dark" x="7.00" y="9.10"/>
+    <use href="#dark" x="7.50" y="9.75"/>
+    <use href="#dark" x="8.00" y="10.40"/>
+    <use href="#dark" x="8.50" y="11.05"/>
+    <use href="#dark" x="9.00" y="11.70"/>
+    <use href="#dark" x="9.50" y="12.35"/>
+    <use href="#dark" x="10.00" y="13.00"/>
+  </g>
+
+  <path transform="rotate(0.0 115 120)" fill="url(#g)" d="M52.95 24.40 Q52.5 23.5 53.50 23.50 L204.00 23.50 Q205 23.5 204.93 24.50 L200.72 82.70 Q200.64444444444445 83.7 199.64 83.70 L169.64 83.70 Q168.64444444444445 83.7 168.72 82.70 L170.66 55.78 Q171.1188630490956 49.5 164.82 49.50 L100.50 49.50 Q99.5 49.5 99.93 50.40 L131.57 117.60 Q132 118.5 131.46 119.34 L87.54 188.66 Q87 189.5 88.00 189.50 L148.99 189.50 Q160.98966408268734 189.5 161.86 177.53 L163.49 155.00 Q163.5581395348837 154 164.56 154.00 L194.56 154.00 Q195.5581395348837 154 195.49 155.00 L191.07 216.00 Q191 217 190.00 217.00 L31.00 217.00 Q30 217 30.57 216.18 L98.93 118.82 Q99.5 118 99.05 117.10 Z"/>
+</svg>
